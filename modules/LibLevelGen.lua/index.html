@@ -1059,15 +1059,18 @@
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="liblevelgennew">libLevelGen.new<a class="headerlink" href="#liblevelgennew" title="Permanent link">&para;</a></h3>
-<p><code>libLevelGen.new(ev: LibLevelGen.LevelGenerationEventParameters): LibLegelGen.Instance</code>  </p>
+<pre><code class="language-lua">libLevelGen.new(ev: LibLevelGen.LevelGenerationEventParameters): LibLegelGen.Instance
+</code></pre>
 <p><strong>Parameters</strong>:  </p>
 <ul>
 <li><code>ev</code>: <code>LibLevelGen.LevelGenerationEventParameters</code> - <em>no description</em></li>
 </ul>
+<p><strong>Returns</strong>: <code>LibLegelGen.Instance</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h3 id="liblevelgenregistergenerator">libLevelGen.registerGenerator<a class="headerlink" href="#liblevelgenregistergenerator" title="Permanent link">&para;</a></h3>
-<p><code>libLevelGen.registerGenerator(name: string, func: function, data: LibLevelGen.Config?, modeData: GameSession.Mode.Data?): number</code>  </p>
+<pre><code class="language-lua">libLevelGen.registerGenerator(name: string, func: function, data: LibLevelGen.Config?, modeData: GameSession.Mode.Data?): number
+</code></pre>
 <p><strong>Parameters</strong>:  </p>
 <ul>
 <li>
@@ -1083,34 +1086,42 @@
 <p><code>modeData</code>: <code>GameSession.Mode.Data?</code> - <em>no description</em></p>
 </li>
 </ul>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h3 id="liblevelgengetgeneratorproperties">libLevelGen.getGeneratorProperties<a class="headerlink" href="#liblevelgengetgeneratorproperties" title="Permanent link">&para;</a></h3>
-<p><code>libLevelGen.getGeneratorProperties(type: any): LibLevelGen.Generator</code>  </p>
+<pre><code class="language-lua">libLevelGen.getGeneratorProperties(type: any): LibLevelGen.Generator
+</code></pre>
 <p><strong>Parameters</strong>:  </p>
 <ul>
 <li><code>type</code>: <code>any</code> - <em>no description</em></li>
 </ul>
+<p><strong>Returns</strong>: <code>LibLevelGen.Generator</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h3 id="liblevelgensetdefaultgenerator">libLevelGen.setDefaultGenerator<a class="headerlink" href="#liblevelgensetdefaultgenerator" title="Permanent link">&para;</a></h3>
-<p><code>libLevelGen.setDefaultGenerator(type: any): void</code>  </p>
+<pre><code class="language-lua">libLevelGen.setDefaultGenerator(type: any): void
+</code></pre>
 <p><strong>Parameters</strong>:  </p>
 <ul>
 <li><code>type</code>: <code>any</code> - <em>no description</em></li>
 </ul>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h3 id="liblevelgenregisterpostprocessor">libLevelGen.registerPostProcessor<a class="headerlink" href="#liblevelgenregisterpostprocessor" title="Permanent link">&para;</a></h3>
-<p><code>libLevelGen.registerPostProcessor(func: function): void</code>  </p>
+<pre><code class="language-lua">libLevelGen.registerPostProcessor(func: function): void
+</code></pre>
 <p><strong>Parameters</strong>:  </p>
 <ul>
 <li><code>func</code>: <code>function</code> - <em>no description</em></li>
 </ul>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h3 id="liblevelgeninitliblevelgenrunstate">libLevelGen.initLibLevelGenRunState<a class="headerlink" href="#liblevelgeninitliblevelgenrunstate" title="Permanent link">&para;</a></h3>
-<p><code>libLevelGen.initLibLevelGenRunState(runState: LibLevelGen.RunState, ev: LibLevelGen.LevelGenerationEventParameters): void</code>  </p>
+<pre><code class="language-lua">libLevelGen.initLibLevelGenRunState(runState: LibLevelGen.RunState, ev: LibLevelGen.LevelGenerationEventParameters): void
+</code></pre>
 <p><strong>Parameters</strong>:  </p>
 <ul>
 <li>
@@ -1120,6 +1131,7 @@
 <p><code>ev</code>: <code>LibLevelGen.LevelGenerationEventParameters</code> - <em>no description</em></p>
 </li>
 </ul>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />
@@ -1344,7 +1356,10 @@
 <blockquote>
 <hr />
 <h4 id="liblegelgeninstanceinit">LibLegelGen.Instance.init<a class="headerlink" href="#liblegelgeninstanceinit" title="Permanent link">&para;</a></h4>
-<p><code>init(self: LibLegelGen.Instance, ev: LibLevelGen.LevelGenerationEventParameters): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">init(self: LibLegelGen.Instance, ev: LibLevelGen.LevelGenerationEventParameters): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1356,40 +1371,56 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h4 id="liblegelgeninstancegetnewsinglechoiceid">LibLegelGen.Instance.getNewSingleChoiceID<a class="headerlink" href="#liblegelgeninstancegetnewsinglechoiceid" title="Permanent link">&para;</a></h4>
-<p><code>getNewSingleChoiceID(self: LibLegelGen.Instance): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">getNewSingleChoiceID(self: LibLegelGen.Instance): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstancegetdepth">LibLegelGen.Instance.getDepth<a class="headerlink" href="#liblegelgeninstancegetdepth" title="Permanent link">&para;</a></h4>
-<p><code>getDepth(self: LibLegelGen.Instance): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">getDepth(self: LibLegelGen.Instance): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h4 id="liblegelgeninstancegetfloor">LibLegelGen.Instance.getFloor<a class="headerlink" href="#liblegelgeninstancegetfloor" title="Permanent link">&para;</a></h4>
-<p><code>getFloor(self: LibLegelGen.Instance): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">getFloor(self: LibLegelGen.Instance): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h4 id="liblegelgeninstancesetmusic">LibLegelGen.Instance.setMusic<a class="headerlink" href="#liblegelgeninstancesetmusic" title="Permanent link">&para;</a></h4>
-<p><code>setMusic(self: LibLegelGen.Instance, music: LibLevelGen.MusicData): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">setMusic(self: LibLegelGen.Instance, music: LibLevelGen.MusicData): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1401,10 +1432,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h4 id="liblegelgeninstancesettileset">LibLegelGen.Instance.setTileset<a class="headerlink" href="#liblegelgeninstancesettileset" title="Permanent link">&para;</a></h4>
-<p><code>setTileset(self: LibLegelGen.Instance, tilesetName: string): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">setTileset(self: LibLegelGen.Instance, tilesetName: string): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1416,20 +1451,28 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h4 id="liblegelgeninstancerand">LibLegelGen.Instance.rand<a class="headerlink" href="#liblegelgeninstancerand" title="Permanent link">&para;</a></h4>
-<p><code>rand(self: LibLegelGen.Instance): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">rand(self: LibLegelGen.Instance): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: Generate a random 32-bit integer number.</p>
 <hr />
 <h4 id="liblegelgeninstancerandfloatrange">LibLegelGen.Instance.randFloatRange<a class="headerlink" href="#liblegelgeninstancerandfloatrange" title="Permanent link">&para;</a></h4>
-<p><code>randFloatRange(self: LibLegelGen.Instance, min: number, max: number): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randFloatRange(self: LibLegelGen.Instance, min: number, max: number): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1444,10 +1487,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: Generate a random float within the given range.</p>
 <hr />
 <h4 id="liblegelgeninstancerandintrange">LibLegelGen.Instance.randIntRange<a class="headerlink" href="#liblegelgeninstancerandintrange" title="Permanent link">&para;</a></h4>
-<p><code>randIntRange(self: LibLegelGen.Instance, min: number, max: number): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randIntRange(self: LibLegelGen.Instance, min: number, max: number): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1462,10 +1509,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: Generate a random integer within the given range.</p>
 <hr />
 <h4 id="liblegelgeninstancerandchoice">LibLegelGen.Instance.randChoice<a class="headerlink" href="#liblegelgeninstancerandchoice" title="Permanent link">&para;</a></h4>
-<p><code>randChoice(self: LibLegelGen.Instance, t: T[], remove: boolean?): T</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randChoice(self: LibLegelGen.Instance, t: T[], remove: boolean?): T
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1480,10 +1531,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>T</code></p>
 <p><strong>Description</strong>: Choose a random element from the given table.</p>
 <hr />
 <h4 id="liblegelgeninstancerandchoicemany">LibLegelGen.Instance.randChoiceMany<a class="headerlink" href="#liblegelgeninstancerandchoicemany" title="Permanent link">&para;</a></h4>
-<p><code>randChoiceMany(self: LibLegelGen.Instance, choices: T, n: number, remove: boolean?): T</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randChoiceMany(self: LibLegelGen.Instance, choices: T, n: number, remove: boolean?): T
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1501,10 +1556,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>T</code></p>
 <p><strong>Description</strong>: Choose n elements from the given table.</p>
 <hr />
 <h4 id="liblegelgeninstancerandchance">LibLegelGen.Instance.randChance<a class="headerlink" href="#liblegelgeninstancerandchance" title="Permanent link">&para;</a></h4>
-<p><code>randChance(self: LibLegelGen.Instance, probability: number Value between 0.0 and 1.0): boolean</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randChance(self: LibLegelGen.Instance, probability: number Value between 0.0 and 1.0): boolean
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1516,10 +1575,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>boolean</code></p>
 <p><strong>Description</strong>: Randomly returns boolean based on given probability.</p>
 <hr />
 <h4 id="liblegelgeninstancerandweightedchoice">LibLegelGen.Instance.randWeightedChoice<a class="headerlink" href="#liblegelgeninstancerandweightedchoice" title="Permanent link">&para;</a></h4>
-<p><code>randWeightedChoice(self: LibLegelGen.Instance, chances: table&lt;string,number&gt;): string</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randWeightedChoice(self: LibLegelGen.Instance, chances: table&lt;string,number&gt;): string
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1531,30 +1594,42 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>string</code></p>
 <p><strong>Description</strong>: Randomly choose a value from the weighted choice data.</p>
 <hr />
 <h4 id="liblegelgeninstanceadvanceperlevelrng">LibLegelGen.Instance.advancePerLevelRNG<a class="headerlink" href="#liblegelgeninstanceadvanceperlevelrng" title="Permanent link">&para;</a></h4>
-<p><code>advancePerLevelRNG(self: LibLegelGen.Instance): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">advancePerLevelRNG(self: LibLegelGen.Instance): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstancecreatesegment">LibLegelGen.Instance.createSegment<a class="headerlink" href="#liblegelgeninstancecreatesegment" title="Permanent link">&para;</a></h4>
-<p><code>createSegment(self: LibLegelGen.Instance): LibLevelGen.Segment</code>  </p>
+</blockquote>
+<pre><code class="language-lua">createSegment(self: LibLegelGen.Instance): LibLevelGen.Segment
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>LibLevelGen.Segment</code></p>
 <p><strong>Description</strong>: <em>no description</em></p>
 <hr />
 <h4 id="liblegelgeninstanceserializesegments">LibLegelGen.Instance.serializeSegments<a class="headerlink" href="#liblegelgeninstanceserializesegments" title="Permanent link">&para;</a></h4>
-<p><code>serializeSegments(self: LibLegelGen.Instance, tileMapping: table): table,</code>  </p>
+</blockquote>
+<pre><code class="language-lua">serializeSegments(self: LibLegelGen.Instance, tileMapping: table): table,
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1566,30 +1641,42 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>table,</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstancegenerateareas">LibLegelGen.Instance.generateAreas<a class="headerlink" href="#liblegelgeninstancegenerateareas" title="Permanent link">&para;</a></h4>
-<p><code>generateAreas(self: LibLegelGen.Instance): table</code>  </p>
+</blockquote>
+<pre><code class="language-lua">generateAreas(self: LibLegelGen.Instance): table
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>table</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstancegeneratetilemapping">LibLegelGen.Instance.generateTileMapping<a class="headerlink" href="#liblegelgeninstancegeneratetilemapping" title="Permanent link">&para;</a></h4>
-<p><code>generateTileMapping(self: LibLegelGen.Instance): table</code>  </p>
+</blockquote>
+<pre><code class="language-lua">generateTileMapping(self: LibLegelGen.Instance): table
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>table</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstanceserializeentities">LibLegelGen.Instance.serializeEntities<a class="headerlink" href="#liblegelgeninstanceserializeentities" title="Permanent link">&para;</a></h4>
-<p><code>serializeEntities(self: LibLegelGen.Instance, allSegmentOffsets: table): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">serializeEntities(self: LibLegelGen.Instance, allSegmentOffsets: table): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -1601,46 +1688,63 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstanceplacesecretshopifneeded">LibLegelGen.Instance.placeSecretShopIfNeeded<a class="headerlink" href="#liblegelgeninstanceplacesecretshopifneeded" title="Permanent link">&para;</a></h4>
-<p><code>placeSecretShopIfNeeded(self: LibLegelGen.Instance): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">placeSecretShopIfNeeded(self: LibLegelGen.Instance): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstanceplaceshrineifneeded">LibLegelGen.Instance.placeShrineIfNeeded<a class="headerlink" href="#liblegelgeninstanceplaceshrineifneeded" title="Permanent link">&para;</a></h4>
-<p><code>placeShrineIfNeeded(self: LibLegelGen.Instance): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">placeShrineIfNeeded(self: LibLegelGen.Instance): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstancegetelligibleshrines">LibLegelGen.Instance.getElligibleShrines<a class="headerlink" href="#liblegelgeninstancegetelligibleshrines" title="Permanent link">&para;</a></h4>
-<p><code>getElligibleShrines(self: LibLegelGen.Instance): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">getElligibleShrines(self: LibLegelGen.Instance): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 <hr />
 <h4 id="liblegelgeninstancefinalize">LibLegelGen.Instance.finalize<a class="headerlink" href="#liblegelgeninstancefinalize" title="Permanent link">&para;</a></h4>
-<p><code>finalize(self: LibLegelGen.Instance): void</code>  </p>
+</blockquote>
+<pre><code class="language-lua">finalize(self: LibLegelGen.Instance): void
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>void</code></p>
 <p><strong>Description</strong>: !!! Internal</p>
 </blockquote>
 

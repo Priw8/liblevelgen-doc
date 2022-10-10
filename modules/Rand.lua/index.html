@@ -681,10 +681,12 @@
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="randnew">rand.new<a class="headerlink" href="#randnew" title="Permanent link">&para;</a></h3>
-<p><code>rand.new(seed: number): LibLevelGen.Rng</code>  </p>
+<pre><code class="language-lua">rand.new(seed: number): LibLevelGen.Rng
+</code></pre>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li><code>seed</code>: <code>number</code> - Initial seed  </li>
+<li><code>seed</code>: <code>number</code> - Initial seed<br />
+<strong>Returns</strong>: <code>LibLevelGen.Rng</code></li>
 </ul>
 <p><strong>Description</strong>: Create a new random number generator instance.</p>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
@@ -695,17 +697,24 @@
 <blockquote>
 <hr />
 <h4 id="liblevelgenrngrand">LibLevelGen.Rng.rand<a class="headerlink" href="#liblevelgenrngrand" title="Permanent link">&para;</a></h4>
-<p><code>rand(self: LibLevelGen.Rng): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">rand(self: LibLevelGen.Rng): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li><code>self</code>: <code>LibLevelGen.Rng</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: Generate a random 32-bit integer number.</p>
 <hr />
 <h4 id="liblevelgenrngrandfloatrange">LibLevelGen.Rng.randFloatRange<a class="headerlink" href="#liblevelgenrngrandfloatrange" title="Permanent link">&para;</a></h4>
-<p><code>randFloatRange(self: LibLevelGen.Rng, min: number, max: number): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randFloatRange(self: LibLevelGen.Rng, min: number, max: number): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -720,10 +729,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: Generate a random float within the given range.</p>
 <hr />
 <h4 id="liblevelgenrngrandintrange">LibLevelGen.Rng.randIntRange<a class="headerlink" href="#liblevelgenrngrandintrange" title="Permanent link">&para;</a></h4>
-<p><code>randIntRange(self: LibLevelGen.Rng, min: number, max: number): number</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randIntRange(self: LibLevelGen.Rng, min: number, max: number): number
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -738,10 +751,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>number</code></p>
 <p><strong>Description</strong>: Generate a random integer within the given range.</p>
 <hr />
 <h4 id="liblevelgenrngrandchoice">LibLevelGen.Rng.randChoice<a class="headerlink" href="#liblevelgenrngrandchoice" title="Permanent link">&para;</a></h4>
-<p><code>randChoice(self: LibLevelGen.Rng, t: T[], remove: boolean): T</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randChoice(self: LibLevelGen.Rng, t: T[], remove: boolean): T
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -756,10 +773,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>T</code></p>
 <p><strong>Description</strong>: Choose a random element from the given table.</p>
 <hr />
 <h4 id="liblevelgenrngrandchoicemany">LibLevelGen.Rng.randChoiceMany<a class="headerlink" href="#liblevelgenrngrandchoicemany" title="Permanent link">&para;</a></h4>
-<p><code>randChoiceMany(self: LibLevelGen.Rng, choices: T, n: number, remove: boolean): T</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randChoiceMany(self: LibLevelGen.Rng, choices: T, n: number, remove: boolean): T
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -777,10 +798,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>T</code></p>
 <p><strong>Description</strong>: Choose a n elements from the given table.</p>
 <hr />
 <h4 id="liblevelgenrngrandchance">LibLevelGen.Rng.randChance<a class="headerlink" href="#liblevelgenrngrandchance" title="Permanent link">&para;</a></h4>
-<p><code>randChance(self: LibLevelGen.Rng, probability: number): boolean</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randChance(self: LibLevelGen.Rng, probability: number): boolean
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -792,10 +817,14 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>boolean</code></p>
 <p><strong>Description</strong>: Randomly returns boolean based on given probability.</p>
 <hr />
 <h4 id="liblevelgenrngrandweightedchoice">LibLevelGen.Rng.randWeightedChoice<a class="headerlink" href="#liblevelgenrngrandweightedchoice" title="Permanent link">&para;</a></h4>
-<p><code>randWeightedChoice(self: LibLevelGen.Rng, chances: table&lt;string,number&gt;): string</code>  </p>
+</blockquote>
+<pre><code class="language-lua">randWeightedChoice(self: LibLevelGen.Rng, chances: table&lt;string,number&gt;): string
+</code></pre>
+<blockquote>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
@@ -807,6 +836,7 @@
 </li>
 </ul>
 </blockquote>
+<p><strong>Returns</strong>: <code>string</code></p>
 <p><strong>Description</strong>: Randomly choose a value from the weighted choice data.</p>
 </blockquote>
 
