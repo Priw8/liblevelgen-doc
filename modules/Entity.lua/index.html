@@ -314,36 +314,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#liblevelgenentityinit" class="md-nav__link">
-    LibLevelGen.Entity.init
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentityprocessupgrade" class="md-nav__link">
-    LibLevelGen.Entity.processUpgrade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentityupgrade" class="md-nav__link">
-    LibLevelGen.Entity.upgrade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#liblevelgenentitysetattribute" class="md-nav__link">
     LibLevelGen.Entity.setAttribute
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentitycalculateprice" class="md-nav__link">
-    LibLevelGen.Entity.calculatePrice
   </a>
   
 </li>
@@ -386,20 +358,6 @@
           <li class="md-nav__item">
   <a href="#liblevelgenentitystoreitem" class="md-nav__link">
     LibLevelGen.Entity.storeItem
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentitygetrealtype" class="md-nav__link">
-    LibLevelGen.Entity.getRealType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentityserialize" class="md-nav__link">
-    LibLevelGen.Entity.serialize
   </a>
   
 </li>
@@ -646,36 +604,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#liblevelgenentityinit" class="md-nav__link">
-    LibLevelGen.Entity.init
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentityprocessupgrade" class="md-nav__link">
-    LibLevelGen.Entity.processUpgrade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentityupgrade" class="md-nav__link">
-    LibLevelGen.Entity.upgrade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#liblevelgenentitysetattribute" class="md-nav__link">
     LibLevelGen.Entity.setAttribute
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentitycalculateprice" class="md-nav__link">
-    LibLevelGen.Entity.calculatePrice
   </a>
   
 </li>
@@ -722,20 +652,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#liblevelgenentitygetrealtype" class="md-nav__link">
-    LibLevelGen.Entity.getRealType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenentityserialize" class="md-nav__link">
-    LibLevelGen.Entity.serialize
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -765,325 +681,183 @@
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="entitynew">entity.new<a class="headerlink" href="#entitynew" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">entity.new(instance: LibLegelGen.Instance, type: string, x: number?, y: number?, level: number?): LibLevelGen.Entity
+<pre><code class="language-lua">entity.new(instance: LibLegelGen.Instance, type: string, x?: number, y?: number, level?: number | number[]): LibLevelGen.Entity
 </code></pre>
+<p>Create a new LibLevelGen entity.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li>
-<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>type</code>: <code>string</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>x</code>: <code>number?</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>y</code>: <code>number?</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>level</code>: <code>number?</code> - <em>no description</em></p>
-</li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - Parent instance of the entity  </li>
+<li><code>type</code>: <code>string</code> - Entity type  </li>
+<li><code>x?</code>: <code>number</code> - X coordinate of the entity, relative to the room it's in. Defaults to -1  </li>
+<li><code>y?</code>: <code>number</code> - Y coordinate of the entity, relative to the room it's in Defaults to -1  </li>
+<li><code>level?</code>: <code>number | number[]</code> - Level of the entity, if a table is specified it's picked randomly from the provided values. Defaults to 1.  </li>
 </ul>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
-<p><strong>Description</strong>: Create a new LibLevelGen entity.</p>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="liblevelgenentity">LibLevelGen.Entity<a class="headerlink" href="#liblevelgenentity" title="Permanent link">&para;</a></h3>
-<p><strong>Description</strong>: <em>no description</em></p>
+<p>Represents a LibLevelGen entity object</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
-<li>
-<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>type</code>: <code>string</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>x</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>y</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>level</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>saleCurrency</code>: <code>string | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>attributes</code>: <code>table | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>inventory</code>: <code>table | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>price</code>: <code>table | nil</code> - <em>no description</em></p>
-</li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - Instance this entity belongs to  </li>
+<li><code>type</code>: <code>string</code> - Entity type  </li>
+<li><code>x</code>: <code>number</code> - Entity X coordinate relative, relative to the room it's in  </li>
+<li><code>y</code>: <code>number</code> - Entity Y coordinate relative, relative to the room it's in  </li>
+<li><code>level</code>: <code>number</code> - Entity level  </li>
+<li><code>saleCurrency</code>: <code>string | nil</code> - If entity has a price, this determines the currency  </li>
+<li><code>price</code>: <code>table | nil</code> - Entity price data, in the format set by Synchrony's <code>levelUtils.setEntityPriceTag</code>  </li>
+<li><code>attributes</code>: <code>table | nil</code> - Additional entity attributes. Use <code>.setAttribute</code> and <code>.getOrCreateAttribute</code> methods to manipulate this table.  </li>
+<li><code>inventory</code>: <code>table | nil</code> - Entity's inventory. Use the <code>.giveItem</code> method to manipulate this table.  </li>
 </ul>
 </blockquote>
 <p><strong>Methods</strong>:  </p>
 <blockquote>
 <hr />
-<h4 id="liblevelgenentityinit">LibLevelGen.Entity.init<a class="headerlink" href="#liblevelgenentityinit" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">init(self: LibLevelGen.Entity, instance: LibLegelGen.Instance, entityType: string, x: number, y: number, level: number): void
-</code></pre>
-<blockquote>
-<p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
-</li>
-<li>
-<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
-</li>
-<li>
-<p><code>entityType</code>: <code>string</code> - <em>no description</em>  </p>
-</li>
-<li>
-<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
-</li>
-<li>
-<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
-</li>
-<li>
-<p><code>level</code>: <code>number</code> - <em>no description</em>  </p>
-</li>
-</ul>
-</blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: Initialize the entity</p>
-<hr />
-<h4 id="liblevelgenentityprocessupgrade">LibLevelGen.Entity.processUpgrade<a class="headerlink" href="#liblevelgenentityprocessupgrade" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">processUpgrade(self: LibLevelGen.Entity, upgradeData: table&lt;number,number|number[]&gt;): void
-</code></pre>
-<blockquote>
-<p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
-</li>
-<li>
-<p><code>upgradeData</code>: <code>table&lt;number,number|number[]&gt;</code> - <em>no description</em>  </p>
-</li>
-</ul>
-</blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: !!! Internal</p>
-<hr />
-<h4 id="liblevelgenentityupgrade">LibLevelGen.Entity.upgrade<a class="headerlink" href="#liblevelgenentityupgrade" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">upgrade(self: LibLevelGen.Entity): void
-</code></pre>
-<blockquote>
-<p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </li>
-</ul>
-</blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: !!! Internal</p>
-<hr />
 <h4 id="liblevelgenentitysetattribute">LibLevelGen.Entity.setAttribute<a class="headerlink" href="#liblevelgenentitysetattribute" title="Permanent link">&para;</a></h4>
 </blockquote>
-<pre><code class="language-lua">setAttribute(self: LibLevelGen.Entity, component: string, field: string, value: any): void
+<pre><code class="language-lua">setAttribute(self: LibLevelGen.Entity, component: string, field: string, value: any): LibLevelGen.Entity
 </code></pre>
 <blockquote>
+<p>Set value of the given component field for when the entity is spawned.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
 </li>
 <li>
-<p><code>component</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>component</code>: <code>string</code> - Component name  </p>
 </li>
 <li>
-<p><code>field</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>field</code>: <code>string</code> - Field in the given component  </p>
 </li>
 <li>
-<p><code>value</code>: <code>any</code> - <em>no description</em>  </p>
+<p><code>value</code>: <code>any</code> - Value to write to the field  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: Set value of the given component field for when the entity is spawned.</p>
-<hr />
-<h4 id="liblevelgenentitycalculateprice">LibLevelGen.Entity.calculatePrice<a class="headerlink" href="#liblevelgenentitycalculateprice" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">calculatePrice(self: LibLevelGen.Entity, currency?: &quot;coins&quot; | &quot;blood&quot; | &quot;diamonds&quot;, discount: number | nil): void
-</code></pre>
-<blockquote>
-<p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
-</li>
-<li>
-<p><code>currency?</code>: <code>"coins" | "blood" | "diamonds"</code> - <em>no description</em>  </p>
-</li>
-<li>
-<p><code>discount</code>: <code>number | nil</code> - <em>no description</em>  </p>
-</li>
-</ul>
-</blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: !!! Internal</p>
+<p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitysetprice">LibLevelGen.Entity.setPrice<a class="headerlink" href="#liblevelgenentitysetprice" title="Permanent link">&para;</a></h4>
 </blockquote>
-<pre><code class="language-lua">setPrice(self: LibLevelGen.Entity, currency?: &quot;coins&quot; | &quot;blood&quot;, amount?: number): void
+<pre><code class="language-lua">setPrice(self: LibLevelGen.Entity, currency?: &quot;coins&quot; | &quot;blood&quot;, amount?: number): LibLevelGen.Entity
 </code></pre>
 <blockquote>
+<p>Set price of the entity. If price is not specified, it is automatically obtained.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - The Entity  </p>
 </li>
 <li>
-<p><code>currency?</code>: <code>"coins" | "blood"</code> - <em>no description</em>  </p>
+<p><code>currency?</code>: <code>"coins" | "blood"</code> - Currency type, defaults to "coins"  </p>
 </li>
 <li>
-<p><code>amount?</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>amount?</code>: <code>number</code> - The price value. If not specified, it's calculated automatically.  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: Set price of the entity. If price is not specified, it is automatically obtained.</p>
+<p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitysetdiscount">LibLevelGen.Entity.setDiscount<a class="headerlink" href="#liblevelgenentitysetdiscount" title="Permanent link">&para;</a></h4>
 </blockquote>
-<pre><code class="language-lua">setDiscount(self: LibLevelGen.Entity, discount: number): void
+<pre><code class="language-lua">setDiscount(self: LibLevelGen.Entity, discount: number): LibLevelGen.Entity
 </code></pre>
 <blockquote>
+<p>Set discount on the price.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
 </li>
 <li>
-<p><code>discount</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>discount</code>: <code>number</code> - The discount factor. <code>0.5</code> will result in the price being halved.  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: Set discount on the price.</p>
+<p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitysetquantity">LibLevelGen.Entity.setQuantity<a class="headerlink" href="#liblevelgenentitysetquantity" title="Permanent link">&para;</a></h4>
 </blockquote>
-<pre><code class="language-lua">setQuantity(self: LibLevelGen.Entity, quantity: number): void
+<pre><code class="language-lua">setQuantity(self: LibLevelGen.Entity, quantity: number): LibLevelGen.Entity
 </code></pre>
 <blockquote>
+<p>Set quantity (itemStack.quantity field)</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
 </li>
 <li>
-<p><code>quantity</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>quantity</code>: <code>number</code> - The quantity amount to set  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: Set quantity (itemStack.quantity field)</p>
+<p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitygiveitem">LibLevelGen.Entity.giveItem<a class="headerlink" href="#liblevelgenentitygiveitem" title="Permanent link">&para;</a></h4>
 </blockquote>
-<pre><code class="language-lua">giveItem(self: LibLevelGen.Entity, item: string | LibLevelGen.Entity): void
+<pre><code class="language-lua">giveItem(self: LibLevelGen.Entity, item: string | LibLevelGen.Entity): LibLevelGen.Entity
 </code></pre>
 <blockquote>
+<p>Add an item to entity's inventory.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
 </li>
 <li>
-<p><code>item</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>item</code>: <code>string | LibLevelGen.Entity</code> - Entity type or an existing entity to add to the inventory.  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: Add an item to entity's inventory.</p>
+<p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitygetorcreateattribute">LibLevelGen.Entity.getOrCreateAttribute<a class="headerlink" href="#liblevelgenentitygetorcreateattribute" title="Permanent link">&para;</a></h4>
 </blockquote>
-<pre><code class="language-lua">getOrCreateAttribute(self: LibLevelGen.Entity, component: string, field: string): void
+<pre><code class="language-lua">getOrCreateAttribute(self: LibLevelGen.Entity, component: string, field: string): LibLevelGen.Entity
 </code></pre>
 <blockquote>
+<p>Get an attribute of the entity. If it doesn't exist, it gets created and added (with no value specified)</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
 </li>
 <li>
-<p><code>component</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>component</code>: <code>string</code> - Component name  </p>
 </li>
 <li>
-<p><code>field</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>field</code>: <code>string</code> - Field name in the given component  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitystoreitem">LibLevelGen.Entity.storeItem<a class="headerlink" href="#liblevelgenentitystoreitem" title="Permanent link">&para;</a></h4>
 </blockquote>
-<pre><code class="language-lua">storeItem(self: LibLevelGen.Entity, item: string): void
+<pre><code class="language-lua">storeItem(self: LibLevelGen.Entity, item: string): LibLevelGen.Entity
 </code></pre>
 <blockquote>
+<p>Add an item to entity's storage.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
 </li>
 <li>
-<p><code>item</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>item</code>: <code>string</code> - Item entity type  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: Add an item to entity's storage.</p>
-<hr />
-<h4 id="liblevelgenentitygetrealtype">LibLevelGen.Entity.getRealType<a class="headerlink" href="#liblevelgenentitygetrealtype" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">getRealType(self: LibLevelGen.Entity): void
-</code></pre>
-<blockquote>
-<p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </li>
-</ul>
-</blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: !!! Internal</p>
-<hr />
-<h4 id="liblevelgenentityserialize">LibLevelGen.Entity.serialize<a class="headerlink" href="#liblevelgenentityserialize" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">serialize(self: LibLevelGen.Entity): void
-</code></pre>
-<blockquote>
-<p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </li>
-</ul>
-</blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
-<p><strong>Description</strong>: !!! Internal</p>
+<p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 </blockquote>
 
 

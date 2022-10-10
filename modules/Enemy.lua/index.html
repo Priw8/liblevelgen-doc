@@ -627,64 +627,44 @@
 <h3 id="enemygetdata">enemy.getData<a class="headerlink" href="#enemygetdata" title="Permanent link">&para;</a></h3>
 <pre><code class="language-lua">enemy.getData(type: string): LibLevelGen.EnemyData
 </code></pre>
+<p>Gets LibLevelGen data for the given enemy type.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li><code>type</code>: <code>string</code> - <em>no description</em></li>
+<li><code>type</code>: <code>string</code> - Type from the enemy.Type enum  </li>
 </ul>
 <p><strong>Returns</strong>: <code>LibLevelGen.EnemyData</code></p>
-<p><strong>Description</strong>: Gets LibLevelGen data for the given enemy type.</p>
 <hr />
 <h3 id="enemyregister">enemy.register<a class="headerlink" href="#enemyregister" title="Permanent link">&para;</a></h3>
 <pre><code class="language-lua">enemy.register(entity: string, maxLevel: number, args: LibLevelGen.EnemyData): number
 </code></pre>
+<p>Register LibLevelGen enemy data in the enemy enum.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li>
-<p><code>entity</code>: <code>string</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>maxLevel</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>args</code>: <code>LibLevelGen.EnemyData</code> - <em>no description</em></p>
-</li>
+<li><code>entity</code>: <code>string</code> - Entity base name  </li>
+<li><code>maxLevel</code>: <code>number</code> - Max level this entity can have  </li>
+<li><code>args</code>: <code>LibLevelGen.EnemyData</code> - Additional enemy definition data  </li>
 </ul>
 <p><strong>Returns</strong>: <code>number</code></p>
-<p><strong>Description</strong>: Register LibLevelGen enemy data in the enemy enum.</p>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="liblevelgenenemydata">LibLevelGen.EnemyData<a class="headerlink" href="#liblevelgenenemydata" title="Permanent link">&para;</a></h3>
-<p><strong>Description</strong>: <em>no description</em></p>
+<p>Class containing data related to processing it by the various level generation components.</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
-<li>
-<p><code>entity</code>: <code>string</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>maxLevel</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>id</code>: <code>number[]</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>warRingUpgrade</code>: <code>table&lt;number,number&gt;</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>warShrineUpgrade</code>: <code>table&lt;number,number&gt;</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>peaceRingDowngrade</code>: <code>table&lt;number,number&gt;</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>challengeCharacterDowngrade</code>: <code>table&lt;number,number&gt;</code> - <em>no description</em></p>
-</li>
+<li><code>entity</code>: <code>string</code> - The base entity type  </li>
+<li><code>maxLevel</code>: <code>number</code> - Max level the entity type can have  </li>
+<li><code>id</code>: <code>number[]</code> - Numeric IDs for every level the entity has  </li>
+<li><code>warRingUpgrade</code>: <code>table&lt;number,number&gt;</code> - Table containing a mapping which specifies which levels get converted to which when ring of war is in effect  </li>
+<li><code>warShrineUpgrade</code>: <code>table&lt;number,number&gt;</code> - Table containing a mapping which specifies which levels get converted to which when shrine of war is in effect  </li>
+<li><code>peaceRingDowngrade</code>: <code>table&lt;number,number&gt;</code> - Table containing a mapping which specifies which levels get converted to which when ring of peace is in effect  </li>
+<li><code>challengeCharacterDowngrade</code>: <code>table&lt;number,number&gt;</code> - Table containing a mapping which specifies which levels get converted to which when playing a challenge character (Monk/Coda/Aria/Bolt - used to downgrade black bats into blue)  </li>
 </ul>
 </blockquote>
 <h2 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="enemytype">enemy.Type<a class="headerlink" href="#enemytype" title="Permanent link">&para;</a></h3>
-<p><strong>Description</strong>: <em>no description</em></p>
+<p>Enum containing enemy types and their associated data. Use <code>enemy.getData</code> to get data for a given enemy from this enum.</p>
 <p><strong>Entries</strong>:  </p>
 <ul>
 <li><code>King</code>  </li>
