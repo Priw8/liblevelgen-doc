@@ -1,0 +1,1726 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>LibLevelGen.lua - LibLevelGen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#liblevelgenlua" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LibLevelGen" class="md-header__button md-logo" aria-label="LibLevelGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LibLevelGen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LibLevelGen.lua
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LibLevelGen" class="md-nav__button md-logo" aria-label="LibLevelGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LibLevelGen
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to LibLevelGen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enemy.lua/" class="md-nav__link">
+        Enemy.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Entity.lua/" class="md-nav__link">
+        Entity.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ErrorLevel.lua/" class="md-nav__link">
+        ErrorLevel.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          LibLevelGen.lua
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        LibLevelGen.lua
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgennew" class="md-nav__link">
+    libLevelGen.new
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenregistergenerator" class="md-nav__link">
+    libLevelGen.registerGenerator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgengetgeneratorproperties" class="md-nav__link">
+    libLevelGen.getGeneratorProperties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgensetdefaultgenerator" class="md-nav__link">
+    libLevelGen.setDefaultGenerator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenregisterpostprocessor" class="md-nav__link">
+    libLevelGen.registerPostProcessor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgeninitliblevelgenrunstate" class="md-nav__link">
+    libLevelGen.initLibLevelGenRunState
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenrunstate" class="md-nav__link">
+    LibLevelGen.RunState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenconfig" class="md-nav__link">
+    LibLevelGen.Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgengenerator" class="md-nav__link">
+    LibLevelGen.Generator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenlevelgenerationconfig" class="md-nav__link">
+    LibLevelGen.LevelGenerationConfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenlevelgenerationeventparameters" class="md-nav__link">
+    LibLevelGen.LevelGenerationEventParameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenmusicdata" class="md-nav__link">
+    LibLevelGen.MusicData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstance" class="md-nav__link">
+    LibLegelGen.Instance
+  </a>
+  
+    <nav class="md-nav" aria-label="LibLegelGen.Instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceinit" class="md-nav__link">
+    LibLegelGen.Instance.init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegetnewsinglechoiceid" class="md-nav__link">
+    LibLegelGen.Instance.getNewSingleChoiceID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegetdepth" class="md-nav__link">
+    LibLegelGen.Instance.getDepth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegetfloor" class="md-nav__link">
+    LibLegelGen.Instance.getFloor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancesetmusic" class="md-nav__link">
+    LibLegelGen.Instance.setMusic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancesettileset" class="md-nav__link">
+    LibLegelGen.Instance.setTileset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerand" class="md-nav__link">
+    LibLegelGen.Instance.rand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandfloatrange" class="md-nav__link">
+    LibLegelGen.Instance.randFloatRange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandintrange" class="md-nav__link">
+    LibLegelGen.Instance.randIntRange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandchoice" class="md-nav__link">
+    LibLegelGen.Instance.randChoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandchoicemany" class="md-nav__link">
+    LibLegelGen.Instance.randChoiceMany
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandchance" class="md-nav__link">
+    LibLegelGen.Instance.randChance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandweightedchoice" class="md-nav__link">
+    LibLegelGen.Instance.randWeightedChoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceadvanceperlevelrng" class="md-nav__link">
+    LibLegelGen.Instance.advancePerLevelRNG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancecreatesegment" class="md-nav__link">
+    LibLegelGen.Instance.createSegment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceserializesegments" class="md-nav__link">
+    LibLegelGen.Instance.serializeSegments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegenerateareas" class="md-nav__link">
+    LibLegelGen.Instance.generateAreas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegeneratetilemapping" class="md-nav__link">
+    LibLegelGen.Instance.generateTileMapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceserializeentities" class="md-nav__link">
+    LibLegelGen.Instance.serializeEntities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceplacesecretshopifneeded" class="md-nav__link">
+    LibLegelGen.Instance.placeSecretShopIfNeeded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceplaceshrineifneeded" class="md-nav__link">
+    LibLegelGen.Instance.placeShrineIfNeeded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegetelligibleshrines" class="md-nav__link">
+    LibLegelGen.Instance.getElligibleShrines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancefinalize" class="md-nav__link">
+    LibLegelGen.Instance.finalize
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Loot.lua/" class="md-nav__link">
+        Loot.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Rand.lua/" class="md-nav__link">
+        Rand.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Room.lua/" class="md-nav__link">
+        Room.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SecretRoom.lua/" class="md-nav__link">
+        SecretRoom.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SecretShop.lua/" class="md-nav__link">
+        SecretShop.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Segment.lua/" class="md-nav__link">
+        Segment.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Settings.lua/" class="md-nav__link">
+        Settings.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shrine.lua/" class="md-nav__link">
+        Shrine.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Util.lua/" class="md-nav__link">
+        Util.lua
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgennew" class="md-nav__link">
+    libLevelGen.new
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenregistergenerator" class="md-nav__link">
+    libLevelGen.registerGenerator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgengetgeneratorproperties" class="md-nav__link">
+    libLevelGen.getGeneratorProperties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgensetdefaultgenerator" class="md-nav__link">
+    libLevelGen.setDefaultGenerator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenregisterpostprocessor" class="md-nav__link">
+    libLevelGen.registerPostProcessor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgeninitliblevelgenrunstate" class="md-nav__link">
+    libLevelGen.initLibLevelGenRunState
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenrunstate" class="md-nav__link">
+    LibLevelGen.RunState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenconfig" class="md-nav__link">
+    LibLevelGen.Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgengenerator" class="md-nav__link">
+    LibLevelGen.Generator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenlevelgenerationconfig" class="md-nav__link">
+    LibLevelGen.LevelGenerationConfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenlevelgenerationeventparameters" class="md-nav__link">
+    LibLevelGen.LevelGenerationEventParameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenmusicdata" class="md-nav__link">
+    LibLevelGen.MusicData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstance" class="md-nav__link">
+    LibLegelGen.Instance
+  </a>
+  
+    <nav class="md-nav" aria-label="LibLegelGen.Instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceinit" class="md-nav__link">
+    LibLegelGen.Instance.init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegetnewsinglechoiceid" class="md-nav__link">
+    LibLegelGen.Instance.getNewSingleChoiceID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegetdepth" class="md-nav__link">
+    LibLegelGen.Instance.getDepth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegetfloor" class="md-nav__link">
+    LibLegelGen.Instance.getFloor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancesetmusic" class="md-nav__link">
+    LibLegelGen.Instance.setMusic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancesettileset" class="md-nav__link">
+    LibLegelGen.Instance.setTileset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerand" class="md-nav__link">
+    LibLegelGen.Instance.rand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandfloatrange" class="md-nav__link">
+    LibLegelGen.Instance.randFloatRange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandintrange" class="md-nav__link">
+    LibLegelGen.Instance.randIntRange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandchoice" class="md-nav__link">
+    LibLegelGen.Instance.randChoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandchoicemany" class="md-nav__link">
+    LibLegelGen.Instance.randChoiceMany
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandchance" class="md-nav__link">
+    LibLegelGen.Instance.randChance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancerandweightedchoice" class="md-nav__link">
+    LibLegelGen.Instance.randWeightedChoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceadvanceperlevelrng" class="md-nav__link">
+    LibLegelGen.Instance.advancePerLevelRNG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancecreatesegment" class="md-nav__link">
+    LibLegelGen.Instance.createSegment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceserializesegments" class="md-nav__link">
+    LibLegelGen.Instance.serializeSegments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegenerateareas" class="md-nav__link">
+    LibLegelGen.Instance.generateAreas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegeneratetilemapping" class="md-nav__link">
+    LibLegelGen.Instance.generateTileMapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceserializeentities" class="md-nav__link">
+    LibLegelGen.Instance.serializeEntities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceplacesecretshopifneeded" class="md-nav__link">
+    LibLegelGen.Instance.placeSecretShopIfNeeded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstanceplaceshrineifneeded" class="md-nav__link">
+    LibLegelGen.Instance.placeShrineIfNeeded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancegetelligibleshrines" class="md-nav__link">
+    LibLegelGen.Instance.getElligibleShrines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblegelgeninstancefinalize" class="md-nav__link">
+    LibLegelGen.Instance.finalize
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="liblevelgenlua">LibLevelGen.lua<a class="headerlink" href="#liblevelgenlua" title="Permanent link">&para;</a></h1>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="liblevelgennew">libLevelGen.new<a class="headerlink" href="#liblevelgennew" title="Permanent link">&para;</a></h3>
+<p><code>libLevelGen.new(ev: LibLevelGen.LevelGenerationEventParameters): LibLegelGen.Instance</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<ul>
+<li><code>ev</code>: <code>LibLevelGen.LevelGenerationEventParameters</code> - <em>no description</em></li>
+</ul>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h3 id="liblevelgenregistergenerator">libLevelGen.registerGenerator<a class="headerlink" href="#liblevelgenregistergenerator" title="Permanent link">&para;</a></h3>
+<p><code>libLevelGen.registerGenerator(name: string, func: function, data: LibLevelGen.Config?, modeData: GameSession.Mode.Data?): number</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<ul>
+<li>
+<p><code>name</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>func</code>: <code>function</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>data</code>: <code>LibLevelGen.Config?</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>modeData</code>: <code>GameSession.Mode.Data?</code> - <em>no description</em></p>
+</li>
+</ul>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h3 id="liblevelgengetgeneratorproperties">libLevelGen.getGeneratorProperties<a class="headerlink" href="#liblevelgengetgeneratorproperties" title="Permanent link">&para;</a></h3>
+<p><code>libLevelGen.getGeneratorProperties(type: any): LibLevelGen.Generator</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<ul>
+<li><code>type</code>: <code>any</code> - <em>no description</em></li>
+</ul>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h3 id="liblevelgensetdefaultgenerator">libLevelGen.setDefaultGenerator<a class="headerlink" href="#liblevelgensetdefaultgenerator" title="Permanent link">&para;</a></h3>
+<p><code>libLevelGen.setDefaultGenerator(type: any): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<ul>
+<li><code>type</code>: <code>any</code> - <em>no description</em></li>
+</ul>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h3 id="liblevelgenregisterpostprocessor">libLevelGen.registerPostProcessor<a class="headerlink" href="#liblevelgenregisterpostprocessor" title="Permanent link">&para;</a></h3>
+<p><code>libLevelGen.registerPostProcessor(func: function): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<ul>
+<li><code>func</code>: <code>function</code> - <em>no description</em></li>
+</ul>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h3 id="liblevelgeninitliblevelgenrunstate">libLevelGen.initLibLevelGenRunState<a class="headerlink" href="#liblevelgeninitliblevelgenrunstate" title="Permanent link">&para;</a></h3>
+<p><code>libLevelGen.initLibLevelGenRunState(runState: LibLevelGen.RunState, ev: LibLevelGen.LevelGenerationEventParameters): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<ul>
+<li>
+<p><code>runState</code>: <code>LibLevelGen.RunState</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>ev</code>: <code>LibLevelGen.LevelGenerationEventParameters</code> - <em>no description</em></p>
+</li>
+</ul>
+<p><strong>Description</strong>: <em>no description</em></p>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="liblevelgenrunstate">LibLevelGen.RunState<a class="headerlink" href="#liblevelgenrunstate" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>libLevelGenDataInitiated</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>previousLevelMinibosses</code>: <code>table</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>secretShopLevels</code>: <code>table&lt;number,number&gt;</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>seenItems</code>: <code>table&lt;string,number&gt;</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>seenShrines</code>: <code>number[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>shrineLevels</code>: <code>table&lt;number,number&gt;</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>shopkeeperDead</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>shopkeeperGhostLevel</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>shopkeeperGhostDepth</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>peaceRingActive</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>warRingActive</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>warShrineActive</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>bossShrineActive</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>spaceShrineActive</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>lockedShopPlaced</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>secretRockRoomPlaced</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>urnPlaced</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenconfig">LibLevelGen.Config<a class="headerlink" href="#liblevelgenconfig" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>allowLevel1Shrine</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>allowOldShrines</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>disableEnemyUpgrades</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>levelsPerZone</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>maxLevel</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>placeSecretShops</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>placeShrines</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgengenerator">LibLevelGen.Generator<a class="headerlink" href="#liblevelgengenerator" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>name</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>func</code>: <code>function</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>data</code>: <code>LibLevelGen.Config</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenlevelgenerationconfig">LibLevelGen.LevelGenerationConfig<a class="headerlink" href="#liblevelgenlevelgenerationconfig" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>initialCharacters</code>: <code>string[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>isFinal</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>isLoopFinal</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>number</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>seed</code>: <code>number</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenlevelgenerationeventparameters">LibLevelGen.LevelGenerationEventParameters<a class="headerlink" href="#liblevelgenlevelgenerationeventparameters" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>callback</code>: <code>function</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>data</code>: <code>LibLevelGen.LevelGenerationConfig</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>failMaps</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>libLevelGenGeneratorData</code>: <code>LibLevelGen.Config</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>runState</code>: <code>LibLevelGen.RunState</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenmusicdata">LibLevelGen.MusicData<a class="headerlink" href="#liblevelgenmusicdata" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>id</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>level</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>type</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>zone</code>: <code>number</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblegelgeninstance">LibLegelGen.Instance<a class="headerlink" href="#liblegelgeninstance" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>rng</code>: <code>LibLevelGen.Rng</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>levelGeneratorData</code>: <code>LibLevelGen.Config</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>runState</code>: <code>LibLevelGen.RunState</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>segments</code>: <code>LibLevelGen.Segment[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>seed</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>currentSeed</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>singleChoiceID</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>level</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>music</code>: <code>LibLevelGen.MusicData</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>tileset</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>levelsPerZone</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>boss</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>callback</code>: <code>function</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Methods</strong>:  </p>
+<blockquote>
+<hr />
+<h4 id="liblegelgeninstanceinit">LibLegelGen.Instance.init<a class="headerlink" href="#liblegelgeninstanceinit" title="Permanent link">&para;</a></h4>
+<p><code>init(self: LibLegelGen.Instance, ev: LibLevelGen.LevelGenerationEventParameters): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>ev</code>: <code>LibLevelGen.LevelGenerationEventParameters</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h4 id="liblegelgeninstancegetnewsinglechoiceid">LibLegelGen.Instance.getNewSingleChoiceID<a class="headerlink" href="#liblegelgeninstancegetnewsinglechoiceid" title="Permanent link">&para;</a></h4>
+<p><code>getNewSingleChoiceID(self: LibLegelGen.Instance): number</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstancegetdepth">LibLegelGen.Instance.getDepth<a class="headerlink" href="#liblegelgeninstancegetdepth" title="Permanent link">&para;</a></h4>
+<p><code>getDepth(self: LibLegelGen.Instance): number</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h4 id="liblegelgeninstancegetfloor">LibLegelGen.Instance.getFloor<a class="headerlink" href="#liblegelgeninstancegetfloor" title="Permanent link">&para;</a></h4>
+<p><code>getFloor(self: LibLegelGen.Instance): number</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h4 id="liblegelgeninstancesetmusic">LibLegelGen.Instance.setMusic<a class="headerlink" href="#liblegelgeninstancesetmusic" title="Permanent link">&para;</a></h4>
+<p><code>setMusic(self: LibLegelGen.Instance, music: LibLevelGen.MusicData): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>music</code>: <code>LibLevelGen.MusicData</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h4 id="liblegelgeninstancesettileset">LibLegelGen.Instance.setTileset<a class="headerlink" href="#liblegelgeninstancesettileset" title="Permanent link">&para;</a></h4>
+<p><code>setTileset(self: LibLegelGen.Instance, tilesetName: string): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tilesetName</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h4 id="liblegelgeninstancerand">LibLegelGen.Instance.rand<a class="headerlink" href="#liblegelgeninstancerand" title="Permanent link">&para;</a></h4>
+<p><code>rand(self: LibLegelGen.Instance): number</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Generate a random 32-bit integer number.</p>
+<hr />
+<h4 id="liblegelgeninstancerandfloatrange">LibLegelGen.Instance.randFloatRange<a class="headerlink" href="#liblegelgeninstancerandfloatrange" title="Permanent link">&para;</a></h4>
+<p><code>randFloatRange(self: LibLegelGen.Instance, min: number, max: number): number</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>min</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>max</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Generate a random float within the given range.</p>
+<hr />
+<h4 id="liblegelgeninstancerandintrange">LibLegelGen.Instance.randIntRange<a class="headerlink" href="#liblegelgeninstancerandintrange" title="Permanent link">&para;</a></h4>
+<p><code>randIntRange(self: LibLegelGen.Instance, min: number, max: number): number</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>min</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>max</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Generate a random integer within the given range.</p>
+<hr />
+<h4 id="liblegelgeninstancerandchoice">LibLegelGen.Instance.randChoice<a class="headerlink" href="#liblegelgeninstancerandchoice" title="Permanent link">&para;</a></h4>
+<p><code>randChoice(self: LibLegelGen.Instance, t: T[], remove: boolean?): T</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>t</code>: <code>T[]</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>remove</code>: <code>boolean?</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Choose a random element from the given table.</p>
+<hr />
+<h4 id="liblegelgeninstancerandchoicemany">LibLegelGen.Instance.randChoiceMany<a class="headerlink" href="#liblegelgeninstancerandchoicemany" title="Permanent link">&para;</a></h4>
+<p><code>randChoiceMany(self: LibLegelGen.Instance, choices: T, n: number, remove: boolean?): T</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>choices</code>: <code>T</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>n</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>remove</code>: <code>boolean?</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Choose n elements from the given table.</p>
+<hr />
+<h4 id="liblegelgeninstancerandchance">LibLegelGen.Instance.randChance<a class="headerlink" href="#liblegelgeninstancerandchance" title="Permanent link">&para;</a></h4>
+<p><code>randChance(self: LibLegelGen.Instance, probability: number Value between 0.0 and 1.0): boolean</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>probability</code>: <code>number Value between 0.0 and 1.0</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Randomly returns boolean based on given probability.</p>
+<hr />
+<h4 id="liblegelgeninstancerandweightedchoice">LibLegelGen.Instance.randWeightedChoice<a class="headerlink" href="#liblegelgeninstancerandweightedchoice" title="Permanent link">&para;</a></h4>
+<p><code>randWeightedChoice(self: LibLegelGen.Instance, chances: table&lt;string,number&gt;): string</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>chances</code>: <code>table&lt;string,number&gt;</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Randomly choose a value from the weighted choice data.</p>
+<hr />
+<h4 id="liblegelgeninstanceadvanceperlevelrng">LibLegelGen.Instance.advancePerLevelRNG<a class="headerlink" href="#liblegelgeninstanceadvanceperlevelrng" title="Permanent link">&para;</a></h4>
+<p><code>advancePerLevelRNG(self: LibLegelGen.Instance): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstancecreatesegment">LibLegelGen.Instance.createSegment<a class="headerlink" href="#liblegelgeninstancecreatesegment" title="Permanent link">&para;</a></h4>
+<p><code>createSegment(self: LibLegelGen.Instance): LibLevelGen.Segment</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h4 id="liblegelgeninstanceserializesegments">LibLegelGen.Instance.serializeSegments<a class="headerlink" href="#liblegelgeninstanceserializesegments" title="Permanent link">&para;</a></h4>
+<p><code>serializeSegments(self: LibLegelGen.Instance, tileMapping: table): table,</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tileMapping</code>: <code>table</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstancegenerateareas">LibLegelGen.Instance.generateAreas<a class="headerlink" href="#liblegelgeninstancegenerateareas" title="Permanent link">&para;</a></h4>
+<p><code>generateAreas(self: LibLegelGen.Instance): table</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstancegeneratetilemapping">LibLegelGen.Instance.generateTileMapping<a class="headerlink" href="#liblegelgeninstancegeneratetilemapping" title="Permanent link">&para;</a></h4>
+<p><code>generateTileMapping(self: LibLegelGen.Instance): table</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstanceserializeentities">LibLegelGen.Instance.serializeEntities<a class="headerlink" href="#liblegelgeninstanceserializeentities" title="Permanent link">&para;</a></h4>
+<p><code>serializeEntities(self: LibLegelGen.Instance, allSegmentOffsets: table): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>allSegmentOffsets</code>: <code>table</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstanceplacesecretshopifneeded">LibLegelGen.Instance.placeSecretShopIfNeeded<a class="headerlink" href="#liblegelgeninstanceplacesecretshopifneeded" title="Permanent link">&para;</a></h4>
+<p><code>placeSecretShopIfNeeded(self: LibLegelGen.Instance): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstanceplaceshrineifneeded">LibLegelGen.Instance.placeShrineIfNeeded<a class="headerlink" href="#liblegelgeninstanceplaceshrineifneeded" title="Permanent link">&para;</a></h4>
+<p><code>placeShrineIfNeeded(self: LibLegelGen.Instance): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstancegetelligibleshrines">LibLegelGen.Instance.getElligibleShrines<a class="headerlink" href="#liblegelgeninstancegetelligibleshrines" title="Permanent link">&para;</a></h4>
+<p><code>getElligibleShrines(self: LibLegelGen.Instance): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblegelgeninstancefinalize">LibLegelGen.Instance.finalize<a class="headerlink" href="#liblegelgeninstancefinalize" title="Permanent link">&para;</a></h4>
+<p><code>finalize(self: LibLegelGen.Instance): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../ErrorLevel.lua/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ErrorLevel.lua" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ErrorLevel.lua
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Loot.lua/" class="md-footer__link md-footer__link--next" aria-label="Next: Loot.lua" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Loot.lua
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

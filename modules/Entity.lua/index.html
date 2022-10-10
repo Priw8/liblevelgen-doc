@@ -1,0 +1,1114 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Entity.lua - LibLevelGen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#entitylua" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LibLevelGen" class="md-header__button md-logo" aria-label="LibLevelGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LibLevelGen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Entity.lua
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LibLevelGen" class="md-nav__button md-logo" aria-label="LibLevelGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LibLevelGen
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to LibLevelGen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enemy.lua/" class="md-nav__link">
+        Enemy.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Entity.lua
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Entity.lua
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entitynew" class="md-nav__link">
+    entity.new
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentity" class="md-nav__link">
+    LibLevelGen.Entity
+  </a>
+  
+    <nav class="md-nav" aria-label="LibLevelGen.Entity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentityinit" class="md-nav__link">
+    LibLevelGen.Entity.init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentityprocessupgrade" class="md-nav__link">
+    LibLevelGen.Entity.processUpgrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentityupgrade" class="md-nav__link">
+    LibLevelGen.Entity.upgrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitysetattribute" class="md-nav__link">
+    LibLevelGen.Entity.setAttribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitycalculateprice" class="md-nav__link">
+    LibLevelGen.Entity.calculatePrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitysetprice" class="md-nav__link">
+    LibLevelGen.Entity.setPrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitysetdiscount" class="md-nav__link">
+    LibLevelGen.Entity.setDiscount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitysetquantity" class="md-nav__link">
+    LibLevelGen.Entity.setQuantity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitygiveitem" class="md-nav__link">
+    LibLevelGen.Entity.giveItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitygetorcreateattribute" class="md-nav__link">
+    LibLevelGen.Entity.getOrCreateAttribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitystoreitem" class="md-nav__link">
+    LibLevelGen.Entity.storeItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitygetrealtype" class="md-nav__link">
+    LibLevelGen.Entity.getRealType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentityserialize" class="md-nav__link">
+    LibLevelGen.Entity.serialize
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ErrorLevel.lua/" class="md-nav__link">
+        ErrorLevel.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LibLevelGen.lua/" class="md-nav__link">
+        LibLevelGen.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Loot.lua/" class="md-nav__link">
+        Loot.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Rand.lua/" class="md-nav__link">
+        Rand.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Room.lua/" class="md-nav__link">
+        Room.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SecretRoom.lua/" class="md-nav__link">
+        SecretRoom.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SecretShop.lua/" class="md-nav__link">
+        SecretShop.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Segment.lua/" class="md-nav__link">
+        Segment.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Settings.lua/" class="md-nav__link">
+        Settings.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shrine.lua/" class="md-nav__link">
+        Shrine.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Util.lua/" class="md-nav__link">
+        Util.lua
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entitynew" class="md-nav__link">
+    entity.new
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentity" class="md-nav__link">
+    LibLevelGen.Entity
+  </a>
+  
+    <nav class="md-nav" aria-label="LibLevelGen.Entity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentityinit" class="md-nav__link">
+    LibLevelGen.Entity.init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentityprocessupgrade" class="md-nav__link">
+    LibLevelGen.Entity.processUpgrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentityupgrade" class="md-nav__link">
+    LibLevelGen.Entity.upgrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitysetattribute" class="md-nav__link">
+    LibLevelGen.Entity.setAttribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitycalculateprice" class="md-nav__link">
+    LibLevelGen.Entity.calculatePrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitysetprice" class="md-nav__link">
+    LibLevelGen.Entity.setPrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitysetdiscount" class="md-nav__link">
+    LibLevelGen.Entity.setDiscount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitysetquantity" class="md-nav__link">
+    LibLevelGen.Entity.setQuantity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitygiveitem" class="md-nav__link">
+    LibLevelGen.Entity.giveItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitygetorcreateattribute" class="md-nav__link">
+    LibLevelGen.Entity.getOrCreateAttribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitystoreitem" class="md-nav__link">
+    LibLevelGen.Entity.storeItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentitygetrealtype" class="md-nav__link">
+    LibLevelGen.Entity.getRealType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenentityserialize" class="md-nav__link">
+    LibLevelGen.Entity.serialize
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="entitylua">Entity.lua<a class="headerlink" href="#entitylua" title="Permanent link">&para;</a></h1>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="entitynew">entity.new<a class="headerlink" href="#entitynew" title="Permanent link">&para;</a></h3>
+<p><code>entity.new(instance: LibLegelGen.Instance, type: string, x: number?, y: number?, level: number?): LibLevelGen.Entity</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<ul>
+<li>
+<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>type</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>x</code>: <code>number?</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>y</code>: <code>number?</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>level</code>: <code>number?</code> - <em>no description</em></p>
+</li>
+</ul>
+<p><strong>Description</strong>: Create a new LibLevelGen entity.</p>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="liblevelgenentity">LibLevelGen.Entity<a class="headerlink" href="#liblevelgenentity" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>type</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>level</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>saleCurrency</code>: <code>string | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>attributes</code>: <code>table | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>inventory</code>: <code>table | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>price</code>: <code>table | nil</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Methods</strong>:  </p>
+<blockquote>
+<hr />
+<h4 id="liblevelgenentityinit">LibLevelGen.Entity.init<a class="headerlink" href="#liblevelgenentityinit" title="Permanent link">&para;</a></h4>
+<p><code>init(self: LibLevelGen.Entity, instance: LibLegelGen.Instance, entityType: string, x: number, y: number, level: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>entityType</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>level</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Initialize the entity</p>
+<hr />
+<h4 id="liblevelgenentityprocessupgrade">LibLevelGen.Entity.processUpgrade<a class="headerlink" href="#liblevelgenentityprocessupgrade" title="Permanent link">&para;</a></h4>
+<p><code>processUpgrade(self: LibLevelGen.Entity, upgradeData: table&lt;number,number|number[]&gt;): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>upgradeData</code>: <code>table&lt;number,number|number[]&gt;</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblevelgenentityupgrade">LibLevelGen.Entity.upgrade<a class="headerlink" href="#liblevelgenentityupgrade" title="Permanent link">&para;</a></h4>
+<p><code>upgrade(self: LibLevelGen.Entity): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblevelgenentitysetattribute">LibLevelGen.Entity.setAttribute<a class="headerlink" href="#liblevelgenentitysetattribute" title="Permanent link">&para;</a></h4>
+<p><code>setAttribute(self: LibLevelGen.Entity, component: string, field: string, value: any): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>component</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>field</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>value</code>: <code>any</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Set value of the given component field for when the entity is spawned.</p>
+<hr />
+<h4 id="liblevelgenentitycalculateprice">LibLevelGen.Entity.calculatePrice<a class="headerlink" href="#liblevelgenentitycalculateprice" title="Permanent link">&para;</a></h4>
+<p><code>calculatePrice(self: LibLevelGen.Entity, currency?: "coins" | "blood" | "diamonds", discount: number | nil): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>currency?</code>: <code>"coins" | "blood" | "diamonds"</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>discount</code>: <code>number | nil</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblevelgenentitysetprice">LibLevelGen.Entity.setPrice<a class="headerlink" href="#liblevelgenentitysetprice" title="Permanent link">&para;</a></h4>
+<p><code>setPrice(self: LibLevelGen.Entity, currency?: "coins" | "blood", amount?: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>currency?</code>: <code>"coins" | "blood"</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>amount?</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Set price of the entity. If price is not specified, it is automatically obtained.</p>
+<hr />
+<h4 id="liblevelgenentitysetdiscount">LibLevelGen.Entity.setDiscount<a class="headerlink" href="#liblevelgenentitysetdiscount" title="Permanent link">&para;</a></h4>
+<p><code>setDiscount(self: LibLevelGen.Entity, discount: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>discount</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Set discount on the price.</p>
+<hr />
+<h4 id="liblevelgenentitysetquantity">LibLevelGen.Entity.setQuantity<a class="headerlink" href="#liblevelgenentitysetquantity" title="Permanent link">&para;</a></h4>
+<p><code>setQuantity(self: LibLevelGen.Entity, quantity: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>quantity</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Set quantity (itemStack.quantity field)</p>
+<hr />
+<h4 id="liblevelgenentitygiveitem">LibLevelGen.Entity.giveItem<a class="headerlink" href="#liblevelgenentitygiveitem" title="Permanent link">&para;</a></h4>
+<p><code>giveItem(self: LibLevelGen.Entity, item: string | LibLevelGen.Entity): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>item</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Add an item to entity's inventory.</p>
+<hr />
+<h4 id="liblevelgenentitygetorcreateattribute">LibLevelGen.Entity.getOrCreateAttribute<a class="headerlink" href="#liblevelgenentitygetorcreateattribute" title="Permanent link">&para;</a></h4>
+<p><code>getOrCreateAttribute(self: LibLevelGen.Entity, component: string, field: string): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>component</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>field</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h4 id="liblevelgenentitystoreitem">LibLevelGen.Entity.storeItem<a class="headerlink" href="#liblevelgenentitystoreitem" title="Permanent link">&para;</a></h4>
+<p><code>storeItem(self: LibLevelGen.Entity, item: string): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>item</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Add an item to entity's storage.</p>
+<hr />
+<h4 id="liblevelgenentitygetrealtype">LibLevelGen.Entity.getRealType<a class="headerlink" href="#liblevelgenentitygetrealtype" title="Permanent link">&para;</a></h4>
+<p><code>getRealType(self: LibLevelGen.Entity): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblevelgenentityserialize">LibLevelGen.Entity.serialize<a class="headerlink" href="#liblevelgenentityserialize" title="Permanent link">&para;</a></h4>
+<p><code>serialize(self: LibLevelGen.Entity): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Entity</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Enemy.lua/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enemy.lua" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Enemy.lua
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ErrorLevel.lua/" class="md-footer__link md-footer__link--next" aria-label="Next: ErrorLevel.lua" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ErrorLevel.lua
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

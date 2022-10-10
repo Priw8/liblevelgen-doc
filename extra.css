@@ -1,0 +1,9 @@
+blockquote {
+    margin-left: 32px;
+    border-left: none !important;
+    color: unset !important;
+}
+
+blockquote ul {
+    padding: 0;
+}

@@ -1,0 +1,2398 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Room.lua - LibLevelGen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#roomlua" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LibLevelGen" class="md-header__button md-logo" aria-label="LibLevelGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LibLevelGen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Room.lua
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LibLevelGen" class="md-nav__button md-logo" aria-label="LibLevelGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LibLevelGen
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to LibLevelGen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enemy.lua/" class="md-nav__link">
+        Enemy.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Entity.lua/" class="md-nav__link">
+        Entity.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ErrorLevel.lua/" class="md-nav__link">
+        ErrorLevel.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LibLevelGen.lua/" class="md-nav__link">
+        LibLevelGen.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Loot.lua/" class="md-nav__link">
+        Loot.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Rand.lua/" class="md-nav__link">
+        Rand.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Room.lua
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Room.lua
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roomnew" class="md-nav__link">
+    room.new
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentilerequirements" class="md-nav__link">
+    LibLevelGen.TileRequirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentile" class="md-nav__link">
+    LibLevelGen.Tile
+  </a>
+  
+    <nav class="md-nav" aria-label="LibLevelGen.Tile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentileconvert" class="md-nav__link">
+    LibLevelGen.Tile.convert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentilesetisentrance" class="md-nav__link">
+    LibLevelGen.Tile.setIsEntrance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentileplaceentity" class="md-nav__link">
+    LibLevelGen.Tile.placeEntity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentilemeetsrequirements" class="md-nav__link">
+    LibLevelGen.Tile.meetsRequirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentiletilebelowiswall" class="md-nav__link">
+    LibLevelGen.Tile.tileBelowIsWall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentileinrect" class="md-nav__link">
+    LibLevelGen.Tile.inRect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomlinkdata" class="md-nav__link">
+    LibLevelGen.RoomLinkData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomlinks" class="md-nav__link">
+    LibLevelGen.RoomLinks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenpoint" class="md-nav__link">
+    LibLevelGen.Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroom" class="md-nav__link">
+    LibLevelGen.Room
+  </a>
+  
+    <nav class="md-nav" aria-label="LibLevelGen.Room">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroominit" class="md-nav__link">
+    LibLevelGen.Room.init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomsetflags" class="md-nav__link">
+    LibLevelGen.Room.setFlags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomclearflags" class="md-nav__link">
+    LibLevelGen.Room.clearFlags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroommaskflags" class="md-nav__link">
+    LibLevelGen.Room.maskFlags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomcheckflags" class="md-nav__link">
+    LibLevelGen.Room.checkFlags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomsetpaddingtileoverride" class="md-nav__link">
+    LibLevelGen.Room.setPaddingTileOverride
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomgetbounds" class="md-nav__link">
+    LibLevelGen.Room.getBounds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomgetrect" class="md-nav__link">
+    LibLevelGen.Room.getRect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomindextile" class="md-nav__link">
+    LibLevelGen.Room.indexTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomsettile" class="md-nav__link">
+    LibLevelGen.Room.setTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomgettile" class="md-nav__link">
+    LibLevelGen.Room.getTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomdeletetile" class="md-nav__link">
+    LibLevelGen.Room.deleteTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomistilenearwall" class="md-nav__link">
+    LibLevelGen.Room.isTileNearWall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomistilenearfloor" class="md-nav__link">
+    LibLevelGen.Room.isTileNearFloor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomistilenearborder" class="md-nav__link">
+    LibLevelGen.Room.isTileNearBorder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomfill" class="md-nav__link">
+    LibLevelGen.Room.fill
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomborder" class="md-nav__link">
+    LibLevelGen.Room.border
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomselecttiles" class="md-nav__link">
+    LibLevelGen.Room.selectTiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomchooserandomtile" class="md-nav__link">
+    LibLevelGen.Room.chooseRandomTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomchooserandomtiles" class="md-nav__link">
+    LibLevelGen.Room.chooseRandomTiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplacewalltorch" class="md-nav__link">
+    LibLevelGen.Room.placeWallTorch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplacewalltorches" class="md-nav__link">
+    LibLevelGen.Room.placeWallTorches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceentity" class="md-nav__link">
+    LibLevelGen.Room.placeEntity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceentityat" class="md-nav__link">
+    LibLevelGen.Room.placeEntityAt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceentityrand" class="md-nav__link">
+    LibLevelGen.Room.placeEntityRand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplacewire" class="md-nav__link">
+    LibLevelGen.Room.placeWire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroommakeexit" class="md-nav__link">
+    LibLevelGen.Room.makeExit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceexit" class="md-nav__link">
+    LibLevelGen.Room.placeExit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroompickminiboss" class="md-nav__link">
+    LibLevelGen.Room.pickMiniboss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceminiboss" class="md-nav__link">
+    LibLevelGen.Room.placeMiniboss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomrandomlyconverttiles" class="md-nav__link">
+    LibLevelGen.Room.randomlyConvertTiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomconverttiles" class="md-nav__link">
+    LibLevelGen.Room.convertTiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomspreadtile" class="md-nav__link">
+    LibLevelGen.Room.spreadTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroommakeshop" class="md-nav__link">
+    LibLevelGen.Room.makeShop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomfillparameters" class="md-nav__link">
+    LibLevelGen.RoomFillParameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroombordersidecount" class="md-nav__link">
+    LibLevelGen.RoomBorderSideCount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomborderparameters" class="md-nav__link">
+    LibLevelGen.RoomBorderParameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roomaxis" class="md-nav__link">
+    room.Axis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roomflag" class="md-nav__link">
+    room.Flag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roomtype" class="md-nav__link">
+    room.Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SecretRoom.lua/" class="md-nav__link">
+        SecretRoom.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SecretShop.lua/" class="md-nav__link">
+        SecretShop.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Segment.lua/" class="md-nav__link">
+        Segment.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Settings.lua/" class="md-nav__link">
+        Settings.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shrine.lua/" class="md-nav__link">
+        Shrine.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Util.lua/" class="md-nav__link">
+        Util.lua
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roomnew" class="md-nav__link">
+    room.new
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentilerequirements" class="md-nav__link">
+    LibLevelGen.TileRequirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentile" class="md-nav__link">
+    LibLevelGen.Tile
+  </a>
+  
+    <nav class="md-nav" aria-label="LibLevelGen.Tile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentileconvert" class="md-nav__link">
+    LibLevelGen.Tile.convert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentilesetisentrance" class="md-nav__link">
+    LibLevelGen.Tile.setIsEntrance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentileplaceentity" class="md-nav__link">
+    LibLevelGen.Tile.placeEntity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentilemeetsrequirements" class="md-nav__link">
+    LibLevelGen.Tile.meetsRequirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentiletilebelowiswall" class="md-nav__link">
+    LibLevelGen.Tile.tileBelowIsWall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgentileinrect" class="md-nav__link">
+    LibLevelGen.Tile.inRect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomlinkdata" class="md-nav__link">
+    LibLevelGen.RoomLinkData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomlinks" class="md-nav__link">
+    LibLevelGen.RoomLinks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenpoint" class="md-nav__link">
+    LibLevelGen.Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroom" class="md-nav__link">
+    LibLevelGen.Room
+  </a>
+  
+    <nav class="md-nav" aria-label="LibLevelGen.Room">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroominit" class="md-nav__link">
+    LibLevelGen.Room.init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomsetflags" class="md-nav__link">
+    LibLevelGen.Room.setFlags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomclearflags" class="md-nav__link">
+    LibLevelGen.Room.clearFlags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroommaskflags" class="md-nav__link">
+    LibLevelGen.Room.maskFlags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomcheckflags" class="md-nav__link">
+    LibLevelGen.Room.checkFlags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomsetpaddingtileoverride" class="md-nav__link">
+    LibLevelGen.Room.setPaddingTileOverride
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomgetbounds" class="md-nav__link">
+    LibLevelGen.Room.getBounds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomgetrect" class="md-nav__link">
+    LibLevelGen.Room.getRect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomindextile" class="md-nav__link">
+    LibLevelGen.Room.indexTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomsettile" class="md-nav__link">
+    LibLevelGen.Room.setTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomgettile" class="md-nav__link">
+    LibLevelGen.Room.getTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomdeletetile" class="md-nav__link">
+    LibLevelGen.Room.deleteTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomistilenearwall" class="md-nav__link">
+    LibLevelGen.Room.isTileNearWall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomistilenearfloor" class="md-nav__link">
+    LibLevelGen.Room.isTileNearFloor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomistilenearborder" class="md-nav__link">
+    LibLevelGen.Room.isTileNearBorder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomfill" class="md-nav__link">
+    LibLevelGen.Room.fill
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomborder" class="md-nav__link">
+    LibLevelGen.Room.border
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomselecttiles" class="md-nav__link">
+    LibLevelGen.Room.selectTiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomchooserandomtile" class="md-nav__link">
+    LibLevelGen.Room.chooseRandomTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomchooserandomtiles" class="md-nav__link">
+    LibLevelGen.Room.chooseRandomTiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplacewalltorch" class="md-nav__link">
+    LibLevelGen.Room.placeWallTorch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplacewalltorches" class="md-nav__link">
+    LibLevelGen.Room.placeWallTorches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceentity" class="md-nav__link">
+    LibLevelGen.Room.placeEntity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceentityat" class="md-nav__link">
+    LibLevelGen.Room.placeEntityAt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceentityrand" class="md-nav__link">
+    LibLevelGen.Room.placeEntityRand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplacewire" class="md-nav__link">
+    LibLevelGen.Room.placeWire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroommakeexit" class="md-nav__link">
+    LibLevelGen.Room.makeExit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceexit" class="md-nav__link">
+    LibLevelGen.Room.placeExit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroompickminiboss" class="md-nav__link">
+    LibLevelGen.Room.pickMiniboss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomplaceminiboss" class="md-nav__link">
+    LibLevelGen.Room.placeMiniboss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomrandomlyconverttiles" class="md-nav__link">
+    LibLevelGen.Room.randomlyConvertTiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomconverttiles" class="md-nav__link">
+    LibLevelGen.Room.convertTiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomspreadtile" class="md-nav__link">
+    LibLevelGen.Room.spreadTile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroommakeshop" class="md-nav__link">
+    LibLevelGen.Room.makeShop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomfillparameters" class="md-nav__link">
+    LibLevelGen.RoomFillParameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroombordersidecount" class="md-nav__link">
+    LibLevelGen.RoomBorderSideCount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liblevelgenroomborderparameters" class="md-nav__link">
+    LibLevelGen.RoomBorderParameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roomaxis" class="md-nav__link">
+    room.Axis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roomflag" class="md-nav__link">
+    room.Flag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roomtype" class="md-nav__link">
+    room.Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="roomlua">Room.lua<a class="headerlink" href="#roomlua" title="Permanent link">&para;</a></h1>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="roomnew">room.new<a class="headerlink" href="#roomnew" title="Permanent link">&para;</a></h3>
+<p><code>room.new(instance: LibLegelGen.Instance, segment: LibLevelGen.Segment, x: number, y: number, w: number, h: number, flags: number): LibLevelGen.Room</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<ul>
+<li>
+<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>segment</code>: <code>LibLevelGen.Segment</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>w</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>h</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>flags</code>: <code>number</code> - <em>no description</em></p>
+</li>
+</ul>
+<p><strong>Description</strong>: Create a new room within the segment.</p>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="liblevelgentilerequirements">LibLevelGen.TileRequirements<a class="headerlink" href="#liblevelgentilerequirements" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>isFloor</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>isWall</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>levelExit</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>hasWallTorch</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>hasEntity</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>tileType</code>: <code>string | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>nearFloor</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>nearWall</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>nearBorder</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>filter</code>: <code>fun(room: LibLevelGen.Room, tile: LibLevelGen.Tile) | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>notCollision</code>: <code>number | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>collision</code>: <code>number | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>rect</code>: <code>LibLevelGen.Rect | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>notRect</code>: <code>LibLevelGen.Rect | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>wire</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>info</code>: <code>table | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>entrance</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>adjacentEntrance</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>directlyAdjacentEntrance</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>noWallTallSprite</code>: <code>TriBool</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgentile">LibLevelGen.Tile<a class="headerlink" href="#liblevelgentile" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>tileset</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>type</code>: <code>string</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>info</code>: <code>table</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>wire</code>: <code>integer</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>hasEntity</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>entities</code>: <code>LibLevelGen.Entity[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>hasWallTorch</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>rx</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>ry</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>adjacentEntrance</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>directlyAdjacentEntrance</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>isEntrance</code>: <code>boolean</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>room</code>: <code>LibLevelGen.Room</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Methods</strong>:  </p>
+<blockquote>
+<hr />
+<h4 id="liblevelgentileconvert">LibLevelGen.Tile.convert<a class="headerlink" href="#liblevelgentileconvert" title="Permanent link">&para;</a></h4>
+<p><code>convert(self: LibLevelGen.Tile, tileType: string): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tileType</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Convert the tile to a different type.</p>
+<hr />
+<h4 id="liblevelgentilesetisentrance">LibLevelGen.Tile.setIsEntrance<a class="headerlink" href="#liblevelgentilesetisentrance" title="Permanent link">&para;</a></h4>
+<p><code>setIsEntrance(self: LibLevelGen.Tile): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Set the isEntrance flag on the tile and adjacentEntrance flags on nearby tiles.</p>
+<hr />
+<h4 id="liblevelgentileplaceentity">LibLevelGen.Tile.placeEntity<a class="headerlink" href="#liblevelgentileplaceentity" title="Permanent link">&para;</a></h4>
+<p><code>placeEntity(self: LibLevelGen.Tile, entityOrType: string | LibLevelGen.Entity, level: number | nil): LibLevelGen.Entity</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>level</code>: <code>number | nil</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place entity of given type and level on the tile.</p>
+<hr />
+<h4 id="liblevelgentilemeetsrequirements">LibLevelGen.Tile.meetsRequirements<a class="headerlink" href="#liblevelgentilemeetsrequirements" title="Permanent link">&para;</a></h4>
+<p><code>meetsRequirements(self: LibLevelGen.Tile, requirements: LibLevelGen.TileRequirements): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Check if the tile meets specified requirements.</p>
+<hr />
+<h4 id="liblevelgentiletilebelowiswall">LibLevelGen.Tile.tileBelowIsWall<a class="headerlink" href="#liblevelgentiletilebelowiswall" title="Permanent link">&para;</a></h4>
+<p><code>tileBelowIsWall(self: LibLevelGen.Tile): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: <em>no description</em></p>
+<hr />
+<h4 id="liblevelgentileinrect">LibLevelGen.Tile.inRect<a class="headerlink" href="#liblevelgentileinrect" title="Permanent link">&para;</a></h4>
+<p><code>inRect(self: LibLevelGen.Tile, rect: LibLevelGen.Rect): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>rect</code>: <code>LibLevelGen.Rect</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Check if the tile is within a given rect in the room.</p>
+</blockquote>
+<hr />
+<h3 id="liblevelgenroomlinkdata">LibLevelGen.RoomLinkData<a class="headerlink" href="#liblevelgenroomlinkdata" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>centerX</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>centerY</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>axis</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>size</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>room</code>: <code>LibLevelGen.Room</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenroomlinks">LibLevelGen.RoomLinks<a class="headerlink" href="#liblevelgenroomlinks" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>top</code>: <code>LibLevelGen.RoomLinkData[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>bottom</code>: <code>LibLevelGen.RoomLinkData[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>left</code>: <code>LibLevelGen.RoomLinkData[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>right</code>: <code>LibLevelGen.RoomLinkData[]</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenpoint">LibLevelGen.Point<a class="headerlink" href="#liblevelgenpoint" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenroom">LibLevelGen.Room<a class="headerlink" href="#liblevelgenroom" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>links</code>: <code>LibLevelGen.RoomLinkData[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>padding</code>: <code>LibLevelGen.PaddingData | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>tiles</code>: <code>LibLevelGen.Tile[]</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>exit</code>: <code>LibLevelGen.Point | nil</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>segment</code>: <code>LibLevelGen.Segment</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>userData</code>: <code>table</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Methods</strong>:  </p>
+<blockquote>
+<hr />
+<h4 id="liblevelgenroominit">LibLevelGen.Room.init<a class="headerlink" href="#liblevelgenroominit" title="Permanent link">&para;</a></h4>
+<p><code>init(self: LibLevelGen.Room, x: number, y: number, w: number, h: number, flags: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>w</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>h</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>flags</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Initializes the room.</p>
+<hr />
+<h4 id="liblevelgenroomsetflags">LibLevelGen.Room.setFlags<a class="headerlink" href="#liblevelgenroomsetflags" title="Permanent link">&para;</a></h4>
+<p><code>setFlags(self: LibLevelGen.Room, newFlags: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>newFlags</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Adds new flags on top of existing flags.</p>
+<hr />
+<h4 id="liblevelgenroomclearflags">LibLevelGen.Room.clearFlags<a class="headerlink" href="#liblevelgenroomclearflags" title="Permanent link">&para;</a></h4>
+<p><code>clearFlags(self: LibLevelGen.Room, flagsToClear: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>flagsToClear</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Removes the given flags.</p>
+<hr />
+<h4 id="liblevelgenroommaskflags">LibLevelGen.Room.maskFlags<a class="headerlink" href="#liblevelgenroommaskflags" title="Permanent link">&para;</a></h4>
+<p><code>maskFlags(self: LibLevelGen.Room, flags: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>flags</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Removes all flags apart from the given ones.</p>
+<hr />
+<h4 id="liblevelgenroomcheckflags">LibLevelGen.Room.checkFlags<a class="headerlink" href="#liblevelgenroomcheckflags" title="Permanent link">&para;</a></h4>
+<p><code>checkFlags(self: LibLevelGen.Room, flags: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>flags</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Checks if the given flags are set.</p>
+<hr />
+<h4 id="liblevelgenroomsetpaddingtileoverride">LibLevelGen.Room.setPaddingTileOverride<a class="headerlink" href="#liblevelgenroomsetpaddingtileoverride" title="Permanent link">&para;</a></h4>
+<p><code>setPaddingTileOverride(self: LibLevelGen.Room, data: LibLevelGen.PaddingData): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>data</code>: <code>LibLevelGen.PaddingData</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Set the padding that will be used instead of the one specified by the segment.</p>
+<hr />
+<h4 id="liblevelgenroomgetbounds">LibLevelGen.Room.getBounds<a class="headerlink" href="#liblevelgenroomgetbounds" title="Permanent link">&para;</a></h4>
+<p><code>getBounds(self: LibLevelGen.Room): number[]</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Get bounds of the room.</p>
+<hr />
+<h4 id="liblevelgenroomgetrect">LibLevelGen.Room.getRect<a class="headerlink" href="#liblevelgenroomgetrect" title="Permanent link">&para;</a></h4>
+<p><code>getRect(self: LibLevelGen.Room): LibLevelGen.Rect</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Get rect of the room.</p>
+<hr />
+<h4 id="liblevelgenroomindextile">LibLevelGen.Room.indexTile<a class="headerlink" href="#liblevelgenroomindextile" title="Permanent link">&para;</a></h4>
+<p><code>indexTile(self: LibLevelGen.Room, x: number, y: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: !!! Internal
+Get tile index within the tile array.</p>
+<hr />
+<h4 id="liblevelgenroomsettile">LibLevelGen.Room.setTile<a class="headerlink" href="#liblevelgenroomsettile" title="Permanent link">&para;</a></h4>
+<p><code>setTile(self: LibLevelGen.Room, x: number, y: number, tileType: string, tileset: string?): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tileType</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tileset</code>: <code>string?</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Set tile on the given coordinates. If tileset is not specified, the default one of the segment is used.</p>
+<hr />
+<h4 id="liblevelgenroomgettile">LibLevelGen.Room.getTile<a class="headerlink" href="#liblevelgenroomgettile" title="Permanent link">&para;</a></h4>
+<p><code>getTile(self: LibLevelGen.Room, x: number, y: number): LibLevelGen.Tile</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Get tile on given coordinates</p>
+<hr />
+<h4 id="liblevelgenroomdeletetile">LibLevelGen.Room.deleteTile<a class="headerlink" href="#liblevelgenroomdeletetile" title="Permanent link">&para;</a></h4>
+<p><code>deleteTile(self: LibLevelGen.Room, x: number, y: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Delete the given tile (set it to Void pseudotile)</p>
+<hr />
+<h4 id="liblevelgenroomistilenearwall">LibLevelGen.Room.isTileNearWall<a class="headerlink" href="#liblevelgenroomistilenearwall" title="Permanent link">&para;</a></h4>
+<p><code>isTileNearWall(self: LibLevelGen.Room, tile: LibLevelGen.Tile): boolean</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tile</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Checks if the given tile (assumed to be within this room) is near a wall tile.</p>
+<hr />
+<h4 id="liblevelgenroomistilenearfloor">LibLevelGen.Room.isTileNearFloor<a class="headerlink" href="#liblevelgenroomistilenearfloor" title="Permanent link">&para;</a></h4>
+<p><code>isTileNearFloor(self: LibLevelGen.Room, tile: LibLevelGen.Tile): boolean</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tile</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Checks if the given tile (assumed to be within this room) is near a floor tile.</p>
+<hr />
+<h4 id="liblevelgenroomistilenearborder">LibLevelGen.Room.isTileNearBorder<a class="headerlink" href="#liblevelgenroomistilenearborder" title="Permanent link">&para;</a></h4>
+<p><code>isTileNearBorder(self: LibLevelGen.Room, tile: LibLevelGen.Tile): boolean</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tile</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Checks if the given tile (assumed to be within this room) is near the edge of the room.</p>
+<hr />
+<h4 id="liblevelgenroomfill">LibLevelGen.Room.fill<a class="headerlink" href="#liblevelgenroomfill" title="Permanent link">&para;</a></h4>
+<p><code>fill(self: LibLevelGen.Room, parameters: LibLevelGen.RoomFillParameters | string Either the RoomFillParameters structure or simply the tile type string.): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>parameters</code>: <code>LibLevelGen.RoomFillParameters | string Either the RoomFillParameters structure or simply the tile type string.</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Fill the room.</p>
+<hr />
+<h4 id="liblevelgenroomborder">LibLevelGen.Room.border<a class="headerlink" href="#liblevelgenroomborder" title="Permanent link">&para;</a></h4>
+<p><code>border(self: LibLevelGen.Room, parameters: LibLevelGen.RoomBorderParameters | string): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>parameters</code>: <code>LibLevelGen.RoomBorderParameters | string</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Create a border around the room.</p>
+<hr />
+<h4 id="liblevelgenroomselecttiles">LibLevelGen.Room.selectTiles<a class="headerlink" href="#liblevelgenroomselecttiles" title="Permanent link">&para;</a></h4>
+<p><code>selectTiles(self: LibLevelGen.Room, requirements: LibLevelGen.TileRequirements): LibLevelGen.Tile[]</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Returns all tiles that meet the requirements.</p>
+<hr />
+<h4 id="liblevelgenroomchooserandomtile">LibLevelGen.Room.chooseRandomTile<a class="headerlink" href="#liblevelgenroomchooserandomtile" title="Permanent link">&para;</a></h4>
+<p><code>chooseRandomTile(self: LibLevelGen.Room, requirements: LibLevelGen.TileRequirements): LibLevelGen.Tile</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Choose a random tile out of ones that meet requirements</p>
+<hr />
+<h4 id="liblevelgenroomchooserandomtiles">LibLevelGen.Room.chooseRandomTiles<a class="headerlink" href="#liblevelgenroomchooserandomtiles" title="Permanent link">&para;</a></h4>
+<p><code>chooseRandomTiles(self: LibLevelGen.Room, requirements: LibLevelGen.TileRequirements): LibLevelGen.Tile[]</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Choose multiple tiles out of ones that meet requirements.</p>
+<hr />
+<h4 id="liblevelgenroomplacewalltorch">LibLevelGen.Room.placeWallTorch<a class="headerlink" href="#liblevelgenroomplacewalltorch" title="Permanent link">&para;</a></h4>
+<p><code>placeWallTorch(self: LibLevelGen.Room, tile: LibLevelGen.Tile, type: string|nil): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tile</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>type</code>: <code>string|nil</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place a wall torch on the given tile.</p>
+<hr />
+<h4 id="liblevelgenroomplacewalltorches">LibLevelGen.Room.placeWallTorches<a class="headerlink" href="#liblevelgenroomplacewalltorches" title="Permanent link">&para;</a></h4>
+<p><code>placeWallTorches(self: LibLevelGen.Room, num: number, type: string|nil): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>num</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>type</code>: <code>string|nil</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place given amount of wall torches randomly on elligible tiles.</p>
+<hr />
+<h4 id="liblevelgenroomplaceentity">LibLevelGen.Room.placeEntity<a class="headerlink" href="#liblevelgenroomplaceentity" title="Permanent link">&para;</a></h4>
+<p><code>placeEntity(self: LibLevelGen.Room, tile: LibLevelGen.Tile, entityOrType: string | LibLevelGen.Entity, level: number|nil): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tile</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>level</code>: <code>number|nil</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place entity on the given tile (wrapper around tile:placeEntity that checks if tile is not nil)</p>
+<hr />
+<h4 id="liblevelgenroomplaceentityat">LibLevelGen.Room.placeEntityAt<a class="headerlink" href="#liblevelgenroomplaceentityat" title="Permanent link">&para;</a></h4>
+<p><code>placeEntityAt(self: LibLevelGen.Room, x: number, y: number, entityOrType: string | LibLevelGen.Entity, level: number|nil): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>level</code>: <code>number|nil</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place entity on a tile on given coordinates.</p>
+<hr />
+<h4 id="liblevelgenroomplaceentityrand">LibLevelGen.Room.placeEntityRand<a class="headerlink" href="#liblevelgenroomplaceentityrand" title="Permanent link">&para;</a></h4>
+<p><code>placeEntityRand(self: LibLevelGen.Room, requirements: LibLevelGen.TileRequirements, entityOrType: string | LibLevelGen.Entity, level: number | nil): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>level</code>: <code>number | nil</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place entity on a random tile that meets requrements.</p>
+<hr />
+<h4 id="liblevelgenroomplacewire">LibLevelGen.Room.placeWire<a class="headerlink" href="#liblevelgenroomplacewire" title="Permanent link">&para;</a></h4>
+<p><code>placeWire(self: LibLevelGen.Room, tile: LibLevelGen.Tile, connectivity: number Unused, reserved): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>tile</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>connectivity</code>: <code>number Unused, reserved</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place wire on the given tile.</p>
+<hr />
+<h4 id="liblevelgenroommakeexit">LibLevelGen.Room.makeExit<a class="headerlink" href="#liblevelgenroommakeexit" title="Permanent link">&para;</a></h4>
+<p><code>makeExit(self: LibLevelGen.Room): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Turn the room into an exit room - set appropriate flags, place the exit stairs and the miniboss.</p>
+<hr />
+<h4 id="liblevelgenroomplaceexit">LibLevelGen.Room.placeExit<a class="headerlink" href="#liblevelgenroomplaceexit" title="Permanent link">&para;</a></h4>
+<p><code>placeExit(self: LibLevelGen.Room): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place exit somewhere in the room.</p>
+<hr />
+<h4 id="liblevelgenroompickminiboss">LibLevelGen.Room.pickMiniboss<a class="headerlink" href="#liblevelgenroompickminiboss" title="Permanent link">&para;</a></h4>
+<p><code>pickMiniboss(): void</code>  </p>
+<p><strong>Description</strong>: !!! Internal</p>
+<hr />
+<h4 id="liblevelgenroomplaceminiboss">LibLevelGen.Room.placeMiniboss<a class="headerlink" href="#liblevelgenroomplaceminiboss" title="Permanent link">&para;</a></h4>
+<p><code>placeMiniboss(self: LibLevelGen.Room, minibosses: table In format {{"type", level}, ...}): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>minibosses</code>: <code>table In format {{"type", level}, ...}</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Place a miniboss in the room (assumes that the room is an exit room).</p>
+<hr />
+<h4 id="liblevelgenroomrandomlyconverttiles">LibLevelGen.Room.randomlyConvertTiles<a class="headerlink" href="#liblevelgenroomrandomlyconverttiles" title="Permanent link">&para;</a></h4>
+<p><code>randomlyConvertTiles(self: LibLevelGen.Room, sourceType: string, targetType: string, ratio: number): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>sourceType</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>targetType</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>ratio</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Randomly convert tiles from sourceType to targetType, chance of conversion happening is ratio.</p>
+<hr />
+<h4 id="liblevelgenroomconverttiles">LibLevelGen.Room.convertTiles<a class="headerlink" href="#liblevelgenroomconverttiles" title="Permanent link">&para;</a></h4>
+<p><code>convertTiles(self: LibLevelGen.Room, sourceType: string, targetType: string): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>sourceType</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>targetType</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Convert all tiles from source type to target type.</p>
+<hr />
+<h4 id="liblevelgenroomspreadtile">LibLevelGen.Room.spreadTile<a class="headerlink" href="#liblevelgenroomspreadtile" title="Permanent link">&para;</a></h4>
+<p><code>spreadTile(self: LibLevelGen.Room, targetType: string, requirements: LibLevelGen.TileRequirements, minConvert: number, maxConvert: number, initialTile: LibLevelGen.Tile? can be used to specify initial tile, instead of choosing it randomly): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>targetType</code>: <code>string</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>minConvert</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>maxConvert</code>: <code>number</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>initialTile</code>: <code>LibLevelGen.Tile? can be used to specify initial tile, instead of choosing it randomly</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Choose 1 tile that meets requirement and convert it and other nearby tiles to target type.</p>
+<hr />
+<h4 id="liblevelgenroommakeshop">LibLevelGen.Room.makeShop<a class="headerlink" href="#liblevelgenroommakeshop" title="Permanent link">&para;</a></h4>
+<p><code>makeShop(self: LibLevelGen.Room, locked: boolean?, force: boolean?): void</code>  </p>
+<p><strong>Parameters</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>locked</code>: <code>boolean?</code> - <em>no description</em>  </p>
+</li>
+<li>
+<p><code>force</code>: <code>boolean?</code> - <em>no description</em>  </p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Description</strong>: Make the room a shop. TODO: move into a separate module</p>
+</blockquote>
+<hr />
+<h3 id="liblevelgenroomfillparameters">LibLevelGen.RoomFillParameters<a class="headerlink" href="#liblevelgenroomfillparameters" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li><code>rect</code>: <code>LibLevelGen.Rect | nil</code> - <em>no description</em></li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenroombordersidecount">LibLevelGen.RoomBorderSideCount<a class="headerlink" href="#liblevelgenroombordersidecount" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>top</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>bottom</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>left</code>: <code>number</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>right</code>: <code>number</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="liblevelgenroomborderparameters">LibLevelGen.RoomBorderParameters<a class="headerlink" href="#liblevelgenroomborderparameters" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Properties</strong>:  </p>
+<blockquote>
+<ul>
+<li>
+<p><code>rect</code>: <code>LibLevelGen.Rect</code> - <em>no description</em></p>
+</li>
+<li>
+<p><code>sides</code>: <code>LibLevelGen.RoomBorderSideCount</code> - <em>no description</em></p>
+</li>
+</ul>
+</blockquote>
+<h2 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="roomaxis">room.Axis<a class="headerlink" href="#roomaxis" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Entries</strong>:  </p>
+<ul>
+<li><code>VERTICAL</code>  </li>
+<li><code>HORIZONTAL</code>  </li>
+</ul>
+<hr />
+<h3 id="roomflag">room.Flag<a class="headerlink" href="#roomflag" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: Flags which determine the properties of the room</p>
+<p><strong>Entries</strong>:  </p>
+<ul>
+<li><code>NONE</code>  </li>
+<li><code>ALLOW_ENEMY</code>  </li>
+<li><code>ALLOW_CHEST</code>  </li>
+<li><code>ALLOW_CRATE</code>  </li>
+<li><code>ALLOW_TRAP</code>  </li>
+<li><code>ALLOW_TRAVELRUNE</code>  </li>
+<li><code>ALLOW_SHRINE</code>  </li>
+<li><code>ALLOW_TORCH</code>  </li>
+<li><code>ALLOW_TILE_CONVERSION</code>  </li>
+<li><code>ALLOW_SECRET_FILL</code>  </li>
+<li><code>EXIT</code>  </li>
+<li><code>STARTING</code>  </li>
+</ul>
+<hr />
+<h3 id="roomtype">room.Type<a class="headerlink" href="#roomtype" title="Permanent link">&para;</a></h3>
+<p><strong>Description</strong>: <em>no description</em></p>
+<p><strong>Entries</strong>:  </p>
+<ul>
+<li><code>REGULAR</code>  </li>
+<li><code>STARTING</code>  </li>
+<li><code>EXIT</code>  </li>
+<li><code>CORRIDOR</code>  </li>
+<li><code>SECRET</code>  </li>
+<li><code>SHOP</code>  </li>
+<li><code>SECRET_SHOP</code>  </li>
+<li><code>OTHER</code>  </li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Rand.lua/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Rand.lua" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Rand.lua
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../SecretRoom.lua/" class="md-footer__link md-footer__link--next" aria-label="Next: SecretRoom.lua" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SecretRoom.lua
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
