@@ -716,7 +716,7 @@
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="liblevelgenrng">LibLevelGen.Rng<a class="headerlink" href="#liblevelgenrng" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Helper class for generating random numbers given a starting seed.</p>
 <p><strong>Methods</strong>:  </p>
 <blockquote>
 <hr />
@@ -729,7 +729,7 @@
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
-<li><code>self</code>: <code>LibLevelGen.Rng</code> - <em>no description</em>  </li>
+<li><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </li>
 </ul>
 </blockquote>
 <p><strong>Returns</strong>: <code>number</code></p>
@@ -744,13 +744,13 @@
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
 </li>
 <li>
-<p><code>min</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>min</code>: <code>number</code> - Minimum value  </p>
 </li>
 <li>
-<p><code>max</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>max</code>: <code>number</code> - Maximum value  </p>
 </li>
 </ul>
 </blockquote>
@@ -766,13 +766,13 @@
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
 </li>
 <li>
-<p><code>min</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>min</code>: <code>number</code> - Minimum value (inclusive)  </p>
 </li>
 <li>
-<p><code>max</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>max</code>: <code>number</code> - Maximum value (not inclusive)  </p>
 </li>
 </ul>
 </blockquote>
@@ -788,10 +788,10 @@
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
 </li>
 <li>
-<p><code>t</code>: <code>T[]</code> - <em>no description</em>  </p>
+<p><code>t</code>: <code>T[]</code> - Elements to choose from  </p>
 </li>
 <li>
 <p><code>remove</code>: <code>boolean</code> - If true, element will be removed from the original table.  </p>
@@ -802,7 +802,7 @@
 <hr />
 <h4 id="liblevelgenrngrandchoicemany">LibLevelGen.Rng.randChoiceMany<a class="headerlink" href="#liblevelgenrngrandchoicemany" title="Permanent link">&para;</a></h4>
 </blockquote>
-<pre><code class="language-lua">randChoiceMany(self: LibLevelGen.Rng, choices: T, n: number, remove: boolean): T
+<pre><code class="language-lua">randChoiceMany(self: LibLevelGen.Rng, choices: T[], n: number, remove: boolean): T
 </code></pre>
 <blockquote>
 <p>Choose a n elements from the given table.</p>
@@ -810,13 +810,13 @@
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
 </li>
 <li>
-<p><code>choices</code>: <code>T</code> - <em>no description</em>  </p>
+<p><code>choices</code>: <code>T[]</code> - Elements to choose from  </p>
 </li>
 <li>
-<p><code>n</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>n</code>: <code>number</code> - Number of elements to choose  </p>
 </li>
 <li>
 <p><code>remove</code>: <code>boolean</code> - If true, element will be removed from the original table.  </p>
@@ -835,7 +835,7 @@
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
 </li>
 <li>
 <p><code>probability</code>: <code>number</code> - Value between 0.0 and 1.0  </p>
@@ -854,10 +854,10 @@
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
 </li>
 <li>
-<p><code>chances</code>: <code>table&lt;string,number&gt;</code> - <em>no description</em>  </p>
+<p><code>chances</code>: <code>table&lt;string,number&gt;</code> - Mapping of values that can be chosen to their probability (does not have to add up to 1)  </p>
 </li>
 </ul>
 </blockquote>
