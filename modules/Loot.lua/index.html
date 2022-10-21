@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://priw8.github.io/liblevelgen-doc/modules/Loot.lua/">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
@@ -143,6 +145,18 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://gitlab.com/Priw8/LibLevelGen" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitLab
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -174,6 +188,18 @@
     </a>
     LibLevelGen
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://gitlab.com/Priw8/LibLevelGen" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitLab
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -403,6 +429,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
   
 </li>
       
@@ -648,6 +681,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -667,123 +707,102 @@
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="lootchestforitem">loot.chestForItem<a class="headerlink" href="#lootchestforitem" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">loot.chestForItem(itemType: string): string
-</code></pre>
-<p><em>no description</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">chestForItem</span><span class="p">(</span><span class="n">itemType</span><span class="p">:</span> <span class="n">string</span><span class="p">):</span> <span class="n">string</span>
+</code></pre></div>
+<p>Get chest entity type for a given entity type.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li><code>itemType</code>: <code>string</code> - <em>no description</em></li>
+<li><code>itemType</code>: <code>string</code> - Item entity type.  </li>
 </ul>
 <p><strong>Returns</strong>: <code>string</code></p>
 <hr />
 <h3 id="lootcreatechestwithitem">loot.createChestWithItem<a class="headerlink" href="#lootcreatechestwithitem" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">loot.createChestWithItem(instance: LibLegelGen.Instance, itemType: string, hidden: boolean, entityType: string optional chest entity type (defaults to chest color based on the item), entityLevel: number optional chest entity level): LibLevelGen.Entity
-</code></pre>
-<p><em>no description</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">createChestWithItem</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">LibLegelGen</span><span class="p">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">itemType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">hidden</span><span class="p">:</span> <span class="n">boolean</span><span class="p">,</span> <span class="n">entityType</span><span class="err">?</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">entityLevel</span><span class="err">?</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div>
+<p>Creates a chest containing a given item type.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li>
-<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>itemType</code>: <code>string</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>hidden</code>: <code>boolean</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>entityType</code>: <code>string optional chest entity type (defaults to chest color based on the item)</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>entityLevel</code>: <code>number optional chest entity level</code> - <em>no description</em></p>
-</li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of generated level.  </li>
+<li><code>itemType</code>: <code>string</code> - Item type to put inside of the chest.  </li>
+<li><code>hidden</code>: <code>boolean</code> - Whether the chest is only revealed when next to it.  </li>
+<li><code>entityType?</code>: <code>string</code> - Optional chest entity type (defaults to chest color based on the item)  </li>
+<li><code>entityLevel?</code>: <code>number</code> - Optional chest entity level  </li>
 </ul>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h3 id="lootcreatechest">loot.createChest<a class="headerlink" href="#lootcreatechest" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">loot.createChest(instance: LibLegelGen.Instance, args: LibLevelGen.ChestChoiceArguments?): void
-</code></pre>
-<p><em>no description</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">createChest</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">LibLegelGen</span><span class="p">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">args</span><span class="err">?</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">ChestChoiceArguments</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
+<p>Creates a chest containing random item.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li>
-<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>args</code>: <code>LibLevelGen.ChestChoiceArguments?</code> - <em>no description</em></p>
-</li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of the generated level.  </li>
+<li><code>args?</code>: <code>LibLevelGen.ChestChoiceArguments</code> - Extra parameters for the chest.  </li>
 </ul>
 <hr />
 <h3 id="lootcreategold">loot.createGold<a class="headerlink" href="#lootcreategold" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">loot.createGold(instance: LibLegelGen.Instance, amount: number): LibLevelGen.Entity
-</code></pre>
-<p><em>no description</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">createGold</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">LibLegelGen</span><span class="p">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div>
+<p>Create a gold entity.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li>
-<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>amount</code>: <code>number</code> - <em>no description</em></p>
-</li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of the generated level.  </li>
+<li><code>amount</code>: <code>number</code> - gold amount to create  </li>
 </ul>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h3 id="lootcreateurn">loot.createUrn<a class="headerlink" href="#lootcreateurn" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">loot.createUrn(instance: LibLegelGen.Instance): LibLevelGen.Entity
-</code></pre>
-<p><em>no description</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">createUrn</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">LibLegelGen</span><span class="p">.</span><span class="n">Instance</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div>
+<p>Create an urn entity.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of the generated level.  </li>
 </ul>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h3 id="lootcreatecrate">loot.createCrate<a class="headerlink" href="#lootcreatecrate" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">loot.createCrate(instance: LibLegelGen.Instance): LibLevelGen.Entity
-</code></pre>
-<p><em>no description</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">createCrate</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">LibLegelGen</span><span class="p">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">crateTypeOverride</span><span class="err">?</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">crateLevelOverride</span><span class="err">?</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div>
+<p>Create a create entity.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of the generated level.  </li>
+<li><code>crateTypeOverride?</code>: <code>string</code> - Force the crate to be a specific entity type.  </li>
+<li><code>crateLevelOverride?</code>: <code>number</code> - Force the crate to have a specific level.  </li>
 </ul>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h3 id="lootplacechests">loot.placeChests<a class="headerlink" href="#lootplacechests" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">loot.placeChests(segment: LibLevelGen.Segment): void
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">placeChests</span><span class="p">(</span><span class="n">segment</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Segment</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place remaining chests.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li><code>segment</code>: <code>LibLevelGen.Segment</code> - <em>no description</em></li>
+<li><code>segment</code>: <code>LibLevelGen.Segment</code> - Segment in which the remaining chests should be placed.  </li>
 </ul>
 <hr />
 <h3 id="lootplacecrates">loot.placeCrates<a class="headerlink" href="#lootplacecrates" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">loot.placeCrates(segment: LibLevelGen.Segment): void
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">placeCrates</span><span class="p">(</span><span class="n">segment</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Segment</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place remaining crates.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
-<li><code>segment</code>: <code>LibLevelGen.Segment</code> - <em>no description</em></li>
+<li><code>segment</code>: <code>LibLevelGen.Segment</code> - Segment in which the remaining crates should be placed.  </li>
 </ul>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="liblevelgenchestchoicearguments-extends-itemgenerationchoicearguments">LibLevelGen.ChestChoiceArguments <em>extends</em> ItemGeneration.ChoiceArguments<a class="headerlink" href="#liblevelgenchestchoicearguments-extends-itemgenerationchoicearguments" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Interface for defining arguments of <code>loot.createChest</code>.</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
-<li>
-<p><code>hidden</code>: <code>boolean? Whether the chest starts visible or not</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>chestType</code>: <code>string? chest entity type</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>chestLevel</code>: <code>number? chest entity type level</code> - <em>no description</em></p>
-</li>
+<li><code>hidden?</code>: <code>boolean</code> - Whether the chest starts visible or not  </li>
+<li><code>chestType?</code>: <code>string</code> - Chest entity type (defaults to chest color based on the item)  </li>
+<li><code>chestLevel?</code>: <code>number</code> - Chest entity type level  </li>
 </ul>
 </blockquote>
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
 
 
 

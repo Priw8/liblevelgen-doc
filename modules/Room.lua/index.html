@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://priw8.github.io/liblevelgen-doc/modules/Room.lua/">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
@@ -143,6 +145,18 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://gitlab.com/Priw8/LibLevelGen" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitLab
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -174,6 +188,18 @@
     </a>
     LibLevelGen
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://gitlab.com/Priw8/LibLevelGen" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitLab
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -753,6 +779,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+    <nav class="md-nav" aria-label="Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roomdirection" class="md-nav__link">
+    room.Direction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roomdirectionvector" class="md-nav__link">
+    room.DirectionVector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tribool-alias" class="md-nav__link">
+    Tribool alias
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1286,6 +1346,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+    <nav class="md-nav" aria-label="Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roomdirection" class="md-nav__link">
+    room.Direction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roomdirectionvector" class="md-nav__link">
+    room.DirectionVector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tribool-alias" class="md-nav__link">
+    Tribool alias
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1305,8 +1399,8 @@
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="roomnew">room.new<a class="headerlink" href="#roomnew" title="Permanent link">&para;</a></h3>
-<pre><code class="language-lua">room.new(instance: LibLegelGen.Instance, segment: LibLevelGen.Segment, x: number, y: number, w: number, h: number, flags: number): LibLevelGen.Room
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">room</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">LibLegelGen</span><span class="p">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">segment</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Segment</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">flags</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span>
+</code></pre></div>
 <p>Create a new room within the segment.</p>
 <p><strong>Parameters</strong>:  </p>
 <ul>
@@ -1336,241 +1430,155 @@
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="liblevelgentilerequirements">LibLevelGen.TileRequirements<a class="headerlink" href="#liblevelgentilerequirements" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Interface used for selecting tiles based on the given requirement.
+Fields of the <code>Tribool</code> type can be <code>nil</code>, <code>true</code> or <code>false</code>.
+When a <code>Tribool</code> is <code>nil</code> the condition is not checked, and if it's a boolean then
+the condition check result must match the value specified.</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
-<li>
-<p><code>isFloor</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>isWall</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>levelExit</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>hasWallTorch</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>hasEntity</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>tileType</code>: <code>string | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>nearFloor</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>nearWall</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>nearBorder</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>filter</code>: <code>fun(room: LibLevelGen.Room, tile: LibLevelGen.Tile) | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>notCollision</code>: <code>number | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>collision</code>: <code>number | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>rect</code>: <code>LibLevelGen.Rect | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>notRect</code>: <code>LibLevelGen.Rect | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>wire</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>info</code>: <code>table | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>entrance</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>adjacentEntrance</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>directlyAdjacentEntrance</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>noWallTallSprite</code>: <code>TriBool</code> - <em>no description</em></p>
-</li>
+<li><code>isFloor</code>: <code>TriBool</code> - Whether the tile is a floor.  </li>
+<li><code>isWall</code>: <code>TriBool</code> - Whether the tile is a wall.  </li>
+<li><code>levelExit</code>: <code>TriBool</code> - Whether the tile is the level exit.  </li>
+<li><code>hasWallTorch</code>: <code>TriBool</code> - Whether the tile has a wall torch.  </li>
+<li><code>hasEntity</code>: <code>TriBool</code> - Whether the tile has an entity.  </li>
+<li><code>tileType</code>: <code>string | nil</code> - Required tile type string name.  </li>
+<li><code>nearFloor</code>: <code>TriBool</code> - Whether the tile is near a floor tile, checked within this room only.  </li>
+<li><code>nearWall</code>: <code>TriBool</code> - Whether the tile is near a wall tile, checked within this room only.  </li>
+<li><code>nearBorder</code>: <code>TriBool</code> - Whether the tile is near the room border.  </li>
+<li><code>filter</code>: <code>fun(room: LibLevelGen.Room, tile: LibLevelGen.Tile) | nil</code> - Filter function, if it returns true the condition check passes.  </li>
+<li><code>notCollision</code>: <code>number | nil</code> - Collision (from <code>necro.game.tile.Collision</code>) bits which must all NOT be set.  </li>
+<li><code>collision</code>: <code>number | nil</code> - Collision (from <code>necro.game.tile.Collision</code>) bits which must all be set.  </li>
+<li><code>rect</code>: <code>LibLevelGen.Rect | nil</code> - Rect the tile must be in.  </li>
+<li><code>notRect</code>: <code>LibLevelGen.Rect | nil</code> - Rect the tile must NOT be in.  </li>
+<li><code>wire</code>: <code>TriBool</code> - Whether the tile has an electric wile.  </li>
+<li><code>info</code>: <code>table | nil</code> - Require the tile to have a specific <code>tileInfo</code> (from <code>necro.game.tile.TileTypes</code>)  </li>
+<li><code>entrance</code>: <code>TriBool</code> - Whether the tile is the entrance to the room (directly next to the corridor).  </li>
+<li><code>adjacentEntrance</code>: <code>TriBool</code> - Whether the tile is adjacent to the entrance.  </li>
+<li><code>directlyAdjacentEntrance</code>: <code>TriBool</code> - Whether the tile is adjacent to the entrance, but not diagonally.  </li>
+<li><code>noWallTallSprite</code>: <code>TriBool</code> - Whether the tile below the checked tile is a wall.  </li>
 </ul>
 </blockquote>
 <hr />
 <h3 id="liblevelgentile">LibLevelGen.Tile<a class="headerlink" href="#liblevelgentile" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Object representing a single tile.</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
-<li>
-<p><code>tileset</code>: <code>string</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>type</code>: <code>string</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>info</code>: <code>table</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>wire</code>: <code>integer</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>hasEntity</code>: <code>boolean</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>entities</code>: <code>LibLevelGen.Entity[]</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>hasWallTorch</code>: <code>boolean</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>x</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>y</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>rx</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>ry</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>adjacentEntrance</code>: <code>boolean</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>directlyAdjacentEntrance</code>: <code>boolean</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>isEntrance</code>: <code>boolean</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>room</code>: <code>LibLevelGen.Room</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
-</li>
+<li><code>tileset</code>: <code>string</code> - Tileset the tile uses.  </li>
+<li><code>type</code>: <code>string</code> - Tile type the tile uses.  </li>
+<li><code>info</code>: <code>table</code> - TileInfo of the tile (from <code>necro.game.tile.TileTypes</code>).  </li>
+<li><code>wire</code>: <code>integer</code> - The wire connectivity bitmask.  </li>
+<li><code>hasEntity</code>: <code>boolean</code> - Whether the tile has an entity.  </li>
+<li><code>entities</code>: <code>LibLevelGen.Entity[]</code> - List of entities on this tile.  </li>
+<li><code>hasWallTorch</code>: <code>boolean</code> - Whether the tile has a wall torch.  </li>
+<li><code>x</code>: <code>number</code> - X coordinate of the tile in the room.  </li>
+<li><code>y</code>: <code>number</code> - Y coordinate of the tile in the room.  </li>
+<li><code>rx</code>: <code>number</code> - X coordinate of the tile in the segment.  </li>
+<li><code>ry</code>: <code>number</code> - Y coordinate of the tile in the segment.  </li>
+<li><code>adjacentEntrance</code>: <code>boolean</code> - Whether the tile is adjacent to an entrance.  </li>
+<li><code>directlyAdjacentEntrance</code>: <code>boolean</code> - Whether the tile is adjacent to an entrance, but not diagonally.  </li>
+<li><code>isEntrance</code>: <code>boolean</code> - Whether the tile is the entrance to the room (directly next to the corridor).  </li>
+<li><code>room</code>: <code>LibLevelGen.Room</code> - Room this tile belongs to.  </li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - Instance this tile belongs to.  </li>
 </ul>
 </blockquote>
 <p><strong>Methods</strong>:  </p>
 <blockquote>
 <hr />
 <h4 id="liblevelgentileconvert">LibLevelGen.Tile.convert<a class="headerlink" href="#liblevelgentileconvert" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">convert(self: LibLevelGen.Tile, tileType: string): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">convert</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">tileType</span><span class="p">:</span> <span class="n">string</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Convert the tile to a different type.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Tile</code> - The tile  </p>
 </li>
 <li>
-<p><code>tileType</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>tileType</code>: <code>string</code> - TileType to convert to.  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgentilesetisentrance">LibLevelGen.Tile.setIsEntrance<a class="headerlink" href="#liblevelgentilesetisentrance" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">setIsEntrance(self: LibLevelGen.Tile): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">setIsEntrance</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Set the isEntrance flag on the tile and adjacentEntrance flags on nearby tiles.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
-<li><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </li>
+<li><code>self</code>: <code>LibLevelGen.Tile</code> - The tile  </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgentileplaceentity">LibLevelGen.Tile.placeEntity<a class="headerlink" href="#liblevelgentileplaceentity" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeEntity(self: LibLevelGen.Tile, entityOrType: string | LibLevelGen.Entity, level: number | nil): LibLevelGen.Entity
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">placeEntity</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="err">?</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div>
 <p>Place entity of given type and level on the tile.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Tile</code> - The tile.  </p>
 </li>
 <li>
-<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - Entity type or existing entity.  </p>
 </li>
 <li>
-<p><code>level</code>: <code>number | nil</code> - <em>no description</em>  </p>
+<p><code>level?</code>: <code>number</code> - Entity level, ignored if existing entity is passed in the previous argument.  </p>
 </li>
 </ul>
 </blockquote>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgentilemeetsrequirements">LibLevelGen.Tile.meetsRequirements<a class="headerlink" href="#liblevelgentilemeetsrequirements" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">meetsRequirements(self: LibLevelGen.Tile, requirements: LibLevelGen.TileRequirements): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">meetsRequirements</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Check if the tile meets specified requirements.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Tile</code> - The tile.  </p>
 </li>
 <li>
-<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - Requirements the tile has to meet.  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgentiletilebelowiswall">LibLevelGen.Tile.tileBelowIsWall<a class="headerlink" href="#liblevelgentiletilebelowiswall" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">tileBelowIsWall(self: LibLevelGen.Tile): void
-</code></pre>
-<blockquote>
-<p><em>no description</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">tileBelowIsWall</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
+<p>Whether a wall tile or the room border is below this tile.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
-<li><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </li>
+<li><code>self</code>: <code>LibLevelGen.Tile</code> - The tile.  </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgentileinrect">LibLevelGen.Tile.inRect<a class="headerlink" href="#liblevelgentileinrect" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">inRect(self: LibLevelGen.Tile, rect: LibLevelGen.Rect): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">inRect</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">rect</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Rect</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Check if the tile is within a given rect in the room.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Tile</code> - The tile.  </p>
 </li>
 <li>
-<p><code>rect</code>: <code>LibLevelGen.Rect</code> - <em>no description</em>  </p>
+<p><code>rect</code>: <code>LibLevelGen.Rect</code> - Rect to check against.  </p>
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 </blockquote>
 <hr />
 <h3 id="liblevelgenroomlinkdata">LibLevelGen.RoomLinkData<a class="headerlink" href="#liblevelgenroomlinkdata" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Data which represents where a room connects to other rooms.</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
@@ -1599,7 +1607,7 @@
 </blockquote>
 <hr />
 <h3 id="liblevelgenroomlinks">LibLevelGen.RoomLinks<a class="headerlink" href="#liblevelgenroomlinks" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Object containing room links for every side of the room.</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
@@ -1619,55 +1627,40 @@
 </blockquote>
 <hr />
 <h3 id="liblevelgenpoint">LibLevelGen.Point<a class="headerlink" href="#liblevelgenpoint" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Simple point interface.</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
-<li>
-<p><code>x</code>: <code>number</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>y</code>: <code>number</code> - <em>no description</em></p>
-</li>
+<li><code>x</code>: <code>number</code> - x  </li>
+<li><code>y</code>: <code>number</code> - y  </li>
 </ul>
 </blockquote>
 <hr />
 <h3 id="liblevelgenroom">LibLevelGen.Room<a class="headerlink" href="#liblevelgenroom" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Object representing a room.</p>
 <p><strong>Properties</strong>:  </p>
 <blockquote>
 <ul>
-<li>
-<p><code>links</code>: <code>LibLevelGen.RoomLinkData[]</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>padding</code>: <code>LibLevelGen.PaddingData | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>tiles</code>: <code>LibLevelGen.Tile[]</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>exit</code>: <code>LibLevelGen.Point | nil</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>instance</code>: <code>LibLegelGen.Instance</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>segment</code>: <code>LibLevelGen.Segment</code> - <em>no description</em></p>
-</li>
-<li>
-<p><code>userData</code>: <code>table</code> - <em>no description</em></p>
-</li>
+<li><code>x</code>: <code>number</code> - X coordinate of the room's top left corner within the segment.  </li>
+<li><code>y</code>: <code>number</code> - Y coordinate of the room's top left corner within the segment.  </li>
+<li><code>w</code>: <code>number</code> - Width of the room.  </li>
+<li><code>h</code>: <code>number</code> - Height of the room.  </li>
+<li><code>flags</code>: <code>number</code> - Room flags (from <code>room.Flag</code>).  </li>
+<li><code>links</code>: <code>LibLevelGen.RoomLinkData[]</code> - Information about the rooms adjacent to this room and where exactly the entrances are.  </li>
+<li><code>padding</code>: <code>LibLevelGen.PaddingData | nil</code> - Padding override to use instead of the segment-defined one.  </li>
+<li><code>tiles</code>: <code>LibLevelGen.Tile[]</code> - Array of tiles in this room.  </li>
+<li><code>exit</code>: <code>LibLevelGen.Point | nil</code> - Coordinates of exit stairs within this room (if they exist).  </li>
+<li><code>instance</code>: <code>LibLegelGen.Instance</code> - Instance this room belongs to.  </li>
+<li><code>segment</code>: <code>LibLevelGen.Segment</code> - Segment this table belongs to.  </li>
+<li><code>userData</code>: <code>table</code> - Table where you can put whatever you want safely.  </li>
 </ul>
 </blockquote>
 <p><strong>Methods</strong>:  </p>
 <blockquote>
 <hr />
 <h4 id="liblevelgenroominit">LibLevelGen.Room.init<a class="headerlink" href="#liblevelgenroominit" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">init(self: LibLevelGen.Room, x: number, y: number, w: number, h: number, flags: number): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">init</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">flags</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Initializes the room.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1692,13 +1685,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomsetflags">LibLevelGen.Room.setFlags<a class="headerlink" href="#liblevelgenroomsetflags" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">setFlags(self: LibLevelGen.Room, newFlags: number): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">setFlags</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">newFlags</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Adds new flags on top of existing flags.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1711,13 +1701,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomclearflags">LibLevelGen.Room.clearFlags<a class="headerlink" href="#liblevelgenroomclearflags" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">clearFlags(self: LibLevelGen.Room, flagsToClear: number): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">clearFlags</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">flagsToClear</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Removes the given flags.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1730,13 +1717,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroommaskflags">LibLevelGen.Room.maskFlags<a class="headerlink" href="#liblevelgenroommaskflags" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">maskFlags(self: LibLevelGen.Room, flags: number): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">maskFlags</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">flags</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Removes all flags apart from the given ones.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1749,13 +1733,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomcheckflags">LibLevelGen.Room.checkFlags<a class="headerlink" href="#liblevelgenroomcheckflags" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">checkFlags(self: LibLevelGen.Room, flags: number): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">checkFlags</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">flags</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Checks if the given flags are set.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1768,13 +1749,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomsetpaddingtileoverride">LibLevelGen.Room.setPaddingTileOverride<a class="headerlink" href="#liblevelgenroomsetpaddingtileoverride" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">setPaddingTileOverride(self: LibLevelGen.Room, data: LibLevelGen.PaddingData): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">setPaddingTileOverride</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">PaddingData</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Set the padding that will be used instead of the one specified by the segment.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1787,13 +1765,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomgetbounds">LibLevelGen.Room.getBounds<a class="headerlink" href="#liblevelgenroomgetbounds" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">getBounds(self: LibLevelGen.Room): number[]
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">getBounds</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">):</span> <span class="n">number</span><span class="p">[]</span>
+</code></pre></div>
 <p>Get bounds of the room.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1804,10 +1779,8 @@
 <p><strong>Returns</strong>: <code>number[]</code></p>
 <hr />
 <h4 id="liblevelgenroomgetrect">LibLevelGen.Room.getRect<a class="headerlink" href="#liblevelgenroomgetrect" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">getRect(self: LibLevelGen.Room): LibLevelGen.Rect
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">getRect</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Rect</span>
+</code></pre></div>
 <p>Get rect of the room.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1818,10 +1791,8 @@
 <p><strong>Returns</strong>: <code>LibLevelGen.Rect</code></p>
 <hr />
 <h4 id="liblevelgenroomsettile">LibLevelGen.Room.setTile<a class="headerlink" href="#liblevelgenroomsettile" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">setTile(self: LibLevelGen.Room, x: number, y: number, tileType: string, tileset: string?): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">setTile</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">tileType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">tileset</span><span class="p">:</span> <span class="n">string</span><span class="err">?</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Set tile on the given coordinates. If tileset is not specified, the default one of the segment is used.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1843,13 +1814,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomgettile">LibLevelGen.Room.getTile<a class="headerlink" href="#liblevelgenroomgettile" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">getTile(self: LibLevelGen.Room, x: number, y: number): LibLevelGen.Tile
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">getTile</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span>
+</code></pre></div>
 <p>Get tile on given coordinates</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1868,10 +1836,8 @@
 <p><strong>Returns</strong>: <code>LibLevelGen.Tile</code></p>
 <hr />
 <h4 id="liblevelgenroomdeletetile">LibLevelGen.Room.deleteTile<a class="headerlink" href="#liblevelgenroomdeletetile" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">deleteTile(self: LibLevelGen.Room, x: number, y: number): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">deleteTile</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Delete the given tile (set it to Void pseudotile)</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1887,13 +1853,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomistilenearwall">LibLevelGen.Room.isTileNearWall<a class="headerlink" href="#liblevelgenroomistilenearwall" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">isTileNearWall(self: LibLevelGen.Room, tile: LibLevelGen.Tile): boolean
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">isTileNearWall</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">):</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Checks if the given tile (assumed to be within this room) is near a wall tile.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1909,10 +1872,8 @@
 <p><strong>Returns</strong>: <code>boolean</code></p>
 <hr />
 <h4 id="liblevelgenroomistilenearfloor">LibLevelGen.Room.isTileNearFloor<a class="headerlink" href="#liblevelgenroomistilenearfloor" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">isTileNearFloor(self: LibLevelGen.Room, tile: LibLevelGen.Tile): boolean
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">isTileNearFloor</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">):</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Checks if the given tile (assumed to be within this room) is near a floor tile.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1928,10 +1889,8 @@
 <p><strong>Returns</strong>: <code>boolean</code></p>
 <hr />
 <h4 id="liblevelgenroomistilenearborder">LibLevelGen.Room.isTileNearBorder<a class="headerlink" href="#liblevelgenroomistilenearborder" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">isTileNearBorder(self: LibLevelGen.Room, tile: LibLevelGen.Tile): boolean
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">isTileNearBorder</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">):</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Checks if the given tile (assumed to be within this room) is near the edge of the room.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1947,10 +1906,8 @@
 <p><strong>Returns</strong>: <code>boolean</code></p>
 <hr />
 <h4 id="liblevelgenroomfill">LibLevelGen.Room.fill<a class="headerlink" href="#liblevelgenroomfill" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">fill(self: LibLevelGen.Room, parameters: LibLevelGen.RoomFillParameters | string Either the RoomFillParameters structure or simply the tile type string.): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">fill</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">RoomFillParameters</span> <span class="o">|</span> <span class="n">string</span> <span class="n">Either</span> <span class="n">the</span> <span class="n">RoomFillParameters</span> <span class="n">structure</span> <span class="ow">or</span> <span class="n">simply</span> <span class="n">the</span> <span class="n">tile</span> <span class="nb">type</span> <span class="n">string</span><span class="p">.):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Fill the room.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1963,13 +1920,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomborder">LibLevelGen.Room.border<a class="headerlink" href="#liblevelgenroomborder" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">border(self: LibLevelGen.Room, parameters: LibLevelGen.RoomBorderParameters | string): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">border</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">RoomBorderParameters</span> <span class="o">|</span> <span class="n">string</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Create a border around the room.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -1982,13 +1936,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomselecttiles">LibLevelGen.Room.selectTiles<a class="headerlink" href="#liblevelgenroomselecttiles" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">selectTiles(self: LibLevelGen.Room, requirements: LibLevelGen.TileRequirements): LibLevelGen.Tile[]
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">selectTiles</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">[]</span>
+</code></pre></div>
 <p>Returns all tiles that meet the requirements.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2004,10 +1955,8 @@
 <p><strong>Returns</strong>: <code>LibLevelGen.Tile[]</code></p>
 <hr />
 <h4 id="liblevelgenroomchooserandomtile">LibLevelGen.Room.chooseRandomTile<a class="headerlink" href="#liblevelgenroomchooserandomtile" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">chooseRandomTile(self: LibLevelGen.Room, requirements: LibLevelGen.TileRequirements): LibLevelGen.Tile
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">chooseRandomTile</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span>
+</code></pre></div>
 <p>Choose a random tile out of ones that meet requirements</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2023,10 +1972,8 @@
 <p><strong>Returns</strong>: <code>LibLevelGen.Tile</code></p>
 <hr />
 <h4 id="liblevelgenroomchooserandomtiles">LibLevelGen.Room.chooseRandomTiles<a class="headerlink" href="#liblevelgenroomchooserandomtiles" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">chooseRandomTiles(self: LibLevelGen.Room, requirements: LibLevelGen.TileRequirements): LibLevelGen.Tile[]
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">chooseRandomTiles</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">[]</span>
+</code></pre></div>
 <p>Choose multiple tiles out of ones that meet requirements.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2042,10 +1989,8 @@
 <p><strong>Returns</strong>: <code>LibLevelGen.Tile[]</code></p>
 <hr />
 <h4 id="liblevelgenroomplacewalltorch">LibLevelGen.Room.placeWallTorch<a class="headerlink" href="#liblevelgenroomplacewalltorch" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeWallTorch(self: LibLevelGen.Room, tile: LibLevelGen.Tile, type: string|nil): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">placeWallTorch</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="n">string</span><span class="o">|</span><span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place a wall torch on the given tile.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2061,13 +2006,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomplacewalltorches">LibLevelGen.Room.placeWallTorches<a class="headerlink" href="#liblevelgenroomplacewalltorches" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeWallTorches(self: LibLevelGen.Room, num: number, type: string|nil): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">placeWallTorches</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="n">string</span><span class="o">|</span><span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place given amount of wall torches randomly on elligible tiles.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2083,13 +2025,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomplaceentity">LibLevelGen.Room.placeEntity<a class="headerlink" href="#liblevelgenroomplaceentity" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeEntity(self: LibLevelGen.Room, tile: LibLevelGen.Tile, entityOrType: string | LibLevelGen.Entity, level: number|nil): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">placeEntity</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">number</span><span class="o">|</span><span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place entity on the given tile (wrapper around tile:placeEntity that checks if tile is not nil)</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2108,13 +2047,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomplaceentityat">LibLevelGen.Room.placeEntityAt<a class="headerlink" href="#liblevelgenroomplaceentityat" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeEntityAt(self: LibLevelGen.Room, x: number, y: number, entityOrType: string | LibLevelGen.Entity, level: number|nil): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">placeEntityAt</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">number</span><span class="o">|</span><span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place entity on a tile on given coordinates.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2136,13 +2072,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomplaceentityrand">LibLevelGen.Room.placeEntityRand<a class="headerlink" href="#liblevelgenroomplaceentityrand" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeEntityRand(self: LibLevelGen.Room, requirements: LibLevelGen.TileRequirements, entityOrType: string | LibLevelGen.Entity, level: number | nil): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">placeEntityRand</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">number</span> <span class="o">|</span> <span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place entity on a random tile that meets requrements.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2161,13 +2094,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomplacewire">LibLevelGen.Room.placeWire<a class="headerlink" href="#liblevelgenroomplacewire" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeWire(self: LibLevelGen.Room, tile: LibLevelGen.Tile, connectivity: number Unused, reserved): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">placeWire</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">:</span> <span class="n">number</span> <span class="n">Unused</span><span class="p">,</span> <span class="n">reserved</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place wire on the given tile.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2183,13 +2113,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroommakeexit">LibLevelGen.Room.makeExit<a class="headerlink" href="#liblevelgenroommakeexit" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">makeExit(self: LibLevelGen.Room): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">makeExit</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Turn the room into an exit room - set appropriate flags, place the exit stairs and the miniboss.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2197,13 +2124,10 @@
 <li><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomplaceexit">LibLevelGen.Room.placeExit<a class="headerlink" href="#liblevelgenroomplaceexit" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeExit(self: LibLevelGen.Room): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">placeExit</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place exit somewhere in the room.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2211,13 +2135,10 @@
 <li><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomplaceminiboss">LibLevelGen.Room.placeMiniboss<a class="headerlink" href="#liblevelgenroomplaceminiboss" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">placeMiniboss(self: LibLevelGen.Room, minibosses: table In format {{&quot;type&quot;, level}, ...}): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">placeMiniboss</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">minibosses</span><span class="p">:</span> <span class="n">table</span> <span class="n">In</span> <span class="n">format</span> <span class="p">{{</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">level</span><span class="p">},</span> <span class="p">...}):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Place a miniboss in the room (assumes that the room is an exit room).</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2230,13 +2151,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomrandomlyconverttiles">LibLevelGen.Room.randomlyConvertTiles<a class="headerlink" href="#liblevelgenroomrandomlyconverttiles" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">randomlyConvertTiles(self: LibLevelGen.Room, sourceType: string, targetType: string, ratio: number): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">randomlyConvertTiles</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">sourceType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">targetType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">ratio</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Randomly convert tiles from sourceType to targetType, chance of conversion happening is ratio.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2255,13 +2173,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomconverttiles">LibLevelGen.Room.convertTiles<a class="headerlink" href="#liblevelgenroomconverttiles" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">convertTiles(self: LibLevelGen.Room, sourceType: string, targetType: string): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">convertTiles</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">sourceType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">targetType</span><span class="p">:</span> <span class="n">string</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Convert all tiles from source type to target type.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2277,13 +2192,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroomspreadtile">LibLevelGen.Room.spreadTile<a class="headerlink" href="#liblevelgenroomspreadtile" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">spreadTile(self: LibLevelGen.Room, targetType: string, requirements: LibLevelGen.TileRequirements, minConvert: number, maxConvert: number, initialTile: LibLevelGen.Tile? can be used to specify initial tile, instead of choosing it randomly): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">spreadTile</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">targetType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">,</span> <span class="n">minConvert</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">maxConvert</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">initialTile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="err">?</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">initial</span> <span class="n">tile</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">choosing</span> <span class="n">it</span> <span class="n">randomly</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Choose 1 tile that meets requirement and convert it and other nearby tiles to target type.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2308,13 +2220,10 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 <hr />
 <h4 id="liblevelgenroommakeshop">LibLevelGen.Room.makeShop<a class="headerlink" href="#liblevelgenroommakeshop" title="Permanent link">&para;</a></h4>
-</blockquote>
-<pre><code class="language-lua">makeShop(self: LibLevelGen.Room, locked: boolean?, force: boolean?): void
-</code></pre>
-<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">makeShop</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">locked</span><span class="p">:</span> <span class="n">boolean</span><span class="err">?</span><span class="p">,</span> <span class="n">force</span><span class="p">:</span> <span class="n">boolean</span><span class="err">?</span><span class="p">):</span> <span class="n">void</span>
+</code></pre></div>
 <p>Make the room a shop. TODO: move into a separate module</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
@@ -2330,7 +2239,6 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>Returns</strong>: <code>void</code></p>
 </blockquote>
 <hr />
 <h3 id="liblevelgenroomfillparameters-extends-liblevelgentiledata">LibLevelGen.RoomFillParameters <em>extends</em> LibLevelGen.TileData<a class="headerlink" href="#liblevelgenroomfillparameters-extends-liblevelgentiledata" title="Permanent link">&para;</a></h3>
@@ -2418,7 +2326,7 @@
 </ul>
 <hr />
 <h3 id="roomtype">room.Type<a class="headerlink" href="#roomtype" title="Permanent link">&para;</a></h3>
-<p><em>no description</em></p>
+<p>Helper enum containing common <code>room.Flag</code> bitmasks.</p>
 <p><strong>Entries</strong>:  </p>
 <ul>
 <li><code>REGULAR</code>  </li>
@@ -2430,6 +2338,21 @@
 <li><code>SECRET_SHOP</code>  </li>
 <li><code>OTHER</code>  </li>
 </ul>
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
+<h3 id="roomdirection">room.Direction<a class="headerlink" href="#roomdirection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">room</span><span class="p">.</span><span class="n">Direction</span> <span class="o">=</span> <span class="n">action</span><span class="p">.</span><span class="n">Direction</span> <span class="c1">-- From necro.game.system.Action</span>
+</code></pre></div>
+<h3 id="roomdirectionvector">room.DirectionVector<a class="headerlink" href="#roomdirectionvector" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">room</span><span class="p">.</span><span class="n">DirectionVector</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    <span class="p">[</span><span class="n">room</span><span class="p">.</span><span class="n">Direction</span><span class="p">.</span><span class="n">LEFT</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="p">[</span><span class="n">room</span><span class="p">.</span><span class="n">Direction</span><span class="p">.</span><span class="n">RIGHT</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>    <span class="p">[</span><span class="n">room</span><span class="p">.</span><span class="n">Direction</span><span class="p">.</span><span class="n">UP</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">},</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>    <span class="p">[</span><span class="n">room</span><span class="p">.</span><span class="n">Direction</span><span class="p">.</span><span class="n">DOWN</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="tribool-alias">Tribool alias<a class="headerlink" href="#tribool-alias" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1">--- @alias TriBool boolean | nil</span>
+</code></pre></div>
 
 
 
