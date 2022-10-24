@@ -778,22 +778,77 @@
 <h3 id="liblevelgensecretshop">LibLevelGen.SecretShop<a class="headerlink" href="#liblevelgensecretshop" title="Permanent link">&para;</a></h3>
 <p><em>no description</em></p>
 <p><strong>Properties</strong>:  </p>
-<blockquote>
-<ul>
-<li><code>name</code>: <code>string</code> - friendlyName for logging/error message purposes  </li>
-<li><code>w</code>: <code>number</code> - (default: 7) - width of the room  </li>
-<li><code>h</code>: <code>number</code> - (default: 10) - height of the room  </li>
-<li><code>runeX</code>: <code>number</code> - (default: 3) - x position of the travel rune  </li>
-<li><code>runeY</code>: <code>number</code> - (default: 7) - y position of the travel rune  </li>
-<li><code>canHaveSSS</code>: <code>boolean</code> - (default: false) - determines whether a super secret shop can be created above the secret shop  </li>
-<li><code>tileType</code>: <code>string</code> - (default: StoneWallCracked) - wall where the rune spawns will be converted to this type  </li>
-<li><code>convertibleTiles</code>: <code>string[]</code> - (default: {"DirtWall", "StoneWall", "CatacombWall"}) - tiles where the rune can be placed. Will be converted to tile specified by tileType.  </li>
-<li><code>runeType</code>: <code>string</code> - entity type of the shop travel rune  </li>
-<li><code>clb</code>: <code>fun(room: LibLevelGen.Room)</code> - callback function that gets called with the room as the parameter when the shop is spawned  </li>
-<li><code>levelRange</code>: <code>number[]</code> - range of level numbers on which the shop is allowed to spawn, in format {minLvl, maxLvl} (inclusive). If not specified, there are no restrictions (apart from not being able to spawn on boss levels)  </li>
-<li><code>SSScurrency</code>: <code>string</code> - <em>no description</em></li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>friendlyName for logging/error message purposes</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td><code>number</code></td>
+<td>(default: 7) - width of the room</td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td><code>number</code></td>
+<td>(default: 10) - height of the room</td>
+</tr>
+<tr>
+<td><code>runeX</code></td>
+<td><code>number</code></td>
+<td>(default: 3) - x position of the travel rune</td>
+</tr>
+<tr>
+<td><code>runeY</code></td>
+<td><code>number</code></td>
+<td>(default: 7) - y position of the travel rune</td>
+</tr>
+<tr>
+<td><code>canHaveSSS</code></td>
+<td><code>boolean</code></td>
+<td>(default: false) - determines whether a super secret shop can be created above the secret shop</td>
+</tr>
+<tr>
+<td><code>tileType</code></td>
+<td><code>string</code></td>
+<td>(default: StoneWallCracked) - wall where the rune spawns will be converted to this type</td>
+</tr>
+<tr>
+<td><code>convertibleTiles</code></td>
+<td><code>string[]</code></td>
+<td>(default: {"DirtWall", "StoneWall", "CatacombWall"}) - tiles where the rune can be placed. Will be converted to tile specified by tileType.</td>
+</tr>
+<tr>
+<td><code>runeType</code></td>
+<td><code>string</code></td>
+<td>entity type of the shop travel rune</td>
+</tr>
+<tr>
+<td><code>clb</code></td>
+<td><code>fun(room: LibLevelGen.Room)</code></td>
+<td>callback function that gets called with the room as the parameter when the shop is spawned</td>
+</tr>
+<tr>
+<td><code>levelRange</code></td>
+<td><code>number[]</code></td>
+<td>range of level numbers on which the shop is allowed to spawn, in format {minLvl, maxLvl} (inclusive). If not specified, there are no restrictions (apart from not being able to spawn on boss levels)</td>
+</tr>
+<tr>
+<td><code>SSScurrency</code></td>
+<td><code>string</code></td>
+<td><em>no description</em></td>
+</tr>
+</tbody>
+</table>
 <h2 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="secretshoptype">secretShop.Type<a class="headerlink" href="#secretshoptype" title="Permanent link">&para;</a></h3>

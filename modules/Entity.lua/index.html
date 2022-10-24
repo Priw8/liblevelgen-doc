@@ -813,19 +813,62 @@
 <h3 id="liblevelgenentity">LibLevelGen.Entity<a class="headerlink" href="#liblevelgenentity" title="Permanent link">&para;</a></h3>
 <p>Represents a LibLevelGen entity object</p>
 <p><strong>Properties</strong>:  </p>
-<blockquote>
-<ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - Instance this entity belongs to  </li>
-<li><code>type</code>: <code>string</code> - Entity type  </li>
-<li><code>x</code>: <code>number</code> - Entity X coordinate relative, relative to the room it's in  </li>
-<li><code>y</code>: <code>number</code> - Entity Y coordinate relative, relative to the room it's in  </li>
-<li><code>level</code>: <code>number</code> - Entity level  </li>
-<li><code>saleCurrency</code>: <code>string | nil</code> - If entity has a price, this determines the currency  </li>
-<li><code>price</code>: <code>table | nil</code> - Entity price data, in the format set by Synchrony's <code>levelUtils.setEntityPriceTag</code>  </li>
-<li><code>attributes</code>: <code>table | nil</code> - Additional entity attributes. Use <code>.setAttribute</code> and <code>.getOrCreateAttribute</code> methods to manipulate this table.  </li>
-<li><code>inventory</code>: <code>table | nil</code> - Entity's inventory. Use the <code>.giveItem</code> method to manipulate this table.  </li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>LibLegelGen.Instance</code></td>
+<td>Instance this entity belongs to</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Entity type</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td><code>number</code></td>
+<td>Entity X coordinate relative, relative to the room it's in</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td><code>number</code></td>
+<td>Entity Y coordinate relative, relative to the room it's in</td>
+</tr>
+<tr>
+<td><code>level</code></td>
+<td><code>number</code></td>
+<td>Entity level</td>
+</tr>
+<tr>
+<td><code>saleCurrency</code></td>
+<td><code>string | nil</code></td>
+<td>If entity has a price, this determines the currency</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td><code>table | nil</code></td>
+<td>Entity price data, in the format set by Synchrony's <code>levelUtils.setEntityPriceTag</code></td>
+</tr>
+<tr>
+<td><code>attributes</code></td>
+<td><code>table | nil</code></td>
+<td>Additional entity attributes. Use <code>.setAttribute</code> and <code>.getOrCreateAttribute</code> methods to manipulate this table.</td>
+</tr>
+<tr>
+<td><code>inventory</code></td>
+<td><code>table | nil</code></td>
+<td>Entity's inventory. Use the <code>.giveItem</code> method to manipulate this table.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Methods</strong>:  </p>
 <blockquote>
 <hr />
@@ -834,22 +877,37 @@
 </code></pre></div>
 <p>Set value of the given component field for when the entity is spawned.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
-</li>
-<li>
-<p><code>component</code>: <code>string</code> - Component name  </p>
-</li>
-<li>
-<p><code>field</code>: <code>string</code> - Field in the given component  </p>
-</li>
-<li>
-<p><code>value</code>: <code>any</code> - Value to write to the field  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Entity</code></td>
+<td>The entity</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td><code>string</code></td>
+<td>Component name</td>
+</tr>
+<tr>
+<td><code>field</code></td>
+<td><code>string</code></td>
+<td>Field in the given component</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>any</code></td>
+<td>Value to write to the field</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitysetprice">LibLevelGen.Entity.setPrice<a class="headerlink" href="#liblevelgenentitysetprice" title="Permanent link">&para;</a></h4>
@@ -857,19 +915,32 @@
 </code></pre></div>
 <p>Set price of the entity. If price is not specified, it is automatically obtained.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - The Entity  </p>
-</li>
-<li>
-<p><code>currency?</code>: <code>"coins" | "blood"</code> - Currency type, defaults to "coins"  </p>
-</li>
-<li>
-<p><code>amount?</code>: <code>number</code> - The price value. If not specified, it's calculated automatically.  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Entity</code></td>
+<td>The Entity</td>
+</tr>
+<tr>
+<td><code>currency?</code></td>
+<td><code>"coins" | "blood"</code></td>
+<td>Currency type, defaults to "coins"</td>
+</tr>
+<tr>
+<td><code>amount?</code></td>
+<td><code>number</code></td>
+<td>The price value. If not specified, it's calculated automatically.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitysetdiscount">LibLevelGen.Entity.setDiscount<a class="headerlink" href="#liblevelgenentitysetdiscount" title="Permanent link">&para;</a></h4>
@@ -877,16 +948,27 @@
 </code></pre></div>
 <p>Set discount on the price.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
-</li>
-<li>
-<p><code>discount</code>: <code>number</code> - The discount factor. <code>0.5</code> will result in the price being halved.  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Entity</code></td>
+<td>The entity</td>
+</tr>
+<tr>
+<td><code>discount</code></td>
+<td><code>number</code></td>
+<td>The discount factor. <code>0.5</code> will result in the price being halved.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitysetquantity">LibLevelGen.Entity.setQuantity<a class="headerlink" href="#liblevelgenentitysetquantity" title="Permanent link">&para;</a></h4>
@@ -894,16 +976,27 @@
 </code></pre></div>
 <p>Set quantity (itemStack.quantity field)</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
-</li>
-<li>
-<p><code>quantity</code>: <code>number</code> - The quantity amount to set  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Entity</code></td>
+<td>The entity</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td><code>number</code></td>
+<td>The quantity amount to set</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitygiveitem">LibLevelGen.Entity.giveItem<a class="headerlink" href="#liblevelgenentitygiveitem" title="Permanent link">&para;</a></h4>
@@ -911,16 +1004,27 @@
 </code></pre></div>
 <p>Add an item to entity's inventory.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
-</li>
-<li>
-<p><code>item</code>: <code>string | LibLevelGen.Entity</code> - Entity type or an existing entity to add to the inventory.  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Entity</code></td>
+<td>The entity</td>
+</tr>
+<tr>
+<td><code>item</code></td>
+<td><code>string | LibLevelGen.Entity</code></td>
+<td>Entity type or an existing entity to add to the inventory.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitygetorcreateattribute">LibLevelGen.Entity.getOrCreateAttribute<a class="headerlink" href="#liblevelgenentitygetorcreateattribute" title="Permanent link">&para;</a></h4>
@@ -928,19 +1032,32 @@
 </code></pre></div>
 <p>Get an attribute of the entity. If it doesn't exist, it gets created and added (with no value specified)</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
-</li>
-<li>
-<p><code>component</code>: <code>string</code> - Component name  </p>
-</li>
-<li>
-<p><code>field</code>: <code>string</code> - Field name in the given component  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Entity</code></td>
+<td>The entity</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td><code>string</code></td>
+<td>Component name</td>
+</tr>
+<tr>
+<td><code>field</code></td>
+<td><code>string</code></td>
+<td>Field name in the given component</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h4 id="liblevelgenentitystoreitem">LibLevelGen.Entity.storeItem<a class="headerlink" href="#liblevelgenentitystoreitem" title="Permanent link">&para;</a></h4>
@@ -948,16 +1065,27 @@
 </code></pre></div>
 <p>Add an item to entity's storage.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Entity</code> - The entity  </p>
-</li>
-<li>
-<p><code>item</code>: <code>string</code> - Item entity type  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Entity</code></td>
+<td>The entity</td>
+</tr>
+<tr>
+<td><code>item</code></td>
+<td><code>string</code></td>
+<td>Item entity type</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 </blockquote>
 <h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>

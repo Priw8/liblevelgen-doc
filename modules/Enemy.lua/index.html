@@ -770,17 +770,52 @@
 <h3 id="liblevelgenenemydata">LibLevelGen.EnemyData<a class="headerlink" href="#liblevelgenenemydata" title="Permanent link">&para;</a></h3>
 <p>Class containing data related to processing it by the various level generation components.</p>
 <p><strong>Properties</strong>:  </p>
-<blockquote>
-<ul>
-<li><code>entity</code>: <code>string</code> - The base entity type  </li>
-<li><code>maxLevel</code>: <code>number</code> - Max level the entity type can have  </li>
-<li><code>id</code>: <code>number[]</code> - Numeric IDs for every level the entity has  </li>
-<li><code>warRingUpgrade</code>: <code>table&lt;number,number&gt;</code> - Table containing a mapping which specifies which levels get converted to which when ring of war is in effect  </li>
-<li><code>warShrineUpgrade</code>: <code>table&lt;number,number&gt;</code> - Table containing a mapping which specifies which levels get converted to which when shrine of war is in effect  </li>
-<li><code>peaceRingDowngrade</code>: <code>table&lt;number,number&gt;</code> - Table containing a mapping which specifies which levels get converted to which when ring of peace is in effect  </li>
-<li><code>challengeCharacterDowngrade</code>: <code>table&lt;number,number&gt;</code> - Table containing a mapping which specifies which levels get converted to which when playing a challenge character (Monk/Coda/Aria/Bolt - used to downgrade black bats into blue)  </li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>entity</code></td>
+<td><code>string</code></td>
+<td>The base entity type</td>
+</tr>
+<tr>
+<td><code>maxLevel</code></td>
+<td><code>number</code></td>
+<td>Max level the entity type can have</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number[]</code></td>
+<td>Numeric IDs for every level the entity has</td>
+</tr>
+<tr>
+<td><code>warRingUpgrade</code></td>
+<td><code>table&lt;number,number&gt;</code></td>
+<td>Table containing a mapping which specifies which levels get converted to which when ring of war is in effect</td>
+</tr>
+<tr>
+<td><code>warShrineUpgrade</code></td>
+<td><code>table&lt;number,number&gt;</code></td>
+<td>Table containing a mapping which specifies which levels get converted to which when shrine of war is in effect</td>
+</tr>
+<tr>
+<td><code>peaceRingDowngrade</code></td>
+<td><code>table&lt;number,number&gt;</code></td>
+<td>Table containing a mapping which specifies which levels get converted to which when ring of peace is in effect</td>
+</tr>
+<tr>
+<td><code>challengeCharacterDowngrade</code></td>
+<td><code>table&lt;number,number&gt;</code></td>
+<td>Table containing a mapping which specifies which levels get converted to which when playing a challenge character (Monk/Coda/Aria/Bolt - used to downgrade black bats into blue)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="enemytype">enemy.Type<a class="headerlink" href="#enemytype" title="Permanent link">&para;</a></h3>

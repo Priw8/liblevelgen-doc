@@ -800,11 +800,22 @@
 </code></pre></div>
 <p>Generate a random 32-bit integer number.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Rng</code></td>
+<td>The RNG instance</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>number</code></p>
 <hr />
 <h4 id="liblevelgenrngrandfloatrange">LibLevelGen.Rng.randFloatRange<a class="headerlink" href="#liblevelgenrngrandfloatrange" title="Permanent link">&para;</a></h4>
@@ -812,19 +823,32 @@
 </code></pre></div>
 <p>Generate a random float within the given range.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
-</li>
-<li>
-<p><code>min</code>: <code>number</code> - Minimum value  </p>
-</li>
-<li>
-<p><code>max</code>: <code>number</code> - Maximum value  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Rng</code></td>
+<td>The RNG instance</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td><code>number</code></td>
+<td>Minimum value</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>number</code></td>
+<td>Maximum value</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>number</code></p>
 <hr />
 <h4 id="liblevelgenrngrandintrange">LibLevelGen.Rng.randIntRange<a class="headerlink" href="#liblevelgenrngrandintrange" title="Permanent link">&para;</a></h4>
@@ -832,19 +856,32 @@
 </code></pre></div>
 <p>Generate a random integer within the given range.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
-</li>
-<li>
-<p><code>min</code>: <code>number</code> - Minimum value (inclusive)  </p>
-</li>
-<li>
-<p><code>max</code>: <code>number</code> - Maximum value (not inclusive)  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Rng</code></td>
+<td>The RNG instance</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td><code>number</code></td>
+<td>Minimum value (inclusive)</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>number</code></td>
+<td>Maximum value (not inclusive)</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>number</code></p>
 <hr />
 <h4 id="liblevelgenrngrandchoice">LibLevelGen.Rng.randChoice<a class="headerlink" href="#liblevelgenrngrandchoice" title="Permanent link">&para;</a></h4>
@@ -852,19 +889,32 @@
 </code></pre></div>
 <p>Choose a random element from the given table.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
-</li>
-<li>
-<p><code>t</code>: <code>T[]</code> - Elements to choose from  </p>
-</li>
-<li>
-<p><code>remove</code>: <code>boolean</code> - If true, element will be removed from the original table.  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Rng</code></td>
+<td>The RNG instance</td>
+</tr>
+<tr>
+<td><code>t</code></td>
+<td><code>T[]</code></td>
+<td>Elements to choose from</td>
+</tr>
+<tr>
+<td><code>remove</code></td>
+<td><code>boolean</code></td>
+<td>If true, element will be removed from the original table.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>T</code></p>
 <hr />
 <h4 id="liblevelgenrngrandchoicemany">LibLevelGen.Rng.randChoiceMany<a class="headerlink" href="#liblevelgenrngrandchoicemany" title="Permanent link">&para;</a></h4>
@@ -872,22 +922,37 @@
 </code></pre></div>
 <p>Choose a n elements from the given table.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
-</li>
-<li>
-<p><code>choices</code>: <code>T[]</code> - Elements to choose from  </p>
-</li>
-<li>
-<p><code>n</code>: <code>number</code> - Number of elements to choose  </p>
-</li>
-<li>
-<p><code>remove</code>: <code>boolean</code> - If true, element will be removed from the original table.  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Rng</code></td>
+<td>The RNG instance</td>
+</tr>
+<tr>
+<td><code>choices</code></td>
+<td><code>T[]</code></td>
+<td>Elements to choose from</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+<td>Number of elements to choose</td>
+</tr>
+<tr>
+<td><code>remove</code></td>
+<td><code>boolean</code></td>
+<td>If true, element will be removed from the original table.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>T</code></p>
 <hr />
 <h4 id="liblevelgenrngrandchance">LibLevelGen.Rng.randChance<a class="headerlink" href="#liblevelgenrngrandchance" title="Permanent link">&para;</a></h4>
@@ -895,16 +960,27 @@
 </code></pre></div>
 <p>Randomly returns boolean based on given probability.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
-</li>
-<li>
-<p><code>probability</code>: <code>number</code> - Value between 0.0 and 1.0  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Rng</code></td>
+<td>The RNG instance</td>
+</tr>
+<tr>
+<td><code>probability</code></td>
+<td><code>number</code></td>
+<td>Value between 0.0 and 1.0</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>boolean</code></p>
 <hr />
 <h4 id="liblevelgenrngrandweightedchoice">LibLevelGen.Rng.randWeightedChoice<a class="headerlink" href="#liblevelgenrngrandweightedchoice" title="Permanent link">&para;</a></h4>
@@ -912,16 +988,27 @@
 </code></pre></div>
 <p>Randomly choose a value from the weighted choice data.</p>
 <p><strong>Parameters</strong>:  </p>
-<blockquote>
-<ul>
-<li>
-<p><code>self</code>: <code>LibLevelGen.Rng</code> - The RNG instance  </p>
-</li>
-<li>
-<p><code>chances</code>: <code>table&lt;string,number&gt;</code> - Mapping of values that can be chosen to their probability (does not have to add up to 1)  </p>
-</li>
-</ul>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td><code>LibLevelGen.Rng</code></td>
+<td>The RNG instance</td>
+</tr>
+<tr>
+<td><code>chances</code></td>
+<td><code>table&lt;string,number&gt;</code></td>
+<td>Mapping of values that can be chosen to their probability (does not have to add up to 1)</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>string</code></p>
 </blockquote>
 <h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>

@@ -9,5 +9,9 @@ blockquote ul {
 }
 
 code {
-    word-break: keep-all;
+    word-break: keep-all !important;
+}
+
+table {
+    font-size: 0.69rem !important;
 }
