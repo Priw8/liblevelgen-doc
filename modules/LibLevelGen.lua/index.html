@@ -953,9 +953,22 @@
 </code></pre></div>
 <p>Creates a new libLevelGen generator instance.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>ev</code>: <code>LibLevelGen.LevelGenerationEventParameters</code> - Parameters from the level generation event  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ev</code></td>
+<td><code>LibLevelGen.LevelGenerationEventParameters</code></td>
+<td>Parameters from the level generation event</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLegelGen.Instance</code></p>
 <hr />
 <h3 id="liblevelgenregistergenerator">libLevelGen.registerGenerator<a class="headerlink" href="#liblevelgenregistergenerator" title="Permanent link">&para;</a></h3>
@@ -963,12 +976,37 @@
 </code></pre></div>
 <p>Registers a new generator (it will appear in the extra modes menu). Returns IDs of the regular and seeded game modes created.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>name</code>: <code>string</code> - Name of the generator  </li>
-<li><code>func</code>: <code>function</code> - The callback function that will be called to generate the level  </li>
-<li><code>data?</code>: <code>LibLevelGen.Config</code> - Generator configuration, fields can be left empty to provide default values.  </li>
-<li><code>modeData?</code>: <code>GameSession.Mode.Data</code> - Game mode data, fields can be left empty to provide default values.  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Name of the generator</td>
+</tr>
+<tr>
+<td><code>func</code></td>
+<td><code>function</code></td>
+<td>The callback function that will be called to generate the level</td>
+</tr>
+<tr>
+<td><code>data?</code></td>
+<td><code>LibLevelGen.Config</code></td>
+<td>Generator configuration, fields can be left empty to provide default values.</td>
+</tr>
+<tr>
+<td><code>modeData?</code></td>
+<td><code>GameSession.Mode.Data</code></td>
+<td>Game mode data, fields can be left empty to provide default values.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>number,number</code></p>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />

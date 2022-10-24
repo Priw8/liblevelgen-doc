@@ -771,13 +771,42 @@
 </code></pre></div>
 <p>Create a new LibLevelGen entity. Do note that instead of using this, you should use methods provided by the <code>LibLevelGen.Room</code> and <code>LibLevelGen.Tile</code> classes, which will place the enemy in the level automatically.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - Parent instance of the entity  </li>
-<li><code>type</code>: <code>string</code> - Entity type  </li>
-<li><code>x?</code>: <code>number</code> - X coordinate of the entity, relative to the room it's in. Defaults to -1  </li>
-<li><code>y?</code>: <code>number</code> - Y coordinate of the entity, relative to the room it's in Defaults to -1  </li>
-<li><code>level?</code>: <code>number | number[]</code> - Level of the entity, if a table is specified it's picked randomly from the provided values. Defaults to 1.  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>LibLegelGen.Instance</code></td>
+<td>Parent instance of the entity</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Entity type</td>
+</tr>
+<tr>
+<td><code>x?</code></td>
+<td><code>number</code></td>
+<td>X coordinate of the entity, relative to the room it's in. Defaults to -1</td>
+</tr>
+<tr>
+<td><code>y?</code></td>
+<td><code>number</code></td>
+<td>Y coordinate of the entity, relative to the room it's in Defaults to -1</td>
+</tr>
+<tr>
+<td><code>level?</code></td>
+<td><code>number | number[]</code></td>
+<td>Level of the entity, if a table is specified it's picked randomly from the provided values. Defaults to 1.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />

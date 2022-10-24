@@ -7,3 +7,7 @@ blockquote {
 blockquote ul {
     padding: 0;
 }
+
+code {
+    word-break: keep-all;
+}

@@ -759,9 +759,22 @@
 </code></pre></div>
 <p>Get chest entity type for a given entity type.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>itemType</code>: <code>string</code> - Item entity type.  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>itemType</code></td>
+<td><code>string</code></td>
+<td>Item entity type.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>string</code></p>
 <hr />
 <h3 id="lootcreatechestwithitem">loot.createChestWithItem<a class="headerlink" href="#lootcreatechestwithitem" title="Permanent link">&para;</a></h3>
@@ -769,13 +782,42 @@
 </code></pre></div>
 <p>Creates a chest containing a given item type.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of generated level.  </li>
-<li><code>itemType</code>: <code>string</code> - Item type to put inside of the chest.  </li>
-<li><code>hidden</code>: <code>boolean</code> - Whether the chest is only revealed when next to it.  </li>
-<li><code>entityType?</code>: <code>string</code> - Optional chest entity type (defaults to chest color based on the item)  </li>
-<li><code>entityLevel?</code>: <code>number</code> - Optional chest entity level  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>LibLegelGen.Instance</code></td>
+<td>The LibLevelGen instance of generated level.</td>
+</tr>
+<tr>
+<td><code>itemType</code></td>
+<td><code>string</code></td>
+<td>Item type to put inside of the chest.</td>
+</tr>
+<tr>
+<td><code>hidden</code></td>
+<td><code>boolean</code></td>
+<td>Whether the chest is only revealed when next to it.</td>
+</tr>
+<tr>
+<td><code>entityType?</code></td>
+<td><code>string</code></td>
+<td>Optional chest entity type (defaults to chest color based on the item)</td>
+</tr>
+<tr>
+<td><code>entityLevel?</code></td>
+<td><code>number</code></td>
+<td>Optional chest entity level</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h3 id="lootcreatechest">loot.createChest<a class="headerlink" href="#lootcreatechest" title="Permanent link">&para;</a></h3>
@@ -783,20 +825,54 @@
 </code></pre></div>
 <p>Creates a chest containing random item.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of the generated level.  </li>
-<li><code>args?</code>: <code>LibLevelGen.ChestChoiceArguments</code> - Extra parameters for the chest.  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>LibLegelGen.Instance</code></td>
+<td>The LibLevelGen instance of the generated level.</td>
+</tr>
+<tr>
+<td><code>args?</code></td>
+<td><code>LibLevelGen.ChestChoiceArguments</code></td>
+<td>Extra parameters for the chest.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h3 id="lootcreategold">loot.createGold<a class="headerlink" href="#lootcreategold" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">createGold</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">LibLegelGen</span><span class="p">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span>
 </code></pre></div>
 <p>Create a gold entity.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of the generated level.  </li>
-<li><code>amount</code>: <code>number</code> - gold amount to create  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>LibLegelGen.Instance</code></td>
+<td>The LibLevelGen instance of the generated level.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td><code>number</code></td>
+<td>gold amount to create</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h3 id="lootcreateurn">loot.createUrn<a class="headerlink" href="#lootcreateurn" title="Permanent link">&para;</a></h3>
@@ -804,9 +880,22 @@
 </code></pre></div>
 <p>Create an urn entity.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of the generated level.  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>LibLegelGen.Instance</code></td>
+<td>The LibLevelGen instance of the generated level.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h3 id="lootcreatecrate">loot.createCrate<a class="headerlink" href="#lootcreatecrate" title="Permanent link">&para;</a></h3>
@@ -814,11 +903,32 @@
 </code></pre></div>
 <p>Create a create entity.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>instance</code>: <code>LibLegelGen.Instance</code> - The LibLevelGen instance of the generated level.  </li>
-<li><code>crateTypeOverride?</code>: <code>string</code> - Force the crate to be a specific entity type.  </li>
-<li><code>crateLevelOverride?</code>: <code>number</code> - Force the crate to have a specific level.  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>LibLegelGen.Instance</code></td>
+<td>The LibLevelGen instance of the generated level.</td>
+</tr>
+<tr>
+<td><code>crateTypeOverride?</code></td>
+<td><code>string</code></td>
+<td>Force the crate to be a specific entity type.</td>
+</tr>
+<tr>
+<td><code>crateLevelOverride?</code></td>
+<td><code>number</code></td>
+<td>Force the crate to have a specific level.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Entity</code></p>
 <hr />
 <h3 id="lootplacechests">loot.placeChests<a class="headerlink" href="#lootplacechests" title="Permanent link">&para;</a></h3>
@@ -826,18 +936,44 @@
 </code></pre></div>
 <p>Place remaining chests.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>segment</code>: <code>LibLevelGen.Segment</code> - Segment in which the remaining chests should be placed.  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>segment</code></td>
+<td><code>LibLevelGen.Segment</code></td>
+<td>Segment in which the remaining chests should be placed.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h3 id="lootplacecrates">loot.placeCrates<a class="headerlink" href="#lootplacecrates" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">loot</span><span class="p">.</span><span class="n">placeCrates</span><span class="p">(</span><span class="n">segment</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Segment</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Place remaining crates.</p>
 <p><strong>Parameters</strong>:  </p>
-<ul>
-<li><code>segment</code>: <code>LibLevelGen.Segment</code> - Segment in which the remaining crates should be placed.  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>segment</code></td>
+<td><code>LibLevelGen.Segment</code></td>
+<td>Segment in which the remaining crates should be placed.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="liblevelgenchestchoicearguments-extends-itemgenerationchoicearguments">LibLevelGen.ChestChoiceArguments <em>extends</em> ItemGeneration.ChoiceArguments<a class="headerlink" href="#liblevelgenchestchoicearguments-extends-itemgenerationchoicearguments" title="Permanent link">&para;</a></h3>
