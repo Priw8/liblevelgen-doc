@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://priw8.github.io/liblevelgen-doc/modules/Room.lua/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
@@ -2056,108 +2056,108 @@ the condition check result must match the value specified.</p>
 </blockquote>
 <hr />
 <h4 id="liblevelgenroomplacewalltorches">LibLevelGen.Room.placeWallTorches<a class="headerlink" href="#liblevelgenroomplacewalltorches" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">placeWallTorches</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="n">string</span><span class="o">|</span><span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">placeWallTorches</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="nb">type</span><span class="err">?</span><span class="p">:</span> <span class="n">string</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Place given amount of wall torches randomly on elligible tiles.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </p>
 </li>
 <li>
-<p><code>num</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>num</code>: <code>number</code> - Amount of weall torches to place.  </p>
 </li>
 <li>
-<p><code>type</code>: <code>string|nil</code> - <em>no description</em>  </p>
+<p><code>type?</code>: <code>string</code> - Optional walltorch entity type override.  </p>
 </li>
 </ul>
 </blockquote>
 <hr />
 <h4 id="liblevelgenroomplaceentity">LibLevelGen.Room.placeEntity<a class="headerlink" href="#liblevelgenroomplaceentity" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">placeEntity</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">number</span><span class="o">|</span><span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">placeEntity</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="err">?</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Place entity on the given tile (wrapper around tile:placeEntity that checks if tile is not nil)</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </p>
 </li>
 <li>
-<p><code>tile</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+<p><code>tile</code>: <code>LibLevelGen.Tile</code> - The tile to place the entity on.  </p>
 </li>
 <li>
-<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - Existing entity or an entity type to spawn.  </p>
 </li>
 <li>
-<p><code>level</code>: <code>number|nil</code> - <em>no description</em>  </p>
+<p><code>level?</code>: <code>number</code> - Optional entity level if passing a string entity type.  </p>
 </li>
 </ul>
 </blockquote>
 <hr />
 <h4 id="liblevelgenroomplaceentityat">LibLevelGen.Room.placeEntityAt<a class="headerlink" href="#liblevelgenroomplaceentityat" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">placeEntityAt</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">number</span><span class="o">|</span><span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">placeEntityAt</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="err">?</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Place entity on a tile on given coordinates.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </p>
 </li>
 <li>
-<p><code>x</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>x</code>: <code>number</code> - X coordinate.  </p>
 </li>
 <li>
-<p><code>y</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>y</code>: <code>number</code> - Y coordinate.  </p>
 </li>
 <li>
-<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - Existing entity or an entity type to spawn.  </p>
 </li>
 <li>
-<p><code>level</code>: <code>number|nil</code> - <em>no description</em>  </p>
+<p><code>level?</code>: <code>number</code> - Optional entity level if passing a string entity type.  </p>
 </li>
 </ul>
 </blockquote>
 <hr />
 <h4 id="liblevelgenroomplaceentityrand">LibLevelGen.Room.placeEntityRand<a class="headerlink" href="#liblevelgenroomplaceentityrand" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">placeEntityRand</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">number</span> <span class="o">|</span> <span class="kc">nil</span><span class="p">):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">placeEntityRand</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">,</span> <span class="n">entityOrType</span><span class="p">:</span> <span class="n">string</span> <span class="o">|</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Entity</span><span class="p">,</span> <span class="n">level</span><span class="err">?</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Place entity on a random tile that meets requrements.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </p>
 </li>
 <li>
-<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - Requirements used to select the tile.  </p>
 </li>
 <li>
-<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - <em>no description</em>  </p>
+<p><code>entityOrType</code>: <code>string | LibLevelGen.Entity</code> - Existing entity or an entity type to spawn.  </p>
 </li>
 <li>
-<p><code>level</code>: <code>number | nil</code> - <em>no description</em>  </p>
+<p><code>level?</code>: <code>number</code> - Optional entity level if passing a string entity type.  </p>
 </li>
 </ul>
 </blockquote>
 <hr />
 <h4 id="liblevelgenroomplacewire">LibLevelGen.Room.placeWire<a class="headerlink" href="#liblevelgenroomplacewire" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">placeWire</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">:</span> <span class="n">number</span> <span class="n">Unused</span><span class="p">,</span> <span class="n">reserved</span><span class="p">):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">placeWire</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Place wire on the given tile.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room  </p>
 </li>
 <li>
-<p><code>tile</code>: <code>LibLevelGen.Tile</code> - <em>no description</em>  </p>
+<p><code>tile</code>: <code>LibLevelGen.Tile</code> - Tile to place the wire on.  </p>
 </li>
 <li>
-<p><code>connectivity</code>: <code>number Unused, reserved</code> - <em>no description</em>  </p>
+<p><code>connectivity</code>: <code>number</code> - Unused, reserved.  </p>
 </li>
 </ul>
 </blockquote>
@@ -2169,7 +2169,7 @@ the condition check result must match the value specified.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
-<li><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </li>
+<li><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </li>
 </ul>
 </blockquote>
 <hr />
@@ -2180,22 +2180,22 @@ the condition check result must match the value specified.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
-<li><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </li>
+<li><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </li>
 </ul>
 </blockquote>
 <hr />
 <h4 id="liblevelgenroomplaceminiboss">LibLevelGen.Room.placeMiniboss<a class="headerlink" href="#liblevelgenroomplaceminiboss" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">placeMiniboss</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">minibosses</span><span class="p">:</span> <span class="n">table</span> <span class="n">In</span> <span class="n">format</span> <span class="p">{{</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">level</span><span class="p">},</span> <span class="p">...}):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">placeMiniboss</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">minibosses</span><span class="p">:</span> <span class="n">table</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Place a miniboss in the room (assumes that the room is an exit room).</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </p>
 </li>
 <li>
-<p><code>minibosses</code>: <code>table In format {{"type", level}, ...}</code> - <em>no description</em>  </p>
+<p><code>minibosses</code>: <code>table</code> - In format <code>{{"type", level}, ...}</code>.  </p>
 </li>
 </ul>
 </blockquote>
@@ -2208,16 +2208,16 @@ the condition check result must match the value specified.</p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </p>
 </li>
 <li>
-<p><code>sourceType</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>sourceType</code>: <code>string</code> - Tile type to convert from.  </p>
 </li>
 <li>
-<p><code>targetType</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>targetType</code>: <code>string</code> - Tile type to convert to.  </p>
 </li>
 <li>
-<p><code>ratio</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>ratio</code>: <code>number</code> - Chance of the conversion happening, a float between 0.0 and 1.0.  </p>
 </li>
 </ul>
 </blockquote>
@@ -2225,65 +2225,65 @@ the condition check result must match the value specified.</p>
 <h4 id="liblevelgenroomconverttiles">LibLevelGen.Room.convertTiles<a class="headerlink" href="#liblevelgenroomconverttiles" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">convertTiles</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">sourceType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">targetType</span><span class="p">:</span> <span class="n">string</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
-<p>Convert all tiles from source type to target type.</p>
+<p>Convert all tiles from source type to target type, preserving their tileset.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </p>
 </li>
 <li>
-<p><code>sourceType</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>sourceType</code>: <code>string</code> - Tile type to convert from.  </p>
 </li>
 <li>
-<p><code>targetType</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>targetType</code>: <code>string</code> - Tile type to convert to.  </p>
 </li>
 </ul>
 </blockquote>
 <hr />
 <h4 id="liblevelgenroomspreadtile">LibLevelGen.Room.spreadTile<a class="headerlink" href="#liblevelgenroomspreadtile" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">spreadTile</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">targetType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">,</span> <span class="n">minConvert</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">maxConvert</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">initialTile</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="err">?</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">initial</span> <span class="n">tile</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">choosing</span> <span class="n">it</span> <span class="n">randomly</span><span class="p">):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">spreadTile</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">targetType</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">requirements</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">TileRequirements</span><span class="p">,</span> <span class="n">minConvert</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">maxConvert</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">initialTile</span><span class="err">?</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Tile</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Choose 1 tile that meets requirement and convert it and other nearby tiles to target type.</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room.  </p>
 </li>
 <li>
-<p><code>targetType</code>: <code>string</code> - <em>no description</em>  </p>
+<p><code>targetType</code>: <code>string</code> - Tiletype to convert the tiles to.  </p>
 </li>
 <li>
-<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - <em>no description</em>  </p>
+<p><code>requirements</code>: <code>LibLevelGen.TileRequirements</code> - The tile requirements used to pick the initial tile.  </p>
 </li>
 <li>
-<p><code>minConvert</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>minConvert</code>: <code>number</code> - Minimum number of tiles to convert.  </p>
 </li>
 <li>
-<p><code>maxConvert</code>: <code>number</code> - <em>no description</em>  </p>
+<p><code>maxConvert</code>: <code>number</code> - Maximum number of tiles to convert.  </p>
 </li>
 <li>
-<p><code>initialTile</code>: <code>LibLevelGen.Tile? can be used to specify initial tile, instead of choosing it randomly</code> - <em>no description</em>  </p>
+<p><code>initialTile?</code>: <code>LibLevelGen.Tile</code> - Can be used to specify initial tile, instead of choosing it randomly.  </p>
 </li>
 </ul>
 </blockquote>
 <hr />
 <h4 id="liblevelgenroommakeshop">LibLevelGen.Room.makeShop<a class="headerlink" href="#liblevelgenroommakeshop" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">makeShop</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">locked</span><span class="p">:</span> <span class="n">boolean</span><span class="err">?</span><span class="p">,</span> <span class="n">force</span><span class="p">:</span> <span class="n">boolean</span><span class="err">?</span><span class="p">):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">makeShop</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">locked</span><span class="err">?</span><span class="p">:</span> <span class="n">boolean</span><span class="p">,</span> <span class="n">force</span><span class="err">?</span><span class="p">:</span> <span class="n">boolean</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Make the room a shop. TODO: move into a separate module</p>
 <p><strong>Parameters</strong>:  </p>
 <blockquote>
 <ul>
 <li>
-<p><code>self</code>: <code>LibLevelGen.Room</code> - <em>no description</em>  </p>
+<p><code>self</code>: <code>LibLevelGen.Room</code> - The room  </p>
 </li>
 <li>
-<p><code>locked</code>: <code>boolean?</code> - <em>no description</em>  </p>
+<p><code>locked?</code>: <code>boolean</code> - Whether the shop should be a locked shop  </p>
 </li>
 <li>
-<p><code>force</code>: <code>boolean?</code> - <em>no description</em>  </p>
+<p><code>force?</code>: <code>boolean</code> - Whether to force shopkeeper and items to spawn even if the shopkeeper killed flag is set in runState.  </p>
 </li>
 </ul>
 </blockquote>
