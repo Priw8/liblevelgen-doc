@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://priw8.github.io/liblevelgen-doc/getting-started/01-introduction/">
+        <link rel="canonical" href="https://priw8.github.io/liblevelgen-doc/getting-started/02-basics/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
-        <title>Introduction - LibLevelGen</title>
+        <title>The basics - LibLevelGen</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#the-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              The basics
             
           </span>
         </div>
@@ -252,6 +252,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../01-introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -264,12 +278,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction
+          The basics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Introduction
+        The basics
       </a>
       
         
@@ -288,22 +302,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#setting-up-a-mod-for-testing" class="md-nav__link">
+    Setting up a mod for testing
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#main-concepts" class="md-nav__link">
-    Main concepts
+  <a href="#generating-the-first-level" class="md-nav__link">
+    Generating the first level
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-instance-the-segments-the-rooms-and-more" class="md-nav__link">
-    The instance, the segments, the rooms and more!
+  <a href="#making-things-a-bit-easier" class="md-nav__link">
+    Making things a bit easier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failmaps" class="md-nav__link">
+    Failmaps
   </a>
   
 </li>
@@ -312,20 +333,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-basics/" class="md-nav__link">
-        The basics
-      </a>
     </li>
   
 
@@ -580,22 +587,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#setting-up-a-mod-for-testing" class="md-nav__link">
+    Setting up a mod for testing
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#main-concepts" class="md-nav__link">
-    Main concepts
+  <a href="#generating-the-first-level" class="md-nav__link">
+    Generating the first level
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-instance-the-segments-the-rooms-and-more" class="md-nav__link">
-    The instance, the segments, the rooms and more!
+  <a href="#making-things-a-bit-easier" class="md-nav__link">
+    Making things a bit easier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failmaps" class="md-nav__link">
+    Failmaps
   </a>
   
 </li>
@@ -615,36 +629,81 @@
                   
 
 
-<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>LibLevelGen aims to provide an easy to use API to make level generation accassible to all, while still exposing advanced functions for people looking to do very specific things in their levels. In this section, we'll go over what you need to understand the API and the basics.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>The tutorials here assume you're already familiar with the following:</p>
-<ul>
-<li>creating a simple Necrodancer (Synchrony) mod,</li>
-<li>basic lua programming,</li>
-<li>(very) basic understanding of object-oriented programming concepts.</li>
-</ul>
-<p>I know it may seem tempting to go on with the tutorial despite not knowing these things, but keep in mind that some stuff may seem confusing if you do that. Anyhow, let's get started!</p>
-<h2 id="main-concepts">Main concepts<a class="headerlink" href="#main-concepts" title="Permanent link">&para;</a></h2>
-<p>If you've done Synchrony modding before, you're probably familiar with the ecs, components, entities, etc... However, we won't actually be using any of that here. This is because of how the level loading pipeline works:</p>
-<ul>
-<li>first, once the the level transition is initialized, the host generates the level in a special <em>serializable</em> format,</li>
-<li>then, that level data is sent to other players if we're playing an online session,</li>
-<li>finally, the level data is interpreted, and all the tiles and entities are placed.</li>
-</ul>
-<p>What this means is that no tiles and entities are actually getting placed until the last step! Because of that, all the things you normally do to spawn entities like <code>object.spawn</code> do not apply here.  </p>
-<p>LibLevelGen does the work on the first step here - generating the level in the serializable format. It's actually similar to the built-in <code>LevelBuilder</code> module, which in a way is a "lite" version of LibLevelGen. You might think it's used internally here, but that's actually not the case - <code>LevelBuilder</code> is the one that was created later, even though it was released first.</p>
-<h2 id="the-instance-the-segments-the-rooms-and-more">The instance, the segments, the rooms and more!<a class="headerlink" href="#the-instance-the-segments-the-rooms-and-more" title="Permanent link">&para;</a></h2>
-<p>LibLevelGen uses basic object-oriented programming to create its API. Generally speaking, there exists a hierarchy of object:</p>
-<ul>
-<li>an <code>instance</code> is a bit of an abstract concept and serves as the "root" of the level - it provides some utility methods and holds all other objects (most indirectly), as well as some level metadata such as the music set to play in the level.</li>
-<li>a <code>segment</code> is essentially some isolated part of the level. It will be explained later a bit more, though you might be familiar with it already since it directly translates to segments used during gameplay. A list of all segments in the level is kept in the <code>instance</code>.</li>
-<li>a <code>room</code> is a single rectangular area in a <code>segment</code>, which has the top-left corner in the given <code>x</code> and <code>y</code> coordinates and specific <code>width</code> and <code>height</code>. Rooms are stored in a <code>segment</code>.</li>
-<li>a <code>tile</code> is, well, a single tile. Tiles are kept in a <code>room</code> object, but unlike the previous objects which had no limit, a <code>room</code> can only have a specific amount of tiles - <code>room.w * room.h</code>. Rooms are also initialized with all the <code>tile</code> objects created immidiately, so you don't have to worry about checking whether a tile at the given coordinates exists or not (unless these coordinates are not in the room).</li>
-<li>finally, there's the <code>entity</code> object. These represent entities that will be spawned once the level is loaded, and are stored in a <code>tile</code> object.</li>
-</ul>
-<p>In other words, an <code>instance</code> can have an arbitrary amount of <code>segment</code> objects, a <code>segment</code> can have an arbitrary amount of <code>rooms</code>, <code>rooms</code> have a set amount of <code>tiles</code> and <code>tiles</code> can have <code>entities</code>. Hopefully, it should be pretty intuitive.</p>
-<p>In the next part, we'll go over registering a new level generator, and creating all these objects mentioned above!</p>
+<h1 id="the-basics">The basics<a class="headerlink" href="#the-basics" title="Permanent link">&para;</a></h1>
+<p>To get started, you need to install LibLevelGen (perhaps unsuprisingly). It's availagle on <a href="https://mod.io/g/crypt/m/liblevelgen">mod.io</a> and through the in-game mod browser.</p>
+<h2 id="setting-up-a-mod-for-testing">Setting up a mod for testing<a class="headerlink" href="#setting-up-a-mod-for-testing" title="Permanent link">&para;</a></h2>
+<p>Once you have it, you can create a new mod that we'll use for testing (the one used throughout the tutorial will be called <code>LibLevelGen Playground</code>).<br />
+I also recommend adding <code>LibLevelGen_io_2421628</code> as a depencency like so:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LibLevelGenPlayground&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LibLevelGen Playground&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;No description given.&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;You&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">&quot;LibLevelGen_io_2421628&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="w">       </span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;api&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;scriptPath&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LibLevelGenPlaygroundIcon.png&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&quot;banner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LibLevelGenPlaygroundBanner.png&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LibLevelGenPlayground&quot;</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+Replace 1.0.0 with the latest LibLevelGen version available (see image below):<br />
+<img alt="modio-version-location" src="../02-modio-version-location.png" /><br />
+<em>(It's a bit inconvenient right now, but in the feature Synchrony will allow automatically getting the latest available version, and this page will be edited accordingly)</em>  </p>
+<p>Of course, if you don't want to do that, you can just load LibLevelGen manually. But once you decide to release your mod, it's something you should do to prevent other people from running into errors caused by LibLevelGen not being loaded.</p>
+<h2 id="generating-the-first-level">Generating the first level<a class="headerlink" href="#generating-the-first-level" title="Permanent link">&para;</a></h2>
+<p>With all that done, we're finally ready to generate our first level! Now, because LibLevelGen is quite isolated from the rest of the game it's mostly self-contained, so you don't need a ton of <code>require</code>s. For now, we'll actually use just one:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span> <span class="n">libLevelGen</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;LibLevelGen.LibLevelGen&quot;</span>
+</code></pre></div>
+To get things going, we need to do a few things - register the level generator, define a function that generates the level and then invoke the generator. It might sound a bit daunting, but it's actually not bad at all:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">local</span> <span class="n">libLevelGen</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;LibLevelGen.LibLevelGen&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">local</span> <span class="kr">function</span> <span class="nf">myGenerator</span><span class="p">(</span><span class="n">genParams</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kr">end</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">libLevelGen</span><span class="p">.</span><span class="n">registerGenerator</span><span class="p">(</span><span class="s2">&quot;LibLevelGen Playground&quot;</span><span class="p">,</span> <span class="n">myGenerator</span><span class="p">)</span>
+</code></pre></div>
+Just like that, we registered a new level generator and a new game mode that uses our generator! You can find it by going to Extra Modes in the lobby and then to the Start Run! stairs.<br />
+<img alt="modio-version-location" src="../02-mode-menu.png" /><br />
+If we select it now, umm... Well, we get a nice black screen, because we haven't actually generated a level inside of the <code>myGenerator</code> function. Let's go ahead and do that real quick:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span> <span class="kr">function</span> <span class="nf">myGenerator</span><span class="p">(</span><span class="n">genParams</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="c1">-- Create a new instance, which will hold all the things</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="c1">-- related to the generated level.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="c1">-- We give it the genParams argument - its type is LibLevelGen.LevelGenerationEventParameters</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="c1">-- (http://priw8.github.io/liblevelgen-doc/modules/LibLevelGen.lua/#liblevelgenlevelgenerationeventparameters)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="c1">-- This argument is used to adjust certain properties of the level.</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="kd">local</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">libLevelGen</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">genParams</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="c1">-- To place the initial starting room, we need a segment.</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="c1">-- As mentioned earlier, segments are isolated collections of rooms.</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="kd">local</span> <span class="n">mainSegment</span> <span class="o">=</span> <span class="n">instance</span><span class="p">:</span><span class="n">createSegment</span><span class="p">()</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="c1">-- Finally, we can create the starting room. There&#39;s a nice helper</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="c1">-- method for that, which makes sure that our room ends up </span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="c1">-- where the player spawns!</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="n">mainSegment</span><span class="p">:</span><span class="n">createStartingRoom</span><span class="p">()</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="c1">-- Once we&#39;re done with generating the level,</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="c1">-- we need to call the finalize method.</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="n">instance</span><span class="p">:</span><span class="n">finalize</span><span class="p">()</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="kr">end</span>
+</code></pre></div>
+And thus, behold! The level!<br />
+<img alt="best-level" src="../02-best-level-ever.png" /><br />
+<em>cricket noises</em>  </p>
+<h2 id="making-things-a-bit-easier">Making things a bit easier<a class="headerlink" href="#making-things-a-bit-easier" title="Permanent link">&para;</a></h2>
+<p>Now, when you spawned you likely couldn't see the entire level because it's heckin' dark in there (unless your character had a torch). For testing level generation, I recommend having a character that can move with fixed beat and starts with a map. I actually made a mod just for that: <a href="https://mod.io/g/crypt/m/DebugBard">DebugBard</a>.</p>
+<p>It's also advised to set the level restart hotkey to something easy to access, because you'll be using it. Like a lot. My personal preference is the [Space] key.</p>
+<h2 id="failmaps">Failmaps<a class="headerlink" href="#failmaps" title="Permanent link">&para;</a></h2>
+<p><strong>Note</strong>: in the section below, I mention getting an error message. In the current version of the game, errors in the <code>levelGenerate</code> event only produce an error in the log file. This will be changed to give your favourite red text on the screen in the next version.</p>
+<p>Now, suppose we did something sad in our generator that causes an error, like calling <code>createSegmen</code> instead of <code>createSegment</code>. If we try to start a level like that, we get an interesting error message: <code>Failmap limit exceeded</code>. What does that mean?</p>
+<p>It's actually quite simple - LibLevelGen generators are <em>allowed</em> to fail, up to 100 times in a row. These failures are called "failmaps", and they are there to help fight rare edge cases where level might generate successfuly 99.9% of the time but there's that one weird situation when it fails. Instead of identifying it, we can just pretend it doesn't exist and try again (which is probably not the best advice for programming in general, but I find it a valid strategy for level generation. The base game actually has failmaps too!).  </p>
+<p>However, this behaviour is generally not desirable when actually making the generator. This is why you can disable it in the settings: Options -&gt; Mod Options -&gt; LibLevelGen. With failmap retry disabled, we get the actual error: <code>attempt to call method createSegmen (a nil value)</code>.</p>
+<p>That's everything for now. In the next part, you'll learn how to make a level that resembles a level a bit more!</p>
 
 
 
@@ -665,7 +724,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome to LibLevelGen" rel="prev">
+        <a href="../01-introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -674,20 +733,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Welcome to LibLevelGen
+              Introduction
             </div>
           </div>
         </a>
       
       
         
-        <a href="../02-basics/" class="md-footer__link md-footer__link--next" aria-label="Next: The basics" rel="next">
+        <a href="../../modules/Enemy.lua/" class="md-footer__link md-footer__link--next" aria-label="Next: Enemy.lua" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              The basics
+              Enemy.lua
             </div>
           </div>
           <div class="md-footer__button md-icon">
