@@ -352,6 +352,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-room-types/" class="md-nav__link">
+        Placing things in rooms
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -644,7 +658,7 @@
 
 
 <h1 id="the-basics">The basics<a class="headerlink" href="#the-basics" title="Permanent link">&para;</a></h1>
-<p>To get started, you need to install LibLevelGen (perhaps unsuprisingly). It's availagle on <a href="https://mod.io/g/crypt/m/liblevelgen">mod.io</a> and through the in-game mod browser.</p>
+<p>To get started, you need to install LibLevelGen (perhaps unsuprisingly). It's available on <a href="https://mod.io/g/crypt/m/liblevelgen">mod.io</a> and through the in-game mod browser.</p>
 <h2 id="setting-up-a-mod-for-testing">Setting up a mod for testing<a class="headerlink" href="#setting-up-a-mod-for-testing" title="Permanent link">&para;</a></h2>
 <p>Once you have it, you can create a new mod that we'll use for testing (the one used throughout the tutorial will be called <code>LibLevelGen Playground</code>).<br />
 I also recommend adding <code>LibLevelGen_io_2421628</code> as a depencency like so:
@@ -665,7 +679,7 @@ I also recommend adding <code>LibLevelGen_io_2421628</code> as a depencency like
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 Replace 1.0.0 with the latest LibLevelGen version available (see image below):<br />
-<img alt="modio-version-location" src="../02-modio-version-location.png" /><br />
+<img alt="modio-version-location" src="../02-assets/modio-version-location.png" /><br />
 <em>(It's a bit inconvenient right now, but in the feature Synchrony will allow automatically getting the latest available version, and this page will be edited accordingly)</em>  </p>
 <p>Of course, if you don't want to do that, you can just load LibLevelGen manually. But once you decide to release your mod, it's something you should do to prevent other people from running into errors caused by LibLevelGen not being loaded.</p>
 <h2 id="generating-the-first-level">Generating the first level<a class="headerlink" href="#generating-the-first-level" title="Permanent link">&para;</a></h2>
@@ -682,7 +696,7 @@ To get things going, we need to do a few things - register the level generator, 
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">libLevelGen</span><span class="p">.</span><span class="n">registerGenerator</span><span class="p">(</span><span class="s2">&quot;LibLevelGen Playground&quot;</span><span class="p">,</span> <span class="n">myGenerator</span><span class="p">)</span>
 </code></pre></div>
 Just like that, we registered a new level generator and a new game mode that uses our generator! You can find it by going to Extra Modes in the lobby and then to the Start Run! stairs.<br />
-<img alt="modio-version-location" src="../02-mode-menu.png" /><br />
+<img alt="modio-version-location" src="../02-assets/mode-menu.png" /><br />
 If we select it now, umm... Well, we get a nice black screen, because we haven't actually generated a level inside of the <code>myGenerator</code> function. Let's go ahead and do that real quick:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span> <span class="kr">function</span> <span class="nf">myGenerator</span><span class="p">(</span><span class="n">genParams</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="c1">-- Create a new instance, which will hold all the things</span>
@@ -707,7 +721,7 @@ If we select it now, umm... Well, we get a nice black screen, because we haven't
 <a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="kr">end</span>
 </code></pre></div>
 And thus, behold! The level!<br />
-<img alt="best-level" src="../02-best-level-ever.png" /><br />
+<img alt="best-level" src="../02-assets/best-level-ever.png" /><br />
 <em>cricket noises</em>  </p>
 <h2 id="making-things-a-bit-easier">Making things a bit easier<a class="headerlink" href="#making-things-a-bit-easier" title="Permanent link">&para;</a></h2>
 <p>Now, when you spawned you likely couldn't see the entire level because it's heckin' dark in there (unless your character had a torch). For testing level generation, I recommend having a character that can move with fixed beat and starts with a map. I actually made a mod just for that: <a href="https://mod.io/g/crypt/m/DebugBard">DebugBard</a>.</p>

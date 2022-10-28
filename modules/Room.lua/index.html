@@ -288,6 +288,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/04-room-types/" class="md-nav__link">
+        Placing things in rooms
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2803,7 +2817,7 @@ the condition check result must match the value specified.</p>
 </table>
 <hr />
 <h4 id="liblevelgenroommakeexit">LibLevelGen.Room.makeExit<a class="headerlink" href="#liblevelgenroommakeexit" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">makeExit</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">):</span> <span class="n">void</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">makeExit</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Room</span><span class="p">,</span> <span class="n">minibosses</span><span class="p">:</span> <span class="n">table</span><span class="p">):</span> <span class="n">void</span>
 </code></pre></div>
 <p>Turn the room into an exit room - set appropriate flags, place the exit stairs and the miniboss.</p>
 <p><strong>Parameters</strong>:  </p>
@@ -2820,6 +2834,11 @@ the condition check result must match the value specified.</p>
 <td><code>self</code></td>
 <td><code>LibLevelGen.Room</code></td>
 <td>The room.</td>
+</tr>
+<tr>
+<td><code>minibosses</code></td>
+<td><code>table</code></td>
+<td>List of possible minibosses, in format: <code>{ {"type1", level1}, {"type2", level2}, ... }</code></td>
 </tr>
 </tbody>
 </table>

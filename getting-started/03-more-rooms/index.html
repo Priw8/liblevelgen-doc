@@ -359,6 +359,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-room-types/" class="md-nav__link">
+        Placing things in rooms
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -678,7 +692,7 @@ Let's place another room below the starting room - to calculate the coordinates 
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">local</span> <span class="n">newRoomY</span> <span class="o">=</span> <span class="n">startingRoom</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">startingRoom</span><span class="p">.</span><span class="n">h</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">local</span> <span class="n">newRoom</span> <span class="o">=</span> <span class="n">mainSegment</span><span class="p">:</span><span class="n">createRoom</span><span class="p">(</span><span class="n">newRoomX</span><span class="p">,</span> <span class="n">newRoomY</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
-<img alt="create-room" src="../03-create-room.png" />  </p>
+<img alt="create-room" src="../03-assets/create-room.png" />  </p>
 <p>You may notice that we specified the room to be 5x5, but the actual area with the floor is only 3x3 - that's because the width and height include the room border wall.  </p>
 <p>If you think that generating an entire level using only this would be immensely painful, you are absolutely correct - but don't worry, LibLevelGen has some more functions in store...</p>
 <h2 id="segmentcreaterandlinkedroom">Segment.createRandLinkedRoom<a class="headerlink" href="#segmentcreaterandlinkedroom" title="Permanent link">&para;</a></h2>
@@ -715,7 +729,7 @@ Let's place another room below the starting room - to calculate the coordinates 
 <a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="p">}</span>
 </code></pre></div>
 So what ends up in <code>roomGenCombinations</code> is all the ways in which the room is allowed to generate. In this case, it's <code>4*3*3*1*5*4*4</code> possible ways, which is a whopping 2880! We can verify that with a quick <code>dbg(#roomGenCombinations)</code>:<br />
-<img alt="2880" src="../03-2880.png" /><br />
+<img alt="2880" src="../03-assets/2880.png" /><br />
 Because of this, it's advised to only call this function once and then use the result. The easy way to do this is simply not putting it in any function, so that it'll only run when the mod is loaded and keep all the combinations ready.</p>
 <h2 id="invoking-createrandlinkedroom">Invoking <code>createRandLinkedRoom</code><a class="headerlink" href="#invoking-createrandlinkedroom" title="Permanent link">&para;</a></h2>
 <p>With our big table generated, we can finally go ahead and call <em>the</em> method. Here's the full file so far:<br />
@@ -752,7 +766,7 @@ Because of this, it's advised to only call this function once and then use the r
 <a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="n">libLevelGen</span><span class="p">.</span><span class="n">registerGenerator</span><span class="p">(</span><span class="s2">&quot;LibLevelGen Playground&quot;</span><span class="p">,</span> <span class="n">myGenerator</span><span class="p">)</span>
 </code></pre></div>
 And here are some maps that it generated:<br />
-<img alt="03-randrooms.png" src="../03-randrooms.png" />  </p>
+<img alt="03-assets/randrooms.png" src="../03-assets/randrooms.png" />  </p>
 <p>Feel free to experiment with the values passed to <code>createRandLinkedRoomParameterCombinations</code> to get a better understanding of what they're doing!</p>
 <p>And so that's basically <code>createRandLinkedRoom</code> in a nutshell. It might take some time to get used to, but it's also fun to mess around with.</p>
 <h2 id="going-even-further">Going even further<a class="headerlink" href="#going-even-further" title="Permanent link">&para;</a></h2>
@@ -765,7 +779,7 @@ And here are some maps that it generated:<br />
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">currentRoom</span> <span class="o">=</span> <span class="n">newRoom</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="kr">end</span>
 </code></pre></div>
-<img alt="03-more-rooms.png" src="../03-more-rooms.png" /><br />
+<img alt="03-assets/more-rooms.png" src="../03-assets/more-rooms.png" /><br />
 This is certainly a level, but we can go <em>even further</em> and generate more than 1 connected room per room by using some fun recursion:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">local</span> <span class="kr">function</span> <span class="nf">createTwoRooms</span><span class="p">(</span><span class="n">currentRoom</span><span class="p">,</span> <span class="n">roomsLeft</span><span class="p">)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="kr">if</span> <span class="n">roomsLeft</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="kr">then</span>
@@ -792,9 +806,9 @@ This is certainly a level, but we can go <em>even further</em> and generate more
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="n">instance</span><span class="p">:</span><span class="n">finalize</span><span class="p">()</span>
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="kr">end</span>
 </code></pre></div>
-<img alt="03-megafloor.png" src="../03-megafloor.png" /><br />
+<img alt="03-assets/megafloor.png" src="../03-assets/megafloor.png" /><br />
 ...it is big. For extra silliness (and CPU torture) we can set the value to 10 instead of 5.<br />
-<img alt="03-ultrafloor.png" src="../03-ultrafloor.png" /><br />
+<img alt="03-assets/ultrafloor.png" src="../03-assets/ultrafloor.png" /><br />
 <em>It is so big that the minimap can't fit it</em>  </p>
 <p>And then, by playing with the combinations a bit...
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
@@ -808,7 +822,7 @@ This is certainly a level, but we can go <em>even further</em> and generate more
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
 </code></pre></div>
 ...we can end up with something completely different!
-<img alt="03-linelevel.png" src="../03-linelevel.png" />  </p>
+<img alt="03-assets/linelevel.png" src="../03-assets/linelevel.png" />  </p>
 <p>Perhaps we could change <code>createTwoRooms</code> to generate one more room once <code>roomsLeft</code> reaches 0, and use different combinations? This way, we could get some bigger rooms in there, surrounded by this maze of corridors! Feel free to try doing this as an exercise.</p>
 <p>And that is it for now! Hopefully these examples gave you an idea of what <code>createRandLinkedRoom</code> is capable of - with some combinations and a bit of clever code, it can shape your entire level!</p>
 
@@ -847,13 +861,13 @@ This is certainly a level, but we can go <em>even further</em> and generate more
       
       
         
-        <a href="../../modules/Enemy.lua/" class="md-footer__link md-footer__link--next" aria-label="Next: Enemy.lua" rel="next">
+        <a href="../04-room-types/" class="md-footer__link md-footer__link--next" aria-label="Next: Placing things in rooms" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Enemy.lua
+              Placing things in rooms
             </div>
           </div>
           <div class="md-footer__button md-icon">
