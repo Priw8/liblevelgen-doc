@@ -760,7 +760,7 @@ But why do it like that? You see, LibLevelGen is capable of automatically handli
 </code></pre></div>
 Suddenly it's a lot nicer in here, huh?  </p>
 <h2 id="making-an-exit-room">Making an exit room<a class="headerlink" href="#making-an-exit-room" title="Permanent link">&para;</a></h2>
-<p>Our level is still missing a pretty crucial part - a way to actually leave it. So first, we need to pick a room that we'll make into an exit room, and ideally it should not be directly adjacent to the exit. We can do that with modyfing the <code>createTwoRooms</code> function in a clever way:<br />
+<p>Our level is still missing a pretty crucial part - a way to actually leave it. So first, we need to pick a room that we'll make into an exit room, and ideally it should not be directly adjacent to the starting room. We can do that with modyfing the <code>createTwoRooms</code> function in a clever way:<br />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">local</span> <span class="kr">function</span> <span class="nf">createExit</span><span class="p">(</span><span class="n">currentRoom</span><span class="p">)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">dbg</span><span class="p">(</span><span class="s2">&quot;Create an exit room here!&quot;</span><span class="p">)</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kr">end</span>
