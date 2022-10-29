@@ -1026,6 +1026,86 @@
 </thead>
 <tbody>
 <tr>
+<td><code>player?</code></td>
+<td><code>Entity</code></td>
+<td>Do not generate items that this player can’t pick up (defaults to a random initial player)</td>
+</tr>
+<tr>
+<td><code>banMask?</code></td>
+<td><code>ItemBan.Flag</code></td>
+<td>Ban flag to check on the player for item generation, defaults to GENERATE_ITEM_POOL</td>
+</tr>
+<tr>
+<td><code>slot?</code></td>
+<td><code>string</code></td>
+<td>If non-nil, only generate items matching that slot</td>
+</tr>
+<tr>
+<td><code>requiredComponents?</code></td>
+<td><code>string[]</code></td>
+<td>Only generate items that have all of those components</td>
+</tr>
+<tr>
+<td><code>excludedComponents?</code></td>
+<td><code>string[]</code></td>
+<td>Only generate items that have none of those components</td>
+</tr>
+<tr>
+<td><code>itemPool?</code></td>
+<td><code>string</code></td>
+<td>Component name used to determine item weights (the component needs a <code>weights</code> field)</td>
+</tr>
+<tr>
+<td><code>chanceType?</code></td>
+<td><code>string</code></td>
+<td>Compatibility alias for itemPool (only works for built-in item pools)</td>
+</tr>
+<tr>
+<td><code>levelBonus?</code></td>
+<td><code>integer</code></td>
+<td>Generate items from higher tiers</td>
+</tr>
+<tr>
+<td><code>chanceFunction?</code></td>
+<td><code>fun(Entity):integer</code></td>
+<td>Sets item weights (when set, chanceType and levelBonus are ignored)</td>
+</tr>
+<tr>
+<td><code>seenCounts?</code></td>
+<td><code>table&lt;string,integer&gt;</code></td>
+<td>Acts as a counter for tracking item generation to prevent duplicates, defaults to global counter</td>
+</tr>
+<tr>
+<td><code>depletionLimit?</code></td>
+<td><code>integer</code></td>
+<td>Items seen that many time will not be generated, defaults to 8</td>
+</tr>
+<tr>
+<td><code>transmutedItem?</code></td>
+<td><code>Entity</code></td>
+<td>The item being transmuted, if any</td>
+</tr>
+<tr>
+<td><code>default?</code></td>
+<td><code>string</code></td>
+<td>If no items match the requirements, this is returned instead</td>
+</tr>
+<tr>
+<td><code>usePendingItems?</code></td>
+<td><code>boolean</code></td>
+<td>Prioritizes pending single-zone items</td>
+</tr>
+<tr>
+<td><code>ignoreProgression?</code></td>
+<td><code>boolean</code></td>
+<td>Allow generating locked items in single-zone</td>
+</tr>
+<tr>
+<td><code>result?</code></td>
+<td><code>string</code></td>
+<td>Resulting item type (used internally by <code>event.itemGenerate</code>)</td>
+</tr>
+<tr>
 <td><code>hidden?</code></td>
 <td><code>boolean</code></td>
 <td>Whether the chest starts visible or not</td>

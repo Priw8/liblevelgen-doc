@@ -762,9 +762,41 @@
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="secretshopcreatesecretshoplevelnumbers">secretShop.createSecretShopLevelNumbers<a class="headerlink" href="#secretshopcreatesecretshoplevelnumbers" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">secretShop</span><span class="p">.</span><span class="n">createSecretShopLevelNumbers</span><span class="p">():</span> <span class="n">table</span><span class="o">&lt;</span><span class="n">number</span><span class="p">,</span><span class="n">number</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">secretShop</span><span class="p">.</span><span class="n">createSecretShopLevelNumbers</span><span class="p">(</span><span class="n">generatorData</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Config</span><span class="err">\</span><span class="p">,</span> <span class="n">rng</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Rng</span><span class="p">):</span> <span class="n">table</span><span class="o">&lt;</span><span class="n">number</span><span class="p">,</span><span class="n">number</span><span class="o">&gt;</span>
 </code></pre></div>
 <p><em>no description</em></p>
+<p><strong>Parameters</strong>:  </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generatorData</code></td>
+<td><code>LibLevelGen.Config\</code></td>
+<td><em>no description</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>rng</code></td>
+<td><code>LibLevelGen.Rng</code></td>
+<td><em>no description</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>table&lt;number,number&gt;</code></p>
 <hr />
 <h3 id="secretshopregister">secretShop.register<a class="headerlink" href="#secretshopregister" title="Permanent link">&para;</a></h3>
@@ -806,9 +838,26 @@
 <p><strong>Returns</strong>: <code>number</code></p>
 <hr />
 <h3 id="secretshopgetdata">secretShop.getData<a class="headerlink" href="#secretshopgetdata" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">secretShop</span><span class="p">.</span><span class="n">getData</span><span class="p">():</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">SecretShop</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">secretShop</span><span class="p">.</span><span class="n">getData</span><span class="p">(</span><span class="n">shopType</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">SecretShop</span>
 </code></pre></div>
 <p><em>no description</em></p>
+<p><strong>Parameters</strong>:  </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shopType</code></td>
+<td><code>number</code></td>
+<td>From the secretShop.Type enum.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.SecretShop</code></p>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />

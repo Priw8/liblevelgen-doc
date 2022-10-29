@@ -1154,9 +1154,31 @@
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="segmentnew">segment.new<a class="headerlink" href="#segmentnew" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">segment</span><span class="p">.</span><span class="n">new</span><span class="p">():</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Segment</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">segment</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">LibLegelGen</span><span class="p">.</span><span class="n">Instance</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Segment</span>
 </code></pre></div>
 <p><em>no description</em></p>
+<p><strong>Parameters</strong>:  </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instance</code></td>
+<td><code>LibLegelGen.Instance</code></td>
+<td><em>no description</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Returns</strong>: <code>LibLevelGen.Segment</code></p>
 <hr />
 <h3 id="segmentcreaterandlinkedroomparametercombinations">segment.createRandLinkedRoomParameterCombinations<a class="headerlink" href="#segmentcreaterandlinkedroomparametercombinations" title="Permanent link">&para;</a></h3>
@@ -2193,7 +2215,7 @@ Chance to convert a given tile is specified by ratio.</p>
 <p><strong>Returns</strong>: <code>boolean</code></p>
 <hr />
 <h4 id="liblevelgensegmentbeetweenroomrectadjecentfakerooms">LibLevelGen.Segment.beetweenRoomRectAdjecentFakeRooms<a class="headerlink" href="#liblevelgensegmentbeetweenroomrectadjecentfakerooms" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">beetweenRoomRectAdjecentFakeRooms</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Segment</span><span class="p">):</span> <span class="n">number</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">beetweenRoomRectAdjecentFakeRooms</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Segment</span><span class="p">,</span> <span class="n">betweenRect</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">OverlappedRect</span><span class="p">):</span> <span class="n">number</span>
 </code></pre></div>
 <p>Counts how many "fake rooms" (other overlapped rects) are adjacent to this overlapped rect.</p>
 <p><strong>Parameters</strong>:  </p>
@@ -2209,6 +2231,11 @@ Chance to convert a given tile is specified by ratio.</p>
 <tr>
 <td><code>self</code></td>
 <td><code>LibLevelGen.Segment</code></td>
+<td><em>no description</em></td>
+</tr>
+<tr>
+<td><code>betweenRect</code></td>
+<td><code>LibLevelGen.OverlappedRect</code></td>
 <td><em>no description</em></td>
 </tr>
 </tbody>
