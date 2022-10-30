@@ -31,6 +31,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://priw8.github.io/liblevelgen-doc/getting-started/06-level-sequence/</loc>
+         <lastmod>2022-10-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Enemy.lua/</loc>
          <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>

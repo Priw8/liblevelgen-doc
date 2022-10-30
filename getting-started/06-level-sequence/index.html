@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://priw8.github.io/liblevelgen-doc/modules/Enemy.lua/">
+        <link rel="canonical" href="https://priw8.github.io/liblevelgen-doc/getting-started/06-level-sequence/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
-        <title>Enemy.lua - LibLevelGen</title>
+        <title>Level sequence - LibLevelGen</title>
       
     
     
@@ -56,11 +56,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Enemy.lua - LibLevelGen" >
+        <meta  property="og:title"  content="Level sequence - LibLevelGen" >
       
         <meta  property="og:description"  content="Documentation and tutorials for the LibLevelGen library." >
       
-        <meta  property="og:image"  content="https://priw8.github.io/liblevelgen-doc/assets/images/social/modules/Enemy.lua.png" >
+        <meta  property="og:image"  content="https://priw8.github.io/liblevelgen-doc/assets/images/social/getting-started/06-level-sequence.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -68,15 +68,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://priw8.github.io/liblevelgen-doc/modules/Enemy.lua/" >
+        <meta  property="og:url"  content="https://priw8.github.io/liblevelgen-doc/getting-started/06-level-sequence/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Enemy.lua - LibLevelGen" >
+        <meta  name="twitter:title"  content="Level sequence - LibLevelGen" >
       
         <meta  name="twitter:description"  content="Documentation and tutorials for the LibLevelGen library." >
       
-        <meta  name="twitter:image"  content="https://priw8.github.io/liblevelgen-doc/assets/images/social/modules/Enemy.lua.png" >
+        <meta  name="twitter:image"  content="https://priw8.github.io/liblevelgen-doc/assets/images/social/getting-started/06-level-sequence.png" >
       
     
     
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enemylua" class="md-skip">
+        <a href="#level-sequence" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enemy.lua
+              Level sequence
             
           </span>
         </div>
@@ -252,12 +252,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -280,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/01-introduction/" class="md-nav__link">
+      <a href="../01-introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -294,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/02-basics/" class="md-nav__link">
+      <a href="../02-basics/" class="md-nav__link">
         The basics
       </a>
     </li>
@@ -308,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/03-more-rooms/" class="md-nav__link">
+      <a href="../03-more-rooms/" class="md-nav__link">
         Creating more rooms
       </a>
     </li>
@@ -322,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/04-room-types/" class="md-nav__link">
+      <a href="../04-room-types/" class="md-nav__link">
         Placing things in rooms
       </a>
     </li>
@@ -336,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/05-tile-requirements/" class="md-nav__link">
+      <a href="../05-tile-requirements/" class="md-nav__link">
         Selecting tiles
       </a>
     </li>
@@ -348,11 +350,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../getting-started/06-level-sequence/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Level sequence
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Level sequence
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-level-sequence-does" class="md-nav__link">
+    What the level sequence does
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-the-level-sequence" class="md-nav__link">
+    Generating the level sequence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-templates" class="md-nav__link">
+    Sequence templates
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -370,14 +427,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -398,112 +453,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Enemy.lua
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../modules/Enemy.lua/" class="md-nav__link">
         Enemy.lua
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enemygetdata" class="md-nav__link">
-    enemy.getData
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enemyregister" class="md-nav__link">
-    enemy.register
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    Classes
-  </a>
-  
-    <nav class="md-nav" aria-label="Classes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenenemydata" class="md-nav__link">
-    LibLevelGen.EnemyData
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    Enums
-  </a>
-  
-    <nav class="md-nav" aria-label="Enums">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enemytype" class="md-nav__link">
-    enemy.Type
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -515,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Entity.lua/" class="md-nav__link">
+      <a href="../../modules/Entity.lua/" class="md-nav__link">
         Entity.lua
       </a>
     </li>
@@ -529,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ErrorLevel.lua/" class="md-nav__link">
+      <a href="../../modules/ErrorLevel.lua/" class="md-nav__link">
         ErrorLevel.lua
       </a>
     </li>
@@ -543,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LevelSequence.lua/" class="md-nav__link">
+      <a href="../../modules/LevelSequence.lua/" class="md-nav__link">
         LevelSequence.lua
       </a>
     </li>
@@ -557,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LibLevelGen.lua/" class="md-nav__link">
+      <a href="../../modules/LibLevelGen.lua/" class="md-nav__link">
         LibLevelGen.lua
       </a>
     </li>
@@ -571,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Loot.lua/" class="md-nav__link">
+      <a href="../../modules/Loot.lua/" class="md-nav__link">
         Loot.lua
       </a>
     </li>
@@ -585,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Rand.lua/" class="md-nav__link">
+      <a href="../../modules/Rand.lua/" class="md-nav__link">
         Rand.lua
       </a>
     </li>
@@ -599,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Room.lua/" class="md-nav__link">
+      <a href="../../modules/Room.lua/" class="md-nav__link">
         Room.lua
       </a>
     </li>
@@ -613,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SecretRoom.lua/" class="md-nav__link">
+      <a href="../../modules/SecretRoom.lua/" class="md-nav__link">
         SecretRoom.lua
       </a>
     </li>
@@ -627,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SecretShop.lua/" class="md-nav__link">
+      <a href="../../modules/SecretShop.lua/" class="md-nav__link">
         SecretShop.lua
       </a>
     </li>
@@ -641,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Segment.lua/" class="md-nav__link">
+      <a href="../../modules/Segment.lua/" class="md-nav__link">
         Segment.lua
       </a>
     </li>
@@ -655,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Settings.lua/" class="md-nav__link">
+      <a href="../../modules/Settings.lua/" class="md-nav__link">
         Settings.lua
       </a>
     </li>
@@ -669,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Shrine.lua/" class="md-nav__link">
+      <a href="../../modules/Shrine.lua/" class="md-nav__link">
         Shrine.lua
       </a>
     </li>
@@ -683,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Util.lua/" class="md-nav__link">
+      <a href="../../modules/Util.lua/" class="md-nav__link">
         Util.lua
       </a>
     </li>
@@ -724,69 +678,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    Functions
+  <a href="#what-the-level-sequence-does" class="md-nav__link">
+    What the level sequence does
   </a>
-  
-    <nav class="md-nav" aria-label="Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enemygetdata" class="md-nav__link">
-    enemy.getData
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enemyregister" class="md-nav__link">
-    enemy.register
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    Classes
+  <a href="#generating-the-level-sequence" class="md-nav__link">
+    Generating the level sequence
   </a>
-  
-    <nav class="md-nav" aria-label="Classes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#liblevelgenenemydata" class="md-nav__link">
-    LibLevelGen.EnemyData
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    Enums
+  <a href="#sequence-templates" class="md-nav__link">
+    Sequence templates
   </a>
-  
-    <nav class="md-nav" aria-label="Enums">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enemytype" class="md-nav__link">
-    enemy.Type
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -805,193 +713,66 @@
                   
 
 
-<h1 id="enemylua">Enemy.lua<a class="headerlink" href="#enemylua" title="Permanent link">&para;</a></h1>
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
-<hr />
-<h3 id="enemygetdata">enemy.getData<a class="headerlink" href="#enemygetdata" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">enemy</span><span class="p">.</span><span class="n">getData</span><span class="p">(</span><span class="nb">type</span><span class="p">:</span> <span class="n">string</span><span class="p">):</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">EnemyData</span>
+<h1 id="level-sequence">Level sequence<a class="headerlink" href="#level-sequence" title="Permanent link">&para;</a></h1>
+<p>So far, we focused on generating just 1 level, but usually we want the run to have more. Various things related to how and how many levels are created are defined by the level sequence. We'll start with the <a href="../06-assets/code-start.html">code from the previous part</a>.</p>
+<h2 id="what-the-level-sequence-does">What the level sequence does<a class="headerlink" href="#what-the-level-sequence-does" title="Permanent link">&para;</a></h2>
+<p>Things like 1-2 coming after 1-1 aren't actually hardcoded and can be changed by altering the level sequence. The sequence itself is an array of <a href="../../modules/LibLevelGen.lua/#liblevelgenlevelgenerationoptions-extends-levelgeneratoroptions">LibLevelGen.LevelGenerationOptions</a> objects, and there's one entry for every level in the run. This object type has a lot of fields, but most of them don't actually need to be set - this is because there's another object of this type that's used as a base, and the values of individual entries from the sequence are merged into the base one.</p>
+<p>Typically, the "base" object will contain things such as mode ID, initial starting characters etc, while the level-specific objects will contain floor/zone/depth numbers, and any additional overrides if applicable. But it is perfectly valid to put floor 3 before floor 2 in the level sequence, even if it doesn't make too much sense.</p>
+<h2 id="generating-the-level-sequence">Generating the level sequence<a class="headerlink" href="#generating-the-level-sequence" title="Permanent link">&para;</a></h2>
+<p>We can specify the level sequence gemerator with the <code>sequenceClb</code> field of the configuration of our generator like so: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">libLevelGen</span><span class="p">.</span><span class="n">registerGenerator</span><span class="p">(</span><span class="s2">&quot;LibLevelGen Playground&quot;</span><span class="p">,</span> <span class="n">myGenerator</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">sequenceClb</span> <span class="o">=</span> <span class="kr">function</span> <span class="p">(</span><span class="n">ev</span><span class="p">,</span> <span class="n">cfg</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">ev</span><span class="p">.</span><span class="n">sequence</span><span class="p">[</span><span class="o">#</span><span class="n">ev</span><span class="p">.</span><span class="n">sequence</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="n">floor</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="n">zone</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="n">depth</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="kr">end</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">})</span>
 </code></pre></div>
-<p>Gets LibLevelGen data for the given enemy type.</p>
-<p><strong>Parameters</strong>:  </p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>type</code></td>
-<td><code>string</code></td>
-<td>Type from the enemy.Type enum</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns</strong>: <code>LibLevelGen.EnemyData</code></p>
-<hr />
-<h3 id="enemyregister">enemy.register<a class="headerlink" href="#enemyregister" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">enemy</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">entity</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">maxLevel</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">EnemyData</span><span class="p">):</span> <span class="n">number</span>
+The <code>ev</code> parameter is an object of type <a href="https://vortexbuffer.com/synchrony/docs/modules/necro.game.level.LevelSequence/#class-Event.LevelSequenceUpdate">Event.LevelSequenceUpdate</a> (kinda; it uses LibLevelGen.LevelGenerationOptions instead of LevelGenerator.Options in this context), while <code>cfg</code> is a <a href="../../modules/LibLevelGen.lua/#liblevelgenconfig">LibLevelGen.Config</a>. If not specified, a default sequence generator is used, which just puts a bunch of levels with depth=1 and zone=1 where the floor number keeps increasing.</p>
+<p>With the sequence in the example, the run has only 1 level and then goes to the run summary screen. 1 level is a little boring, so let's add some more... Actually, let's add 2 more <code>require</code>s first:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Do not confuse with levelSequence module of the base game.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">local</span> <span class="n">levelSequence</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;LibLevelGen.LevelSequence&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">local</span> <span class="n">boss</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;necro.game.level.Boss&quot;</span>
 </code></pre></div>
-<p>Register LibLevelGen enemy data in the enemy enum.</p>
-<p><strong>Parameters</strong>:  </p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>entity</code></td>
-<td><code>string</code></td>
-<td>Entity base name</td>
-</tr>
-<tr>
-<td><code>maxLevel</code></td>
-<td><code>number</code></td>
-<td>Max level this entity can have</td>
-</tr>
-<tr>
-<td><code>args</code></td>
-<td><code>LibLevelGen.EnemyData</code></td>
-<td>Additional enemy definition data</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns</strong>: <code>number</code></p>
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
-<hr />
-<h3 id="liblevelgenenemydata">LibLevelGen.EnemyData<a class="headerlink" href="#liblevelgenenemydata" title="Permanent link">&para;</a></h3>
-<p>Class containing data related to processing it by the various level generation components.</p>
-<p><strong>Properties</strong>:  </p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>entity</code></td>
-<td><code>string</code></td>
-<td>The base entity type</td>
-</tr>
-<tr>
-<td><code>maxLevel</code></td>
-<td><code>number</code></td>
-<td>Max level the entity type can have</td>
-</tr>
-<tr>
-<td><code>id</code></td>
-<td><code>number[]</code></td>
-<td>Numeric IDs for every level the entity has</td>
-</tr>
-<tr>
-<td><code>warRingUpgrade</code></td>
-<td><code>table&lt;number,number&gt;</code></td>
-<td>Table containing a mapping which specifies which levels get converted to which when ring of war is in effect</td>
-</tr>
-<tr>
-<td><code>warShrineUpgrade</code></td>
-<td><code>table&lt;number,number&gt;</code></td>
-<td>Table containing a mapping which specifies which levels get converted to which when shrine of war is in effect</td>
-</tr>
-<tr>
-<td><code>peaceRingDowngrade</code></td>
-<td><code>table&lt;number,number&gt;</code></td>
-<td>Table containing a mapping which specifies which levels get converted to which when ring of peace is in effect</td>
-</tr>
-<tr>
-<td><code>challengeCharacterDowngrade</code></td>
-<td><code>table&lt;number,number&gt;</code></td>
-<td>Table containing a mapping which specifies which levels get converted to which when playing a challenge character (Monk/Coda/Aria/Bolt - used to downgrade black bats into blue)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h2>
-<hr />
-<h3 id="enemytype">enemy.Type<a class="headerlink" href="#enemytype" title="Permanent link">&para;</a></h3>
-<p>Enum containing enemy types and their associated data. Use <code>enemy.getData</code> to get data for a given enemy from this enum.</p>
-<p><strong>Entries</strong>:  </p>
-<ul>
-<li><code>King</code>  </li>
-<li><code>CoralRiff</code>  </li>
-<li><code>KingConga</code>  </li>
-<li><code>Deathmetal</code>  </li>
-<li><code>Fortissimole</code>  </li>
-<li><code>Necrodancer</code>  </li>
-<li><code>DeadRinger</code>  </li>
-<li><code>Frankensteinway</code>  </li>
-<li><code>Conductor</code>  </li>
-<li><code>LuteDragon</code>  </li>
-<li><code>Direbat</code>  </li>
-<li><code>Dragon</code>  </li>
-<li><code>Banshee</code>  </li>
-<li><code>Minotaur</code>  </li>
-<li><code>Nightmare</code>  </li>
-<li><code>Mommy</code>  </li>
-<li><code>Ogre</code>  </li>
-<li><code>Metrognome</code>  </li>
-<li><code>Armadillo</code>  </li>
-<li><code>Armoredskeleton</code>  </li>
-<li><code>Bat</code>  </li>
-<li><code>Beetle</code>  </li>
-<li><code>Bishop</code>  </li>
-<li><code>Blademaster</code>  </li>
-<li><code>Cauldron</code>  </li>
-<li><code>Clone</code>  </li>
-<li><code>Devil</code>  </li>
-<li><code>ElectricMage</code>  </li>
-<li><code>Evileye</code>  </li>
-<li><code>Fireelemental</code>  </li>
-<li><code>Iceelemental</code>  </li>
-<li><code>Ghast</code>  </li>
-<li><code>Ghost</code>  </li>
-<li><code>Ghoul</code>  </li>
-<li><code>Goblin</code>  </li>
-<li><code>GoblinBomber</code>  </li>
-<li><code>Golem</code>  </li>
-<li><code>Gorgon</code>  </li>
-<li><code>Harpy</code>  </li>
-<li><code>Hellhound</code>  </li>
-<li><code>Knight</code>  </li>
-<li><code>Lich</code>  </li>
-<li><code>Monkey</code>  </li>
-<li><code>Mushroom</code>  </li>
-<li><code>Orc</code>  </li>
-<li><code>Pawn</code>  </li>
-<li><code>Pixie</code>  </li>
-<li><code>Queen</code>  </li>
-<li><code>Rook</code>  </li>
-<li><code>Sarcophagus</code>  </li>
-<li><code>Shovemonster</code>  </li>
-<li><code>Skeleton</code>  </li>
-<li><code>Skeletonknight</code>  </li>
-<li><code>Skeletonmage</code>  </li>
-<li><code>Skull</code>  </li>
-<li><code>SleepingGoblin</code>  </li>
-<li><code>Slime</code>  </li>
-<li><code>Spider</code>  </li>
-<li><code>Tarmonster</code>  </li>
-<li><code>Tentacle</code>  </li>
-<li><code>Trapcouldron</code>  </li>
-<li><code>Trapchest</code>  </li>
-<li><code>Troll</code>  </li>
-<li><code>Warlock</code>  </li>
-<li><code>WaterBall</code>  </li>
-<li><code>Wight</code>  </li>
-<li><code>Wraith</code>  </li>
-<li><code>Yeti</code>  </li>
-<li><code>Zombie</code>  </li>
-<li><code>ZombieElectric</code>  </li>
-<li><code>ZombieSnake</code>  </li>
-</ul>
+Now we can do the thing:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">libLevelGen</span><span class="p">.</span><span class="n">registerGenerator</span><span class="p">(</span><span class="s2">&quot;LibLevelGen Playground&quot;</span><span class="p">,</span> <span class="n">myGenerator</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">maxLevel</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">sequenceClb</span> <span class="o">=</span> <span class="kr">function</span> <span class="p">(</span><span class="n">ev</span><span class="p">,</span> <span class="n">cfg</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="kr">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cfg</span><span class="p">.</span><span class="n">maxLevel</span> <span class="o">-</span> <span class="mi">1</span> <span class="kr">do</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="n">ev</span><span class="p">.</span><span class="n">sequence</span><span class="p">[</span><span class="o">#</span><span class="n">ev</span><span class="p">.</span><span class="n">sequence</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                <span class="n">floor</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                <span class="n">zone</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                <span class="n">depth</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="p">}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="kr">end</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">ev</span><span class="p">.</span><span class="n">sequence</span><span class="p">[</span><span class="o">#</span><span class="n">ev</span><span class="p">.</span><span class="n">sequence</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>            <span class="nb">type</span> <span class="o">=</span> <span class="n">levelSequence</span><span class="p">.</span><span class="n">BuiltinGenerators</span><span class="p">.</span><span class="n">BOSS</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            <span class="n">boss</span> <span class="o">=</span> <span class="n">boss</span><span class="p">.</span><span class="n">Type</span><span class="p">.</span><span class="n">CONDUCTOR</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="n">floor</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">.</span><span class="n">maxLevel</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            <span class="n">zone</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            <span class="n">depth</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="p">}</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="kr">end</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">})</span>
+</code></pre></div>
+So now, since <code>maxLevel</code> is 3, the level sequence consists of floors 1-1 and 1-2 followed by a boss level. But we didn't define a boss generator anywhere, so how is it possible? The secret lies in the <code>type</code> field of a sequence entry, which can completely change what level generator is used, as it overrides the <code>type</code> field in the base object. In this case, we're redirecting the level generation to the built-in boss generator and telling it to generate the conductor fight. And if we head to 1-3...<br />
+<img alt="the-conductor.png" src="../06-assets/the-conductor.png" /><br />
+We are, in fact, welcomed by the conductor fight!</p>
+<h2 id="sequence-templates">Sequence templates<a class="headerlink" href="#sequence-templates" title="Permanent link">&para;</a></h2>
+<p>In the <code>LevelSequence</code> module from LibLevelGen there are some premade level sequence generators that you can use.<br />
+<em>At the time of writing there are only 2 basic ones, because I just added this feature</em><br />
+Let's try using one!<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">libLevelGen</span><span class="p">.</span><span class="n">registerGenerator</span><span class="p">(</span><span class="s2">&quot;LibLevelGen Playground&quot;</span><span class="p">,</span> <span class="n">myGenerator</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">levelsPerZone</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">zones</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">sequenceClb</span> <span class="o">=</span> <span class="n">levelSequence</span><span class="p">.</span><span class="n">templateAllZones</span><span class="p">()</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">})</span>
+</code></pre></div>
+So now we have 1 floor of our generator followed by a boss, repeated 4 times before the run ends. Pretty neat!</p>
+<p>And that's about it as far as the level sequence goes. Next time, we'll talk a bit about some built-in LibLevelGen features, generating random numbers and altering generation based on the floor. See you there!</p>
 
 
 
@@ -1012,7 +793,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../getting-started/06-level-sequence/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Level sequence" rel="prev">
+        <a href="../05-tile-requirements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Selecting tiles" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1021,20 +802,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Level sequence
+              Selecting tiles
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Entity.lua/" class="md-footer__link md-footer__link--next" aria-label="Next: Entity.lua" rel="next">
+        <a href="../../modules/Enemy.lua/" class="md-footer__link md-footer__link--next" aria-label="Next: Enemy.lua" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Entity.lua
+              Enemy.lua
             </div>
           </div>
           <div class="md-footer__button md-icon">

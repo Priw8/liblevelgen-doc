@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>code-start.lua</title>
+<link rel="stylesheet" type="text/css" href="highlight.css">
+</head>
+<body class="hl">
+<pre class="hl"><span class="hl kwa">local</span> libLevelGen <span class="hl opt">=</span> require <span class="hl sng">&quot;LibLevelGen.LibLevelGen&quot;</span>
+<span class="hl kwa">local</span> segment <span class="hl opt">=</span> require <span class="hl sng">&quot;LibLevelGen.Segment&quot;</span>
+<span class="hl kwa">local</span> room <span class="hl opt">=</span> require <span class="hl sng">&quot;LibLevelGen.Room&quot;</span>
+<span class="hl kwa">local</span> levelgenUtil <span class="hl opt">=</span> require <span class="hl sng">&quot;LibLevelGen.Util&quot;</span>
+
+<span class="hl slc">-- An alias because this name is too long</span>
+<span class="hl kwa">local</span> tr <span class="hl opt">=</span> levelgenUtil<span class="hl opt">.</span>TileRequirements
+
+<span class="hl kwa">local</span> roomGenCombinations <span class="hl opt">=</span> segment<span class="hl opt">.</span>createRandLinkedRoomParameterCombinations <span class="hl opt">{</span>
+    direction <span class="hl opt">= {</span>room<span class="hl opt">.</span>Direction<span class="hl opt">.</span>UP<span class="hl opt">,</span> room<span class="hl opt">.</span>Direction<span class="hl opt">.</span>DOWN<span class="hl opt">,</span> room<span class="hl opt">.</span>Direction<span class="hl opt">.</span>LEFT<span class="hl opt">,</span> room<span class="hl opt">.</span>Direction<span class="hl opt">.</span>RIGHT<span class="hl opt">},</span>
+    corridorEntrance <span class="hl opt">= {</span><span class="hl num">0.25</span><span class="hl opt">,</span> <span class="hl num">0.5</span><span class="hl opt">,</span> <span class="hl num">0.75</span><span class="hl opt">},</span>
+    corridorExit <span class="hl opt">= {</span><span class="hl num">0.25</span><span class="hl opt">,</span> <span class="hl num">0.5</span><span class="hl opt">,</span> <span class="hl num">0.75</span><span class="hl opt">},</span>
+    corridorThickness <span class="hl opt">= {</span><span class="hl num">3</span><span class="hl opt">},</span>
+    corridorLength <span class="hl opt">= {</span><span class="hl num">0</span><span class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> <span class="hl num">2</span><span class="hl opt">},</span>
+    roomWidth <span class="hl opt">= {</span><span class="hl num">6</span><span class="hl opt">,</span> <span class="hl num">7</span><span class="hl opt">,</span> <span class="hl num">8</span><span class="hl opt">,</span> <span class="hl num">9</span><span class="hl opt">},</span>
+    roomHeight <span class="hl opt">= {</span><span class="hl num">6</span><span class="hl opt">,</span> <span class="hl num">7</span><span class="hl opt">,</span> <span class="hl num">8</span><span class="hl opt">,</span> <span class="hl num">9</span><span class="hl opt">},</span>
+<span class="hl opt">}</span>
+
+<span class="hl kwa">local function</span> <span class="hl kwd">createExit</span><span class="hl opt">(</span>currentRoom<span class="hl opt">)</span>
+    currentRoom<span class="hl opt">:</span>makeExit <span class="hl opt">{ {</span><span class="hl sng">&quot;Dragon&quot;</span><span class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">}, {</span><span class="hl sng">&quot;Minotaur&quot;</span><span class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">} }</span>
+<span class="hl kwa">end</span>
+
+<span class="hl kwa">local function</span> <span class="hl kwd">createTwoRooms</span><span class="hl opt">(</span>currentRoom<span class="hl opt">,</span> roomsLeft<span class="hl opt">,</span> needsExit<span class="hl opt">)</span>
+    <span class="hl kwa">if</span> roomsLeft <span class="hl opt">&gt;</span> <span class="hl num">0</span> <span class="hl kwa">then</span>
+        <span class="hl kwa">local</span> newCorridor1<span class="hl opt">,</span> newRoom1 <span class="hl opt">=</span> currentRoom<span class="hl opt">.</span>segment<span class="hl opt">:</span><span class="hl kwd">createRandLinkedRoom</span><span class="hl opt">(</span>currentRoom<span class="hl opt">,</span> <span class="hl kwa">false</span><span class="hl opt">,</span> roomGenCombinations<span class="hl opt">)</span>
+        <span class="hl kwa">local</span> newCorridor2<span class="hl opt">,</span> newRoom2 <span class="hl opt">=</span> currentRoom<span class="hl opt">.</span>segment<span class="hl opt">:</span><span class="hl kwd">createRandLinkedRoom</span><span class="hl opt">(</span>currentRoom<span class="hl opt">,</span> <span class="hl kwa">false</span><span class="hl opt">,</span> roomGenCombinations<span class="hl opt">)</span>
+        <span class="hl slc">-- Check if the generation didn&#39;t fail:</span>
+        <span class="hl kwa">if</span> newRoom1 <span class="hl kwa">then</span>
+            <span class="hl kwd">createTwoRooms</span><span class="hl opt">(</span>newRoom1<span class="hl opt">,</span> roomsLeft <span class="hl opt">-</span> <span class="hl num">1</span><span class="hl opt">,</span> needsExit<span class="hl opt">)</span>
+        <span class="hl kwa">end</span>
+        <span class="hl kwa">if</span> newRoom2 <span class="hl kwa">then</span>
+            <span class="hl kwd">createTwoRooms</span><span class="hl opt">(</span>newRoom2<span class="hl opt">,</span> roomsLeft <span class="hl opt">-</span> <span class="hl num">1</span><span class="hl opt">,</span> <span class="hl kwa">false</span><span class="hl opt">)</span>
+        <span class="hl kwa">end</span>
+    <span class="hl kwa">elseif</span> needsExit <span class="hl kwa">then</span>
+        <span class="hl kwd">createExit</span><span class="hl opt">(</span>currentRoom<span class="hl opt">)</span>
+    <span class="hl kwa">end</span>
+<span class="hl kwa">end</span>
+
+<span class="hl kwa">local function</span> <span class="hl kwd">placeEnemies</span><span class="hl opt">(</span>currentRoom<span class="hl opt">)</span>
+    currentRoom<span class="hl opt">:</span><span class="hl kwd">placeEntityRand</span><span class="hl opt">(</span>tr<span class="hl opt">.</span>Enemy<span class="hl opt">.</span>Generic<span class="hl opt">,</span> <span class="hl sng">&quot;Skeleton&quot;</span><span class="hl opt">,</span> <span class="hl num">2</span><span class="hl opt">)</span>
+    currentRoom<span class="hl opt">:</span><span class="hl kwd">placeEntityRand</span><span class="hl opt">(</span>tr<span class="hl opt">.</span>Enemy<span class="hl opt">.</span>OnWall<span class="hl opt">,</span> <span class="hl sng">&quot;Spider&quot;</span><span class="hl opt">)</span>
+<span class="hl kwa">end</span>
+
+<span class="hl kwa">local function</span> <span class="hl kwd">myGenerator</span><span class="hl opt">(</span>genParams<span class="hl opt">)</span>
+    <span class="hl kwa">local</span> instance <span class="hl opt">=</span> libLevelGen<span class="hl opt">.</span><span class="hl kwd">new</span><span class="hl opt">(</span>genParams<span class="hl opt">)</span>
+
+    <span class="hl kwa">local</span> mainSegment <span class="hl opt">=</span> instance<span class="hl opt">:</span><span class="hl kwd">createSegment</span><span class="hl opt">()</span>
+
+    <span class="hl kwa">local</span> startingRoom <span class="hl opt">=</span> mainSegment<span class="hl opt">:</span><span class="hl kwd">createStartingRoom</span><span class="hl opt">()</span>
+
+    <span class="hl kwd">createTwoRooms</span><span class="hl opt">(</span>startingRoom<span class="hl opt">,</span> <span class="hl num">2</span><span class="hl opt">,</span> <span class="hl kwa">true</span><span class="hl opt">)</span>
+
+    mainSegment<span class="hl opt">:</span><span class="hl kwd">iterateRooms</span><span class="hl opt">(</span>room<span class="hl opt">.</span>Flag<span class="hl opt">.</span>ALLOW_ENEMY<span class="hl opt">,</span> placeEnemies<span class="hl opt">)</span>
+
+    mainSegment<span class="hl opt">:</span><span class="hl kwd">placeWallTorches</span><span class="hl opt">(</span><span class="hl num">2</span><span class="hl opt">)</span>
+
+    instance<span class="hl opt">:</span><span class="hl kwd">finalize</span><span class="hl opt">()</span>
+<span class="hl kwa">end</span>
+
+libLevelGen<span class="hl opt">.</span><span class="hl kwd">registerGenerator</span><span class="hl opt">(</span><span class="hl sng">&quot;LibLevelGen Playground&quot;</span><span class="hl opt">,</span> myGenerator<span class="hl opt">)</span>
+</pre>
+</body>
+</html>
+<!--HTML generated by highlight 4.2, http://www.andre-simon.de/-->
