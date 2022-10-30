@@ -139,6 +139,39 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
       <div class="md-header__source">
         <a href="https://gitlab.com/Priw8/LibLevelGen" title="Go to repository" class="md-source" data-md-component="source">
@@ -393,6 +426,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../LevelSequence.lua/" class="md-nav__link">
+        LevelSequence.lua
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -485,8 +532,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#liblevelgenlevelgenerationconfig" class="md-nav__link">
-    LibLevelGen.LevelGenerationConfig
+  <a href="#liblevelgenlevelgenerationoptions-extends-levelgeneratoroptions" class="md-nav__link">
+    LibLevelGen.LevelGenerationOptions extends LevelGenerator.Options
   </a>
   
 </li>
@@ -838,8 +885,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#liblevelgenlevelgenerationconfig" class="md-nav__link">
-    LibLevelGen.LevelGenerationConfig
+  <a href="#liblevelgenlevelgenerationoptions-extends-levelgeneratoroptions" class="md-nav__link">
+    LibLevelGen.LevelGenerationOptions extends LevelGenerator.Options
   </a>
   
 </li>
@@ -1009,9 +1056,9 @@
 <p><strong>Returns</strong>: <code>LibLegelGen.Instance</code></p>
 <hr />
 <h3 id="liblevelgenregistergenerator">libLevelGen.registerGenerator<a class="headerlink" href="#liblevelgenregistergenerator" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">libLevelGen</span><span class="p">.</span><span class="n">registerGenerator</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="kr">function</span><span class="err">,</span> <span class="nf">data</span><span class="err">?</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Config</span><span class="p">,</span> <span class="n">modeData</span><span class="err">?</span><span class="p">:</span> <span class="n">GameSession</span><span class="p">.</span><span class="n">Mode</span><span class="p">.</span><span class="n">Data</span><span class="p">):</span> <span class="n">number</span><span class="p">,</span><span class="n">number</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">libLevelGen</span><span class="p">.</span><span class="n">registerGenerator</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="kr">function</span><span class="err">,</span> <span class="nf">data</span><span class="err">?</span><span class="p">:</span> <span class="n">LibLevelGen</span><span class="p">.</span><span class="n">Config</span><span class="p">,</span> <span class="n">modeData</span><span class="err">?</span><span class="p">:</span> <span class="n">GameSession</span><span class="p">.</span><span class="n">Mode</span><span class="p">.</span><span class="n">Data</span><span class="p">):</span> <span class="n">number</span><span class="p">,</span><span class="n">number</span><span class="p">,</span><span class="n">number</span>
 </code></pre></div>
-<p>Registers a new generator (it will appear in the extra modes menu). Returns IDs of the regular and seeded game modes created.</p>
+<p>Registers a new generator (it will appear in the extra modes menu). Returns IDs of the generator, regular and seeded game modes created.</p>
 <p><strong>Parameters</strong>:  </p>
 <table>
 <thead>
@@ -1044,7 +1091,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Returns</strong>: <code>number,number</code></p>
+<p><strong>Returns</strong>: <code>number,number,number</code></p>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="liblevelgenrunstate">LibLevelGen.RunState<a class="headerlink" href="#liblevelgenrunstate" title="Permanent link">&para;</a></h3>
@@ -1175,6 +1222,11 @@
 <td>Whether enemy upgrades (or downgrades) through ring of war/peace/shrines etc should be disabled</td>
 </tr>
 <tr>
+<td><code>zones</code></td>
+<td><code>number</code></td>
+<td>Amount of zones</td>
+</tr>
+<tr>
 <td><code>levelsPerZone</code></td>
 <td><code>number</code></td>
 <td>Amount of levels per zone</td>
@@ -1193,6 +1245,11 @@
 <td><code>placeShrines</code></td>
 <td><code>boolean</code></td>
 <td>Whether shrines should be automatically placed</td>
+</tr>
+<tr>
+<td><code>sequenceClb</code></td>
+<td><code>fun(ev:Event.LevelSequenceUpdate, cfg: LibLevelGen.Config)</code></td>
+<td>Function which will be used to generate level sequence data.</td>
 </tr>
 </tbody>
 </table>
@@ -1227,7 +1284,7 @@
 </tbody>
 </table>
 <hr />
-<h3 id="liblevelgenlevelgenerationconfig">LibLevelGen.LevelGenerationConfig<a class="headerlink" href="#liblevelgenlevelgenerationconfig" title="Permanent link">&para;</a></h3>
+<h3 id="liblevelgenlevelgenerationoptions-extends-levelgeneratoroptions">LibLevelGen.LevelGenerationOptions <em>extends</em> LevelGenerator.Options<a class="headerlink" href="#liblevelgenlevelgenerationoptions-extends-levelgeneratoroptions" title="Permanent link">&para;</a></h3>
 <p>Configuration of the currently generated level</p>
 <p><strong>Properties</strong>:  </p>
 <table>
@@ -1240,29 +1297,74 @@
 </thead>
 <tbody>
 <tr>
-<td><code>initialCharacters</code></td>
-<td><code>string[]</code></td>
-<td>Initial player entity types</td>
-</tr>
-<tr>
-<td><code>isFinal</code></td>
-<td><code>boolean</code></td>
-<td><em>no description</em></td>
-</tr>
-<tr>
-<td><code>isLoopFinal</code></td>
-<td><code>boolean</code></td>
-<td><em>no description</em></td>
-</tr>
-<tr>
 <td><code>number</code></td>
-<td><code>number</code></td>
-<td>Level number</td>
+<td><code>integer</code></td>
+<td>1-indexed sequential identifier of this level in the whole run. Preserved across sub-runs</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>LevelGenerator.Type</code></td>
+<td>Stores the string ID of the generator to use for this level</td>
+</tr>
+<tr>
+<td><code>modeID</code></td>
+<td><code>GameSession.Mode</code></td>
+<td>Stores the string ID of the game mode to use for this level</td>
+</tr>
+<tr>
+<td><code>isFinal?</code></td>
+<td><code>boolean</code></td>
+<td>If true, completing this level counts as a victory and ends the run</td>
+</tr>
+<tr>
+<td><code>isLoopFinal?</code></td>
+<td><code>boolean</code></td>
+<td>If true, completing this level counts as a victory for the current loop</td>
+</tr>
+<tr>
+<td><code>initialCharacters?</code></td>
+<td><code>table&lt;integer,string&gt;</code></td>
+<td>Maps initially present player IDs to chosen characters</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
+<td><code>integer</code></td>
+<td>Specifies the seed to generate this level with</td>
+</tr>
+<tr>
+<td><code>runState</code></td>
+<td><code>RunState</code></td>
+<td>Stores the current run state table</td>
+</tr>
+<tr>
+<td><code>loopID</code></td>
+<td><code>integer</code></td>
+<td>1-index loop counter, tracking how many sub-runs have been performed within this run</td>
+</tr>
+<tr>
+<td><code>overridePastLevels?</code></td>
+<td><code>Level.Data</code></td>
+<td>Overwrites all past levels to reduce memory usage</td>
+</tr>
+<tr>
+<td><code>primaryPlayerID?</code></td>
+<td><code>Player.ID</code></td>
+<td>Optionally designates a player as the in-turn host for the current session</td>
+</tr>
+<tr>
+<td><code>zone</code></td>
 <td><code>number</code></td>
-<td>Level seed</td>
+<td>Current zone number</td>
+</tr>
+<tr>
+<td><code>depth</code></td>
+<td><code>number</code></td>
+<td>Current depth number</td>
+</tr>
+<tr>
+<td><code>floor</code></td>
+<td><code>number</code></td>
+<td>Current floor number</td>
 </tr>
 </tbody>
 </table>
@@ -1286,7 +1388,7 @@
 </tr>
 <tr>
 <td><code>data</code></td>
-<td><code>LibLevelGen.LevelGenerationConfig</code></td>
+<td><code>LibLevelGen.LevelGenerationOptions</code></td>
 <td>Configuration of the current level</td>
 </tr>
 <tr>
@@ -1380,6 +1482,11 @@
 <td>Seed of the entire run</td>
 </tr>
 <tr>
+<td><code>isFinal</code></td>
+<td><code>boolean</code></td>
+<td>Whether the current level is the last one</td>
+</tr>
+<tr>
 <td><code>currentSeed</code></td>
 <td><code>number</code></td>
 <td>Seed of this level</td>
@@ -1393,6 +1500,21 @@
 <td><code>level</code></td>
 <td><code>number</code></td>
 <td>Current level number</td>
+</tr>
+<tr>
+<td><code>zone</code></td>
+<td><code>number</code></td>
+<td>Current zone</td>
+</tr>
+<tr>
+<td><code>depth</code></td>
+<td><code>number</code></td>
+<td>Current depth</td>
+</tr>
+<tr>
+<td><code>floor</code></td>
+<td><code>number</code></td>
+<td>Current floor</td>
 </tr>
 <tr>
 <td><code>music</code></td>
@@ -1805,7 +1927,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../ErrorLevel.lua/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ErrorLevel.lua" rel="prev">
+        <a href="../LevelSequence.lua/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LevelSequence.lua" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1814,7 +1936,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              ErrorLevel.lua
+              LevelSequence.lua
             </div>
           </div>
         </a>

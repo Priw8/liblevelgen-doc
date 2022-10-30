@@ -2,97 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/getting-started/01-introduction/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/getting-started/02-basics/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/getting-started/03-more-rooms/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/getting-started/04-room-types/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/getting-started/05-tile-requirements/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Enemy.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Entity.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/ErrorLevel.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://priw8.github.io/liblevelgen-doc/modules/LevelSequence.lua/</loc>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/LibLevelGen.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Loot.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Rand.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Room.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/SecretRoom.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/SecretShop.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Segment.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Settings.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Shrine.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://priw8.github.io/liblevelgen-doc/modules/Util.lua/</loc>
-         <lastmod>2022-10-29</lastmod>
+         <lastmod>2022-10-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
