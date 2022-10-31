@@ -17,7 +17,7 @@
     
     
       
-        <title>Level sequence - LibLevelGen</title>
+        <title>06. Level sequence - LibLevelGen</title>
       
     
     
@@ -56,7 +56,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Level sequence - LibLevelGen" >
+        <meta  property="og:title"  content="06. Level sequence - LibLevelGen" >
       
         <meta  property="og:description"  content="Documentation and tutorials for the LibLevelGen library." >
       
@@ -72,7 +72,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Level sequence - LibLevelGen" >
+        <meta  name="twitter:title"  content="06. Level sequence - LibLevelGen" >
       
         <meta  name="twitter:description"  content="Documentation and tutorials for the LibLevelGen library." >
       
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#level-sequence" class="md-skip">
+        <a href="#06-level-sequence" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Level sequence
+              06. Level sequence
             
           </span>
         </div>
@@ -283,7 +283,7 @@
   
     <li class="md-nav__item">
       <a href="../01-introduction/" class="md-nav__link">
-        Introduction
+        01. Introduction
       </a>
     </li>
   
@@ -297,7 +297,7 @@
   
     <li class="md-nav__item">
       <a href="../02-basics/" class="md-nav__link">
-        The basics
+        02. The basics
       </a>
     </li>
   
@@ -311,7 +311,7 @@
   
     <li class="md-nav__item">
       <a href="../03-more-rooms/" class="md-nav__link">
-        Creating more rooms
+        03. Creating more rooms
       </a>
     </li>
   
@@ -325,7 +325,7 @@
   
     <li class="md-nav__item">
       <a href="../04-room-types/" class="md-nav__link">
-        Placing things in rooms
+        04. Placing things in rooms
       </a>
     </li>
   
@@ -339,7 +339,7 @@
   
     <li class="md-nav__item">
       <a href="../05-tile-requirements/" class="md-nav__link">
-        Selecting tiles
+        05. Selecting tiles
       </a>
     </li>
   
@@ -362,12 +362,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Level sequence
+          06. Level sequence
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Level sequence
+        06. Level sequence
       </a>
       
         
@@ -410,6 +410,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-small-things/" class="md-nav__link">
+        07. A variety of small things #1
+      </a>
     </li>
   
 
@@ -713,7 +727,10 @@
                   
 
 
-<h1 id="level-sequence">Level sequence<a class="headerlink" href="#level-sequence" title="Permanent link">&para;</a></h1>
+<h1 id="06-level-sequence">06. Level sequence<a class="headerlink" href="#06-level-sequence" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><em>Note</em>: features discussed here were added in 1.1.0, update if you're using 1.0.0.</p>
+</blockquote>
 <p>So far, we focused on generating just 1 level, but usually we want the run to have more. Various things related to how and how many levels are created are defined by the level sequence. We'll start with the <a href="../06-assets/code-start.html">code from the previous part</a>.</p>
 <h2 id="what-the-level-sequence-does">What the level sequence does<a class="headerlink" href="#what-the-level-sequence-does" title="Permanent link">&para;</a></h2>
 <p>Things like 1-2 coming after 1-1 aren't actually hardcoded and can be changed by altering the level sequence. The sequence itself is an array of <a href="../../modules/LibLevelGen.lua/#liblevelgenlevelgenerationoptions-extends-levelgeneratoroptions">LibLevelGen.LevelGenerationOptions</a> objects, and there's one entry for every level in the run. This object type has a lot of fields, but most of them don't actually need to be set - this is because there's another object of this type that's used as a base, and the values of individual entries from the sequence are merged into the base one.</p>
@@ -793,7 +810,7 @@ So now we have 1 floor of our generator followed by a boss, repeated 4 times bef
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../05-tile-requirements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Selecting tiles" rel="prev">
+        <a href="../05-tile-requirements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 05. Selecting tiles" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -802,20 +819,20 @@ So now we have 1 floor of our generator followed by a boss, repeated 4 times bef
               <span class="md-footer__direction">
                 Previous
               </span>
-              Selecting tiles
+              05. Selecting tiles
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../modules/Enemy.lua/" class="md-footer__link md-footer__link--next" aria-label="Next: Enemy.lua" rel="next">
+        <a href="../07-small-things/" class="md-footer__link md-footer__link--next" aria-label="Next: 07. A variety of small things #1" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Enemy.lua
+              07. A variety of small things #1
             </div>
           </div>
           <div class="md-footer__button md-icon">
