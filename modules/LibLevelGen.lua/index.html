@@ -1275,6 +1275,11 @@
 <td>Whether shrines should be automatically placed</td>
 </tr>
 <tr>
+<td><code>allowSecretShopPlacementFailures</code></td>
+<td><code>boolean</code></td>
+<td>Whether errors related to secret shop generation should be suppressed.</td>
+</tr>
+<tr>
 <td><code>sequenceClb</code></td>
 <td><code>fun(ev:Event.LevelSequenceUpdate, cfg: LibLevelGen.Config)</code></td>
 <td>Function which will be used to generate level sequence data.</td>
@@ -1493,6 +1498,11 @@
 <td><code>levelGeneratorData</code></td>
 <td><code>LibLevelGen.Config</code></td>
 <td>Configuration of the generator used</td>
+</tr>
+<tr>
+<td><code>levelGenerationOptions</code></td>
+<td><code>LibLevelGen.LevelGenerationOptions</code></td>
+<td>Level generation options for the current level</td>
 </tr>
 <tr>
 <td><code>runState</code></td>
